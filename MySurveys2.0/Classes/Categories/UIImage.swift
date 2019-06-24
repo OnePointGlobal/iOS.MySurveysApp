@@ -25,14 +25,14 @@ extension UIImage{
         var imgData: Data?
         var compressingValue: CGFloat = 0.8
         while (needCompress && compressingValue > 0.0) {
-            if let data: Data = UIImageJPEGRepresentation(self, compressingValue) {
-                if data.count < sizeInBytes {
-                    needCompress = false
-                    imgData = data
-                } else {
-                    compressingValue = compressingValue * 0.8
-                }
-            }
+//            if let data: Data = UIImageJPEGRepresentation(self, compressingValue) {
+//                if data.count < sizeInBytes {
+//                    needCompress = false
+//                    imgData = data
+//                } else {
+//                    compressingValue = compressingValue * 0.8
+//                }
+//            }
         }
         if let data = imgData {
             if (data.count < sizeInBytes) {
@@ -44,7 +44,7 @@ extension UIImage{
 
     func fixOrientation() -> UIImage {
         if self.size.width > self.size.height {
-           return UIImage.init(cgImage: self.cgImage!, scale: self.scale, orientation: UIImageOrientation.right)
+            return UIImage.init(cgImage: self.cgImage!, scale: self.scale, orientation: UIImage.Orientation.right)
         }
         else {
             return self

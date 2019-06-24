@@ -64,7 +64,7 @@ class ProfileViewController: RootViewController, UITableViewDelegate, UITableVie
         self.tableview?.delegate=self
         self.tableview?.dataSource=self
         self.tableview?.allowsSelection = false                  // Disable table view selection
-        self.tableview?.separatorStyle = UITableViewCellSeparatorStyle.none
+        self.tableview?.separatorStyle = UITableViewCell.SeparatorStyle.none
         self.tableview?.isScrollEnabled=false
         self.activityIndicator?.color = AppTheme.appBackgroundColor()
         self.configureUI()
@@ -78,8 +78,14 @@ class ProfileViewController: RootViewController, UITableViewDelegate, UITableVie
         let cameraIconWidth =  btnCameraIcon?.bounds.size.width
         btnCameraIcon?.layer.cornerRadius = 0.5 * cameraIconWidth!
         if UIDevice.current.userInterfaceIdiom == .pad {
-            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+            NotificationCenter.default.addObserver(
+                self,
+                selector: #selector(keyboardWillShow),
+                name: UIResponder.keyboardWillShowNotification, object: nil)
+            NotificationCenter.default.addObserver(
+                self,
+                selector: #selector(keyboardWillHide),
+                name: UIResponder.keyboardWillShowNotification, object: nil)
         }
     }
 
@@ -98,13 +104,13 @@ class ProfileViewController: RootViewController, UITableViewDelegate, UITableVie
             }
         }
         if isEditable! {
-            let btnEdit =  UIBarButtonItem(title: NSLocalizedString("Save", comment: ""), style: UIBarButtonItemStyle.plain, target: self, action: #selector(editProfile))
+            let btnEdit =  UIBarButtonItem(title: NSLocalizedString("Save", comment: ""), style: UIBarButtonItem.Style.plain, target: self, action: #selector(editProfile))
             self.tabBarController?.navigationItem.rightBarButtonItem = btnEdit
         }
         else {
-            let btnEdit =  UIBarButtonItem(title: NSLocalizedString("Edit", comment: ""), style: UIBarButtonItemStyle.plain, target: self, action: #selector(editProfile))
+            let btnEdit =  UIBarButtonItem(title: NSLocalizedString("Edit", comment: ""), style: UIBarButtonItem.Style.plain, target: self, action: #selector(editProfile))
             self.tabBarController?.navigationItem.rightBarButtonItem = btnEdit
-            self.tableview?.separatorStyle = UITableViewCellSeparatorStyle.none
+            self.tableview?.separatorStyle = UITableViewCell.SeparatorStyle.none
             self.tableview?.allowsSelection = false
             self.tableview?.reloadData()                 // to disable editing after coming back to profile screen which was left in edit mode
         }
@@ -214,7 +220,7 @@ class ProfileViewController: RootViewController, UITableViewDelegate, UITableVie
         photoImageView!.layer.masksToBounds = false
         photoImageView!.clipsToBounds = true
         photoImageView!.layer.borderWidth = 0.5
-        photoImageView!.contentMode = UIViewContentMode.scaleAspectFill
+        photoImageView!.contentMode = UIView.ContentMode.scaleAspectFill
     }
 
 
@@ -541,7 +547,7 @@ class ProfileViewController: RootViewController, UITableViewDelegate, UITableVie
     func encryptProfileImg(imgPath: String) {
         // Gets the profile image downloaded by SDK, converts to Data, deletes it and encryptes the Data and write to a file
         let image = UIImage(contentsOfFile: imgPath)
-        let data: Data = UIImagePNGRepresentation(image!)!
+        let data: Data = image!.pngData()!
         self.deleteImgFromPath(path: imgPath)
         let encryptedData: Data = RNCryptor.encrypt(data: data, withPassword: "ABCD")
          do {
@@ -567,13 +573,13 @@ class ProfileViewController: RootViewController, UITableViewDelegate, UITableVie
     }
 
     // MARK: - Image Picker Delegates
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
+    private func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         _ = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
-        let image: UIImage = (info[UIImagePickerControllerOriginalImage] as? UIImage)!
+        let image: UIImage = (info[UIImagePickerController.InfoKey.originalImage]  as? UIImage)!
         let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
         let photoURL          = NSURL(fileURLWithPath: documentDirectory)
         let localPath         = photoURL.appendingPathComponent("profileimage.jpg")
-        let data              = UIImageJPEGRepresentation(image, 1.0)
+        let data              = image.jpegData(compressionQuality: 1.0)
         let img              = UIImage(data: data!)
 
         if let compressedData: Data = img?.compressTo(1) {
@@ -610,17 +616,17 @@ class ProfileViewController: RootViewController, UITableViewDelegate, UITableVie
     // MARK: - IBOutlet Action methods
     @IBAction func cameraAction(_ sender: UIButton) {
         if super.isOnline() {
-            let alert = UIAlertController(title: NSLocalizedString("MySurveys", comment: "App Name"), message: NSLocalizedString("Profile image", comment: "Profile image"), preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: NSLocalizedString("Take Photo", comment: ""), style: UIAlertActionStyle.default, handler: {
+            let alert = UIAlertController(title: NSLocalizedString("MySurveys", comment: "App Name"), message: NSLocalizedString("Profile image", comment: "Profile image"), preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Take Photo", comment: ""), style: UIAlertAction.Style.default, handler: {
                 action in self.openCamera()
             }))
-            alert.addAction(UIAlertAction(title: NSLocalizedString("Choose From Gallery", comment: "gallery"), style: UIAlertActionStyle.default, handler: {
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Choose From Gallery", comment: "gallery"), style: UIAlertAction.Style.default, handler: {
                 action in self.openGallery()
             }))
-            alert.addAction(UIAlertAction(title: "Remove Photo", style: UIAlertActionStyle.default, handler: {
+            alert.addAction(UIAlertAction(title: "Remove Photo", style: UIAlertAction.Style.default, handler: {
                 action in self.removeProfilePic()
             }))
-            alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: UIAlertActionStyle.destructive, handler: nil))
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: UIAlertAction.Style.destructive, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
         else {
@@ -636,11 +642,11 @@ class ProfileViewController: RootViewController, UITableViewDelegate, UITableVie
         }
         else {
             if super.isOnline() {
-                let alert = UIAlertController(title: NSLocalizedString("MySurveys", comment: "App Name"), message: NSLocalizedString("Are you sure you want to logout?", comment: ""), preferredStyle: UIAlertControllerStyle.alert)
-                alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "OK"), style: UIAlertActionStyle.default, handler: {
+                let alert = UIAlertController(title: NSLocalizedString("MySurveys", comment: "App Name"), message: NSLocalizedString("Are you sure you want to logout?", comment: ""), preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "OK"), style: UIAlertAction.Style.default, handler: {
                     action in self.logout()
                 }))
-                alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: UIAlertActionStyle.default, handler: nil))
+                alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: UIAlertAction.Style.default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
             }
             else {
@@ -655,7 +661,7 @@ class ProfileViewController: RootViewController, UITableViewDelegate, UITableVie
                 self.isEditable = false
                 self.tabBarController?.navigationItem.rightBarButtonItem?.title = NSLocalizedString("Edit", comment: "")
                 self.tableview?.allowsSelection = false
-                self.tableview?.separatorStyle = UITableViewCellSeparatorStyle.none
+                self.tableview?.separatorStyle = UITableViewCell.SeparatorStyle.none
                 self.hideKeyboard()                 // dismiss keyboard first and then update profile
                 self.updateProfile()
             }
@@ -664,7 +670,7 @@ class ProfileViewController: RootViewController, UITableViewDelegate, UITableVie
                 self.tabBarController?.navigationItem.rightBarButtonItem?.title=NSLocalizedString("Save", comment: "")
                 self.tableview?.allowsSelection = true
                 self.tableview?.isScrollEnabled=true
-                self.tableview?.separatorStyle = UITableViewCellSeparatorStyle.singleLine
+                self.tableview?.separatorStyle = UITableViewCell.SeparatorStyle.singleLine
                 self.tableview?.reloadData()                 // to enable country btn and name txtfld after hitting edit
             }
         }
@@ -673,7 +679,7 @@ class ProfileViewController: RootViewController, UITableViewDelegate, UITableVie
                 self.isEditable = false
                 self.tabBarController?.navigationItem.rightBarButtonItem?.title = NSLocalizedString("Edit", comment: "")
                 self.tableview?.allowsSelection = false
-                self.tableview?.separatorStyle = UITableViewCellSeparatorStyle.none
+                self.tableview?.separatorStyle = UITableViewCell.SeparatorStyle.none
                 self.getPanellistProfileFromDB()                    // get from DB again because profile object is edited locally in the class
                 self.tableview?.reloadData()
             }
@@ -740,7 +746,7 @@ class ProfileViewController: RootViewController, UITableViewDelegate, UITableVie
             else {
                 tableViewCell.txtValue.isEnabled=false
             }
-            tableViewCell.selectionStyle = UITableViewCellSelectionStyle.none
+            tableViewCell.selectionStyle = UITableViewCell.SelectionStyle.none
             return tableViewCell
 
         case 1:
@@ -755,12 +761,12 @@ class ProfileViewController: RootViewController, UITableViewDelegate, UITableVie
                 // 15 is for iPhone
                 tableViewCell.separatorInset = UIEdgeInsets(top: 0, left: 40, bottom: 0, right: 40)
             }
-            tableViewCell.selectionStyle = UITableViewCellSelectionStyle.none
+            tableViewCell.selectionStyle = UITableViewCell.SelectionStyle.none
             return tableViewCell
 
         case 2:
             let tableViewCell = tableView.dequeueReusableCell(withIdentifier: "Profile") as! ProfileTableViewCell
-            tableViewCell.separatorInset = UIEdgeInsetsMake(0, 0, 0, 1000)
+            tableViewCell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 1000)
             if self.panelist?.email == nil {
                 tableViewCell.fillCell(title: titleArray[indexPath.row], value: "", tagIdentifier: 1)
             }
@@ -768,14 +774,14 @@ class ProfileViewController: RootViewController, UITableViewDelegate, UITableVie
                 tableViewCell.fillCell(title: titleArray[indexPath.row], value: (panelist?.email)!, tagIdentifier: 1)
             }
             tableViewCell.txtValue.isEnabled = false
-            tableViewCell.selectionStyle = UITableViewCellSelectionStyle.none
+            tableViewCell.selectionStyle = UITableViewCell.SelectionStyle.none
             return tableViewCell
 
         case 3:
             let tableViewCell = tableView.dequeueReusableCell(withIdentifier: "Logout") as! ProfileLogoutTableViewCell
-            tableViewCell.btnLogout.addTarget(self, action: #selector(showAlert(sender:)), for: UIControlEvents.touchUpInside)
+            tableViewCell.btnLogout.addTarget(self, action: #selector(showAlert(sender:)), for: UIControl.Event.touchUpInside)
             tableViewCell.btnLogout.setTitle(NSLocalizedString("Log out", comment: ""), for: .normal)
-            tableViewCell.selectionStyle = UITableViewCellSelectionStyle.none
+            tableViewCell.selectionStyle = UITableViewCell.SelectionStyle.none
             return tableViewCell
         default:
             let tableViewCell = tableView.dequeueReusableCell(withIdentifier: "Profile") as! ProfileTableViewCell

@@ -62,10 +62,10 @@ class SettingsViewController: RootViewController, UITableViewDelegate, UITableVi
         let tableViewCell: SettingsTableViewCell = tableView.dequeueReusableCell(withIdentifier: "settingsCell") as! SettingsTableViewCell
 
         if indexPath.row == 1 {
-            tableViewCell.selectionStyle = UITableViewCellSelectionStyle.none
+            tableViewCell.selectionStyle = UITableViewCell.SelectionStyle.none
             tableViewCell.layoutMargins = UIEdgeInsets.zero
             tableViewCell.fillCell(items: settingItems[indexPath.row], isGeoFencing: true)
-            tableViewCell.switchControl.addTarget(self, action: #selector(switchEvents), for: UIControlEvents.valueChanged)
+            tableViewCell.switchControl.addTarget(self, action: #selector(switchEvents), for: UIControl.Event.valueChanged)
             tableViewCell.accessoryType = .none
 
         } else {
@@ -73,7 +73,7 @@ class SettingsViewController: RootViewController, UITableViewDelegate, UITableVi
             tableViewCell.layoutMargins = UIEdgeInsets.zero
             tableViewCell.fillCell(items: settingItems[indexPath.row], isGeoFencing: false)
         }
-        tableViewCell.selectionStyle = UITableViewCellSelectionStyle.none
+        tableViewCell.selectionStyle = UITableViewCell.SelectionStyle.none
         return tableViewCell
     }
 

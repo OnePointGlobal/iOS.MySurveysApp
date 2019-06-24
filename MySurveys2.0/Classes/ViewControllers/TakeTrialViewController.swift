@@ -21,7 +21,7 @@ class TakeTrialViewController: OPGViewController, OPGSurveyDelegate {
         let navBar = self.navigationController?.navigationBar
         navBar?.barStyle = UIBarStyle.black
         navBar?.tintColor = UIColor.white
-        navBar?.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        navBar?.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         self.view.backgroundColor = AppTheme.appBackgroundColor()
         self.spinner.color = AppTheme.appBackgroundColor()
         self.spinner.startAnimating()

@@ -114,17 +114,17 @@ class LoginViewController: RootViewController, UITextFieldDelegate, GIDSignInUID
         self.txtUsername?.inputAccessoryView = self.hideKeyboard()
         self.txtPassword?.inputAccessoryView = self.hideKeyboard()
         self.txtUsername?.attributedPlaceholder = NSAttributedString(string: NSLocalizedString("Username/EmailID", comment: "Username/EmailID"),
-                                                                     attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
+                                                                     attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         self.txtPassword?.attributedPlaceholder = NSAttributedString(string: NSLocalizedString("Password", comment: "Password"),
-                                                                     attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
+                                                                     attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         self.btnLogin?.setTitleColor(AppTheme.appBackgroundColor(), for: .normal)
         self.btnLogin?.layer.borderColor = UIColor.white.cgColor
         self.btnLogin?.layer.borderWidth = 1.0
 
-        self.btnLogin?.setTitle(NSLocalizedString("Login", comment: ""), for: UIControlState.normal)
-        self.btnGooglePlusLogin.setTitle(NSLocalizedString("Sign in with Google", comment: ""), for: UIControlState.normal)
-        self.btnFacebookLogin.setTitle(NSLocalizedString("Login with Facebook", comment: ""), for: UIControlState.normal)
-        self.btnForgotPassword?.setTitle(NSLocalizedString("Forgot Password?", comment: ""), for: UIControlState.normal)
+        self.btnLogin?.setTitle(NSLocalizedString("Login", comment: ""), for: UIControl.State.normal)
+        self.btnGooglePlusLogin.setTitle(NSLocalizedString("Sign in with Google", comment: ""), for: UIControl.State.normal)
+        self.btnFacebookLogin.setTitle(NSLocalizedString("Login with Facebook", comment: ""), for: UIControl.State.normal)
+        self.btnForgotPassword?.setTitle(NSLocalizedString("Forgot Password?", comment: ""), for: UIControl.State.normal)
         // Configure GGLContext and set delegate
         GIDSignIn.sharedInstance().uiDelegate=self  // Google SignIn UI Delegate
         GIDSignIn.sharedInstance().clientID = "698735233704-dk4nnf5k4r5r6ji8rcctbi5s5r2ici1m.apps.googleusercontent.com"
@@ -457,7 +457,7 @@ class LoginViewController: RootViewController, UITextFieldDelegate, GIDSignInUID
     func hideKeyboard() -> UIToolbar {
         let toolbarDone = UIToolbar.init()
         toolbarDone.sizeToFit()
-        let barBtnDone = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonSystemItem.done,
+        let barBtnDone = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonItem.SystemItem.done,
                                               target: self, action: #selector(dismissKeyBoard))
         toolbarDone.items = [barBtnDone]
         return toolbarDone

@@ -88,7 +88,7 @@ class HomeViewController: RootViewController, CLLocationManagerDelegate,UITableV
         AppTheme.delelgate = self
         
         if #available(iOS 11, *) {
-            self.tableView?.contentInsetAdjustmentBehavior =  UIScrollViewContentInsetAdjustmentBehavior.never
+            self.tableView?.contentInsetAdjustmentBehavior =  UIScrollView.ContentInsetAdjustmentBehavior.never
         }
         
         queue.maxConcurrentOperationCount = 1
@@ -154,10 +154,10 @@ class HomeViewController: RootViewController, CLLocationManagerDelegate,UITableV
     override func viewWillAppear(_ animated: Bool) {
         let isAvailable: Bool? = UserDefaults.standard.value(forKey: "isGeoFencingAvailable") as? Bool
         if isAvailable == true {
-            self.tableView?.contentInset = UIEdgeInsetsMake(105,0,0,0);
+            self.tableView?.contentInset = UIEdgeInsets(top: 105,left: 0,bottom: 0,right: 0);
         }
         else {
-            self.tableView?.contentInset = UIEdgeInsetsMake(60,0,0,0);
+            self.tableView?.contentInset = UIEdgeInsets(top: 60,left: 0,bottom: 0,right: 0);
         }
         let defaults = UserDefaults.standard
         let name: String? = defaults.value(forKey: "appName") as? String
@@ -292,7 +292,7 @@ class HomeViewController: RootViewController, CLLocationManagerDelegate,UITableV
                     }
                     else {
                         tableViewCell?.offlineFileCountButton.isHidden = false
-                        tableViewCell?.offlineFileCountButton.setTitle(String(numberOfFilesPending), for: UIControlState.normal)
+                        tableViewCell?.offlineFileCountButton.setTitle(String(numberOfFilesPending), for: UIControl.State.normal)
                         tableViewCell?.btnSurveyDesc.setTitle(NSLocalizedString("Uploading", comment: ""),for: .normal)
                         tableViewCell?.setNeedsDisplay()
                     }
@@ -378,7 +378,7 @@ class HomeViewController: RootViewController, CLLocationManagerDelegate,UITableV
     func setUpSegmentedController() {
         let isAvailable: Bool? = UserDefaults.standard.value(forKey: "isGeoFencingAvailable") as? Bool
         if #available(iOS 11, *) {
-            self.tableView?.contentInsetAdjustmentBehavior =  UIScrollViewContentInsetAdjustmentBehavior.never
+            self.tableView?.contentInsetAdjustmentBehavior =  UIScrollView.ContentInsetAdjustmentBehavior.never
         }
         if isAvailable == true {
             self.segmentedView?.isHidden = false
@@ -388,7 +388,7 @@ class HomeViewController: RootViewController, CLLocationManagerDelegate,UITableV
             UIView.animate(withDuration: 0.5, animations: {
                 self.constraintShimmeringTop.constant = -60.0
                 self.constraintGeoFenceTop.constant = -60.0
-                self.tableView?.contentInset = UIEdgeInsetsMake(105,0,0,0);
+                self.tableView?.contentInset = UIEdgeInsets(top: 105,left: 0,bottom: 0,right: 0);
                 self.view.layoutIfNeeded()
             })
         } else {
@@ -400,7 +400,7 @@ class HomeViewController: RootViewController, CLLocationManagerDelegate,UITableV
                 self.constraintShimmeringTop.constant =  -60.0
                 self.view.layoutIfNeeded()
 
-                self.tableView?.contentInset = UIEdgeInsetsMake(60,0,0,0);
+                self.tableView?.contentInset = UIEdgeInsets(top: 60,left: 0,bottom: 0,right: 0);
                 self.view.layoutIfNeeded()
 
                 self.constraintGeoFenceTop.constant = -60.0
@@ -560,11 +560,11 @@ class HomeViewController: RootViewController, CLLocationManagerDelegate,UITableV
                                 opgSurvey.endDate = self.stringFromDate(survey.deadLine as NSDate)
                                 opgSurvey.deadline = self.stringFromDate(survey.deadLine as NSDate)
                             }
-                            opgSurvey.isOffline = NSNumber(value:Int(survey.isOffline))
-                            opgSurvey.isGeoFencing = NSNumber(value:Int(survey.isGeofencing))
+                            opgSurvey.isOffline = NSNumber(value:Int(truncating: survey.isOffline))
+                            opgSurvey.isGeoFencing = NSNumber(value:Int(truncating: survey.isGeofencing))
                             opgSurvey.surveyID = survey.surveyID;
                             opgSurvey.estimatedTime = survey.estimatedTime;
-                            opgSurvey.isOfflineDownloaded = NSNumber(value:Int(survey.occurences))
+                            opgSurvey.isOfflineDownloaded = NSNumber(value:Int(truncating: survey.occurences))
                             if opgSurvey.isGeoFencing == 1 {
                                 UserDefaults.standard.set(true, forKey: "isGeoFencingAvailable")
                             }
@@ -794,7 +794,7 @@ class HomeViewController: RootViewController, CLLocationManagerDelegate,UITableV
                         }
 
                         // download script only if the survey ID is not there in the downloading list already (to avoid repetitive downloading)
-                        if self.arrayOfDownloadingScripts.contains(Int((self.surveyList[index] as! OPGSurvey).surveyID)) == false {
+                        if self.arrayOfDownloadingScripts.contains(Int(truncating: (self.surveyList[index] as! OPGSurvey).surveyID)) == false {
                             self.arrayOfDownloadingScripts.append((self.surveyList[index] as! OPGSurvey).surveyID as! Int)        // add survey ID to list of downloading arrays
                             dispatchQueue.async(flags: .barrier) {
                                 dataObject.downloadOfflineSurvey(self.surveyList[index] as! OPGSurvey) { [weak self] progress, survey, error in
@@ -829,7 +829,7 @@ class HomeViewController: RootViewController, CLLocationManagerDelegate,UITableV
                                                         let indexForSurvey = self?.findIndexOfSurey(survey!)
 
                                                         // remove survey id from the list after download has failed
-                                                        if (self?.arrayOfDownloadingScripts.contains(Int(survey!.surveyID)))! {
+                                                        if (self?.arrayOfDownloadingScripts.contains(Int(truncating: survey!.surveyID)))! {
                                                         let index: Int = (self?.arrayOfDownloadingScripts.index(of: survey!.surveyID as! Int))!
                                                         self?.arrayOfDownloadingScripts.remove(at: index)
                                                         }
@@ -871,7 +871,7 @@ class HomeViewController: RootViewController, CLLocationManagerDelegate,UITableV
                                             }
                                            // remove survey id from the list after download is complete
                                             let surveyID: NSNumber = (survey! as OPGSurvey).surveyID
-                                            if (self?.arrayOfDownloadingScripts.contains(Int(surveyID)))! {
+                                            if (self?.arrayOfDownloadingScripts.contains(Int(truncating: surveyID)))! {
                                                 let index: Int = (self?.arrayOfDownloadingScripts.index(of: surveyID as! Int))!
                                                 self?.arrayOfDownloadingScripts.remove(at: index)
                                             }
@@ -981,7 +981,7 @@ class HomeViewController: RootViewController, CLLocationManagerDelegate,UITableV
                     arrayLocations = try sdk.getGeofenceSurveys(Float((self.myLocation?.latitude)!), longitude: Float((self.myLocation?.longitude)!)) as NSArray
                     DispatchQueue.main.async {
                         if arrayLocations.count > 0 {
-                            self.saveGeofenceSurveysToDB(arrayLocations as! [OPGGeofenceSurvey])
+                            self.saveGeofenceSurveysToDB(arrayLocations as? [OPGGeofenceSurvey])
                         }
                         else {
                             print("No geofenced survey locations to monitor")
@@ -1013,7 +1013,7 @@ class HomeViewController: RootViewController, CLLocationManagerDelegate,UITableV
                     var error: NSError?
                     self.geofencedArrays = locations //CollabrateDB.sharedInstance().getAllGeoFenceSurveys()
                     if self.geofencedArrays.count > 0 {
-                        geoFence?.startMonitor(forGeoFencing: self.geofencedArrays as! [OPGGeofenceSurvey], error: &error)
+                        geoFence?.startMonitor(forGeoFencing: self.geofencedArrays as? [OPGGeofenceSurvey], error: &error)
                         if error != nil {
                             print(error.debugDescription)
                             super.showAlert(alertTitle: NSLocalizedString("MySurveys", comment: ""), alertMessage: NSLocalizedString("Oops! Unknown error. Please try again.", comment: ""), alertAction: NSLocalizedString("OK", comment: "OK"))
@@ -1330,7 +1330,7 @@ class HomeViewController: RootViewController, CLLocationManagerDelegate,UITableV
                     if (count.intValue) > 0 {
                         let cell: SurveyTableViewCell? = tableview.cellForRow(at: indexPath) as? SurveyTableViewCell
                         cell?.offlineFileCountButton.isHidden = false                //show counter if there is any survey to be uploaded
-                        cell?.offlineFileCountButton.setTitle(count.stringValue, for: UIControlState.normal)
+                        cell?.offlineFileCountButton.setTitle(count.stringValue, for: UIControl.State.normal)
                         cell?.setNeedsDisplay()
                     }
                 }
@@ -1486,7 +1486,7 @@ class HomeViewController: RootViewController, CLLocationManagerDelegate,UITableV
             }
            tableViewCell.fillCellGeoFenced(survey)             //for color enable and disable
         }
-        tableViewCell.selectionStyle = UITableViewCellSelectionStyle.none
+        tableViewCell.selectionStyle = UITableViewCell.SelectionStyle.none
         return tableViewCell
     }
 
@@ -1588,7 +1588,7 @@ class HomeViewController: RootViewController, CLLocationManagerDelegate,UITableV
                                                "body": alertMessage,
                                                "IsRead": "0"]
 
-                if appState == UIApplicationState.active {
+                if appState == UIApplication.State.active {
                     let concurrentQueue = DispatchQueue(label: "getAllSurveys")
                     concurrentQueue.sync() {
                         CollabrateDB.sharedInstance().saveLocalNotifications(dict)
@@ -1635,7 +1635,7 @@ class HomeViewController: RootViewController, CLLocationManagerDelegate,UITableV
                 }
                 DispatchQueue.main.async {
                     self.tableViewGeoFenced?.reloadData()       //enable surveys with orange color
-                    if appState == UIApplicationState.active {
+                    if appState == UIApplication.State.active {
                         self.showGeoAlerts(regionEntered)
                     }
                 }
@@ -1655,13 +1655,13 @@ class HomeViewController: RootViewController, CLLocationManagerDelegate,UITableV
     }
 
     func showGeoAlerts(_ regions: OPGGeofenceSurvey) {
-        let alert = UIAlertController.init(title: NSLocalizedString("MySurveys", comment: ""), message: ("Welcome to \(regions.address!)!. You have a survey available!"), preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Take Survey", comment: ""), style: UIAlertActionStyle.default, handler: {
+        let alert = UIAlertController.init(title: NSLocalizedString("MySurveys", comment: ""), message: ("Welcome to \(regions.address!)!. You have a survey available!"), preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Take Survey", comment: ""), style: UIAlertAction.Style.default, handler: {
             action in
             self.alertsArray.removeFirst()
             self.performGeoFencingPush(regions.surveyReference)
         }))
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: UIAlertActionStyle.cancel, handler: {
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: UIAlertAction.Style.cancel, handler: {
             action in
             self.alertsArray.removeFirst()
             if self.alertsArray.count > 0 {
@@ -1777,7 +1777,7 @@ class HomeViewController: RootViewController, CLLocationManagerDelegate,UITableV
     }
 
     func geoFencedTableViewSetUp() {
-        self.tableViewGeoFenced?.separatorStyle = UITableViewCellSeparatorStyle.none
+        self.tableViewGeoFenced?.separatorStyle = UITableViewCell.SeparatorStyle.none
         var dummyArray: Array<Any> = []
         self.geoFencedArrayFiltered = []
         var surveyNames: Array<String> = []
@@ -1868,7 +1868,7 @@ class HomeViewController: RootViewController, CLLocationManagerDelegate,UITableV
     }
 
     func centerMapOnLocation(_ location: CLLocation) {
-        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius * 2.0, regionRadius * 2.0)
+        let coordinateRegion = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: regionRadius * 2.0, longitudinalMeters: regionRadius * 2.0)
         mapView.setRegion(coordinateRegion, animated: true)
         
     }
@@ -1876,7 +1876,7 @@ class HomeViewController: RootViewController, CLLocationManagerDelegate,UITableV
     func loadOverlayForRegionWithLatitude(_ latitude: Double, andLongitude longitude: Double, _ range: Double) {
         let coordinates = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         let circle = MKCircle(center: coordinates, radius: range)
-        self.mapView.add(circle)
+        self.mapView.addOverlay(circle)
     }
 
     @objc func mapView(_ mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
@@ -1902,14 +1902,14 @@ class HomeViewController: RootViewController, CLLocationManagerDelegate,UITableV
                 // 3
                 view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
                 view.canShowCallout = true
-                view.rightCalloutAccessoryView = UIButton(type: UIButtonType.custom)
+                view.rightCalloutAccessoryView = UIButton(type: UIButton.ButtonType.custom)
                 view.centerOffset = CGPoint(x: 0, y: -32)
                 
-                let deleteButton = UIButton(type: UIButtonType.system) as UIButton
+                let deleteButton = UIButton(type: UIButton.ButtonType.system) as UIButton
                 deleteButton.frame.size.width = 35
                 deleteButton.frame.size.height = 35
                 deleteButton.backgroundColor = UIColor.white
-                deleteButton.setImage(UIImage(named: "survey_nav"), for: UIControlState())
+                deleteButton.setImage(UIImage(named: "survey_nav"), for: UIControl.State())
                 view.rightCalloutAccessoryView = deleteButton
             }
             self.addBounceAnimationToView(view)
@@ -1961,7 +1961,7 @@ class HomeViewController: RootViewController, CLLocationManagerDelegate,UITableV
         let timingFunctions = NSMutableArray(capacity: bounceAnimation.values!.count)
         
         for _ in 0 ..< bounceAnimation.values!.count {
-            timingFunctions.add(CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut))
+            timingFunctions.add(CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut))
         }
         bounceAnimation.timingFunctions = timingFunctions as NSArray as? [CAMediaTimingFunction]
         bounceAnimation.isRemovedOnCompletion = false

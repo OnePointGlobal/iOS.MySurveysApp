@@ -33,8 +33,8 @@ class RootViewController: UIViewController {
     - parameter alertAction: Alert action button title. Eg: OK
     */
     func showAlert(alertTitle: String, alertMessage: String, alertAction: String) {
-        let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: alertAction, style: UIAlertActionStyle.default, handler: nil))
+        let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: alertAction, style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
 

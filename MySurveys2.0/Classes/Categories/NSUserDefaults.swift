@@ -49,7 +49,7 @@ extension UserDefaults {
     
     func setImage(_ image: UIImage?, forKey key: String) {
         var imageData: Data?
-        if let image = UIImagePNGRepresentation(image!) {
+        if let image = image!.pngData() {
             imageData = NSKeyedArchiver.archivedData(withRootObject: image)
         }
         set(imageData, forKey: key)

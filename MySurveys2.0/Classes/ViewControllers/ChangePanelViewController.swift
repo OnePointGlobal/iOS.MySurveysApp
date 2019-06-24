@@ -91,7 +91,7 @@ class ChangePanelViewController: RootViewController, UITableViewDelegate, UITabl
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let paneltableViewCell: ChangePanelTableViewCell = tableView.dequeueReusableCell(withIdentifier: tableViewCell) as! ChangePanelTableViewCell
         paneltableViewCell.tag = indexPath.row
-        paneltableViewCell.selectionStyle =  UITableViewCellSelectionStyle.gray
+        paneltableViewCell.selectionStyle =  UITableViewCell.SelectionStyle.gray
         paneltableViewCell.fillCell(panel: panelsArray[indexPath.row])
         let logoID: NSNumber  = self.panelsArray[indexPath.row].logoID as NSNumber
         let mediaID: NSNumber = self.panelsArray[indexPath.row].mediaID as NSNumber
@@ -159,7 +159,7 @@ class ChangePanelViewController: RootViewController, UITableViewDelegate, UITabl
                 }
             }
         }
-        paneltableViewCell.selectionStyle = UITableViewCellSelectionStyle.default
+        paneltableViewCell.selectionStyle = UITableViewCell.SelectionStyle.default
         return paneltableViewCell
     }
 
@@ -174,7 +174,7 @@ class ChangePanelViewController: RootViewController, UITableViewDelegate, UITabl
             }
         }
         // save image with panel name, JPEG representation doesn't support transparent images
-        if let data = UIImagePNGRepresentation(image) {
+        if let data = image.pngData() {
             let desPath = NSURL(fileURLWithPath: destinationFolderPath.appending("/\(fileName).png"))
             do {
                 try data.write(to: desPath as URL, options: .atomic)

@@ -37,12 +37,12 @@ class NotificationsViewController: RootViewController, UITableViewDelegate, UITa
 
     override func viewWillAppear(_ animated: Bool) {
         self.notifTableView?.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
-        self.notifTableView?.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
+        self.notifTableView?.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
 
         let isOperating: Int? = UserDefaults.standard.value(forKey: "isOperating") as? Int
         let array: Array<Any>? = UserDefaults.standard.value(forKey: "downloadSurveysArray") as? Array<Any>
         self.navigationController?.isNavigationBarHidden = false
-        let btnEdit =  UIBarButtonItem(title: NSLocalizedString("Edit", comment: ""), style: UIBarButtonItemStyle.plain, target: self, action: #selector(editNotificationTable))
+        let btnEdit =  UIBarButtonItem(title: NSLocalizedString("Edit", comment: ""), style: UIBarButtonItem.Style.plain, target: self, action: #selector(editNotificationTable))
         self.checkEditMode()
         if (isOperating == 2) && (array?.count == 0) {
             dispatchQueue.async(flags: .barrier) {
@@ -166,7 +166,7 @@ class NotificationsViewController: RootViewController, UITableViewDelegate, UITa
         else {
             self.isEditable = true
             self.tabBarController?.navigationItem.rightBarButtonItem?.title = NSLocalizedString("Delete", comment: "")                 // Toggle to delete button title
-            let btnCancel =  UIBarButtonItem(title: NSLocalizedString("Cancel", comment: ""), style: UIBarButtonItemStyle.plain, target: self, action: #selector(cancelEditing))
+            let btnCancel =  UIBarButtonItem(title: NSLocalizedString("Cancel", comment: ""), style: UIBarButtonItem.Style.plain, target: self, action: #selector(cancelEditing))
             self.tabBarController?.navigationItem.leftBarButtonItem = btnCancel
             self.notifTableView.reloadData()                                                             // change notification table from reminder icon to select icon when edit btn is clicked
         }
@@ -284,8 +284,8 @@ class NotificationsViewController: RootViewController, UITableViewDelegate, UITa
         return true
     }
 
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == UITableViewCellEditingStyle.delete {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
             // handle delete (by removing the data from your array and updating the tableview)
             if self.notifTableView != nil {
                 self.notifTableView.beginUpdates()
@@ -295,7 +295,7 @@ class NotificationsViewController: RootViewController, UITableViewDelegate, UITa
                     CollabrateDB.sharedInstance().deleteNotifications(notifID)
                 }
                 notificationArray.remove(at: indexPath.row)
-                self.notifTableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.fade)
+                self.notifTableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.fade)
                 self.notifTableView.endUpdates()
                 if notificationArray.count == 0 {
                     self.checkforAvailableNotifications()               // set no notifications label in the center

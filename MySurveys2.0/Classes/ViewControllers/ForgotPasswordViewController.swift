@@ -33,7 +33,7 @@ class ForgotPasswordViewController: RootViewController, UITextFieldDelegate {
         self.lblForgotYourPassword?.text = NSLocalizedString("Forgot your password?", comment: "")
         self.txtEmailID?.delegate = self
         self.txtEmailID?.attributedPlaceholder = NSAttributedString(string: NSLocalizedString("E-mail Id", comment: "email"),
-                                                                     attributes: [NSAttributedStringKey.foregroundColor: UIColor(red: 178/255.0, green: 176/255.0, blue: 178/255.0, alpha: 1.0)])
+                                                                    attributes: [NSAttributedString.Key.foregroundColor: UIColor(red: 178/255.0, green: 176/255.0, blue: 178/255.0, alpha: 1.0)])
         self.btnSubmit?.setTitleColor(self.bgColor, for: .normal)
         self.btnSubmit?.layer.borderColor = self.bgColor?.cgColor
         if UIDevice.current.userInterfaceIdiom == .phone {

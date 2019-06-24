@@ -73,7 +73,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         return surveyRef as String
     }
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+      func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         UIApplication.shared.statusBarStyle = .lightContent
         // Override point for customization after application launch.
         UIApplication.shared.applicationIconBadgeNumber = 0
@@ -126,7 +126,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     // for iOS 9 and below
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
         application.applicationIconBadgeNumber = application.applicationIconBadgeNumber + 1
-        if application.applicationState == UIApplicationState.active {
+        if application.applicationState == UIApplication.State.active {
              DispatchQueue.global(qos: .default).sync {
                  CollabrateDB.sharedInstance().saveNotifications(userInfo as [AnyHashable: Any])
             }
@@ -164,7 +164,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
 
     // openUrl method for iOS 9 and above
-    func application(_ application: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey: Any]) -> Bool {
+    func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any]) -> Bool {
         var googleDidHandle: Bool = false
         var facebookDidHandle: Bool = false
 
@@ -192,7 +192,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
                         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
                         let navController = storyBoard.instantiateViewController(withIdentifier: "Take_Trial")
-                        let vc: IntermediateTrialSurveyViewController = navController.childViewControllers.first as! IntermediateTrialSurveyViewController
+                        let vc: IntermediateTrialSurveyViewController = navController.children.first as! IntermediateTrialSurveyViewController
                         vc.surveyReference = surveyRef
                         self.window?.rootViewController = navController
                         self.window?.makeKeyAndVisible()
@@ -203,14 +203,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
         if #available(iOS 9.0, *) {
             googleDidHandle = GIDSignIn.sharedInstance().handle(url,
-                                                                    sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as! String,
-                                                                    annotation: options[UIApplicationOpenURLOptionsKey.annotation])
+                                                                sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
+                                                                annotation: options[UIApplication.OpenURLOptionsKey.annotation])
         }
 
         if #available(iOS 9.0, *) {
             facebookDidHandle = FBSDKApplicationDelegate.sharedInstance().application(application, open: url as URL?,
-                                                                                      sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as! String?,
-                                                                                          annotation: options[UIApplicationOpenURLOptionsKey.annotation])
+                                                                                      sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as! String?,
+                                                                                      annotation: options[UIApplication.OpenURLOptionsKey.annotation])
         }
         return googleDidHandle || facebookDidHandle
     }
@@ -220,8 +220,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func application(_ application: UIApplication,
                      open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
         if #available(iOS 9.0, *) {
-            var _: [String: AnyObject] = [UIApplicationOpenURLOptionsKey.sourceApplication.rawValue: sourceApplication as AnyObject,
-                                          UIApplicationOpenURLOptionsKey.annotation.rawValue: annotation as AnyObject]
+            var _: [String: AnyObject] = [UIApplication.OpenURLOptionsKey.sourceApplication.rawValue: sourceApplication as AnyObject,
+                                          UIApplication.OpenURLOptionsKey.annotation.rawValue: annotation as AnyObject]
     }
         let googleDidHandle = GIDSignIn.sharedInstance().handle(url as URL?,
                                                     sourceApplication: sourceApplication,
