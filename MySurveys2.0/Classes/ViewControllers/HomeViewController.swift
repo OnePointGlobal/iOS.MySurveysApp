@@ -115,7 +115,7 @@ class HomeViewController: RootViewController, CLLocationManagerDelegate,UITableV
 
         segmentedControl.subviews.last?.tintColor =  AppTheme.appBackgroundColor()
         self.tabBarController?.navigationItem.hidesBackButton = true
-        self.setThemeBGImage()
+       // self.setThemeBGImage()
         self.showBanner(progressTitle: NSLocalizedString("Sync in progress. Please wait!", comment: ""))//
         self.segmentedControl.setTitle(NSLocalizedString("By List", comment: ""), forSegmentAt: 0)
         self.segmentedControl.setTitle(NSLocalizedString("By Location", comment: ""), forSegmentAt: 1)
@@ -243,9 +243,10 @@ class HomeViewController: RootViewController, CLLocationManagerDelegate,UITableV
         self.segmentedControl.tintColor = AppTheme.appBackgroundColor()
         self.segmentedControl.subviews[0].tintColor = AppTheme.appBackgroundColor()
         self.segmentedControl.subviews[1].tintColor = AppTheme.appBackgroundColor()
-         self.setNavigationBarTheme()
+        
         // set theme header logo
         self.setThemeBGImage()
+        self.setNavigationBarTheme()
     }
 
     /**
@@ -1847,8 +1848,8 @@ class HomeViewController: RootViewController, CLLocationManagerDelegate,UITableV
         var coordinate:CLLocationCoordinate2D!
         self.mapView.showsUserLocation = true
         for geoFencedArea: OPGGeofenceSurvey in self.geofencedArrays as! Array<OPGGeofenceSurvey> {
-            let latitude = Double(geoFencedArea.latitude)
-            let longitude = Double(geoFencedArea.longitude)
+            let latitude = Double(truncating: geoFencedArea.latitude) 
+            let longitude = Double(truncating: geoFencedArea.longitude)
             let address = geoFencedArea.address as String
             coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
             let point = MyPointAnnotation()

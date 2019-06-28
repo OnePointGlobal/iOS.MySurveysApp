@@ -1,26 +1,19 @@
 PODS:
-  - GoogleSignIn (4.3.0):
+  - GoogleSignIn (4.4.0):
     - "GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)"
     - "GoogleToolboxForMac/NSString+URLArguments (~> 2.1)"
-    - GTMOAuth2 (~> 1.0)
     - GTMSessionFetcher/Core (~> 1.1)
-  - GoogleToolboxForMac/DebugUtils (2.1.4):
-    - GoogleToolboxForMac/Defines (= 2.1.4)
-  - GoogleToolboxForMac/Defines (2.1.4)
-  - "GoogleToolboxForMac/NSDictionary+URLArguments (2.1.4)":
-    - GoogleToolboxForMac/DebugUtils (= 2.1.4)
-    - GoogleToolboxForMac/Defines (= 2.1.4)
-    - "GoogleToolboxForMac/NSString+URLArguments (= 2.1.4)"
-  - "GoogleToolboxForMac/NSString+URLArguments (2.1.4)"
-  - GTMOAuth2 (1.1.6):
-    - GTMSessionFetcher (~> 1.1)
-  - GTMSessionFetcher (1.2.0):
-    - GTMSessionFetcher/Full (= 1.2.0)
-  - GTMSessionFetcher/Core (1.2.0)
-  - GTMSessionFetcher/Full (1.2.0):
-    - GTMSessionFetcher/Core (= 1.2.0)
+  - GoogleToolboxForMac/DebugUtils (2.2.1):
+    - GoogleToolboxForMac/Defines (= 2.2.1)
+  - GoogleToolboxForMac/Defines (2.2.1)
+  - "GoogleToolboxForMac/NSDictionary+URLArguments (2.2.1)":
+    - GoogleToolboxForMac/DebugUtils (= 2.2.1)
+    - GoogleToolboxForMac/Defines (= 2.2.1)
+    - "GoogleToolboxForMac/NSString+URLArguments (= 2.2.1)"
+  - "GoogleToolboxForMac/NSString+URLArguments (2.2.1)"
+  - GTMSessionFetcher/Core (1.2.2)
   - OPGFeedbackSDK (0.1.6)
-  - RNCryptor (5.0.3)
+  - RNCryptor (5.1.0)
   - Shimmer (1.0.2)
   - TesseractOCRiOS (4.0.0)
 
@@ -35,7 +28,6 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - GoogleSignIn
     - GoogleToolboxForMac
-    - GTMOAuth2
     - GTMSessionFetcher
     - RNCryptor
     - Shimmer
@@ -47,16 +39,15 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   OPGFeedbackSDK:
-    :commit: 8e3a4dfa783d49e7a695c5b7321bfa91fe714330
+    :commit: 466f56572a6a3d033e238087c9a72408b0fb0958
     :git: https://github.com/OnePointGlobal/OPGFeedbackSDK.git
 
 SPEC CHECKSUMS:
-  GoogleSignIn: 11183592dc63e105475c7305a325045ff95e02b7
-  GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
-  GTMOAuth2: e8b6512c896235149df975c41d9a36c868ab7fba
-  GTMSessionFetcher: 0c4baf0a73acd0041bf9f71ea018deedab5ea84e
+  GoogleSignIn: 7ff245e1a7b26d379099d3243a562f5747e23d39
+  GoogleToolboxForMac: b3553629623a3b1bff17f555e736cd5a6d95ad55
+  GTMSessionFetcher: 61bb0f61a4cb560030f1222021178008a5727a23
   OPGFeedbackSDK: 4f2d76091012ea54687c047ac6a74fb8047a0e13
-  RNCryptor: c93d19029dcf7ff160aca0f24d6c9e7b0d82f664
+  RNCryptor: a369134686cd2ad391323cc856b62e591193ba79
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
   TesseractOCRiOS: 90638afbe43d082433f2e76b384c7901d23956df
 
