@@ -1,11 +1,11 @@
-# MySurvey-2.0-App_New
+# OnePoint-Global-MySurvey-2.0-App-iOS-Latest
 Latest Code update with fixing errors.
 
 <p align="center">
   <img src="https://www.onepointglobal.com/Images/OPG_Github_logo.png"/>
 </p>
 
-# OnePoint-Global-MySurveys-App-iOS
+# OnePoint-Global-MySurvey-2.0-App-iOS-Latest
 
 Welcome to the OnePoint-Global-MySurveys-App-iOS.
 
