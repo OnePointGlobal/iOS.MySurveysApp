@@ -109,7 +109,7 @@ class ForgotPasswordViewController: RootViewController, UITextFieldDelegate {
                             if forgotPassword.httpStatusCode.intValue == 400 {
                                 super.showAlert(alertTitle: NSLocalizedString("MySurveys", comment: ""), alertMessage: NSLocalizedString("Please enter a valid e-mail ID.", comment: ""), alertAction: NSLocalizedString("OK", comment: "OK"))
                             }
-                            else if forgotPassword.httpStatusCode.intValue == 200 && forgotPassword.statusMessage == "Email Id does not exist" {
+                            else if forgotPassword.httpStatusCode.intValue == 200 {
                                 super.showAlert(alertTitle: NSLocalizedString("MySurveys", comment: ""), alertMessage: NSLocalizedString("E-mail Id does not exist", comment: ""), alertAction: NSLocalizedString("OK", comment: "OK"))
                             }
                             else if forgotPassword.httpStatusCode.intValue == 406 {
