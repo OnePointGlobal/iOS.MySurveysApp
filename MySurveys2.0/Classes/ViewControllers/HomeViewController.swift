@@ -1155,6 +1155,12 @@ class HomeViewController: RootViewController, CLLocationManagerDelegate,UITableV
             self.geoFencedView?.isHidden = true
             self.shimmeringView?.isHidden = false
             hideGeoFencePopUp()
+            if self.surveyFilteredList.count == 0 {
+                self.lblNoSurveys?.isHidden = false
+            }
+            else {
+                 self.lblNoSurveys?.isHidden = true
+            }
             sender.subviews.last?.tintColor =  AppTheme.appBackgroundColor()
         case 1:
             self.geoFencedView?.isHidden = false
@@ -1178,10 +1184,11 @@ class HomeViewController: RootViewController, CLLocationManagerDelegate,UITableV
             UserDefaults.standard.set(3, forKey: "isOperating")                 //indicates refresh started
             self.isAppKilled = false
             self.startSpinning()
-            self.tableView?.isUserInteractionEnabled = false                    //Disable table interaction during refresh/shimmer
-            if self.surveyList.count == 0 {
-                self.lblNoSurveys?.isHidden = true
-            }
+            self.tableView?.isUserInteractionEnabled = false                //Disable table interaction during refresh/shimmer
+            self.lblNoSurveys?.isHidden = true
+//            if self.surveyList.count == 0 {
+//                self.lblNoSurveys?.isHidden = true
+//            }
             self.stopDownloadSurveys()
             let downloadArray: Array<Any> = []
             UserDefaults.standard.set(downloadArray, forKey: "downloadSurveysArray")        // resetting download to get fresh update

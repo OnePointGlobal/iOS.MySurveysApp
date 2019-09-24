@@ -270,7 +270,7 @@ class LoginViewController: RootViewController, UITextFieldDelegate, GIDSignInUID
     /// Authenticates the user with Facebook credentials.
     func authenticateWithFacebook(result: FBSDKLoginManagerLoginResult) {
         if result.token != nil {
-            print("the token received is \(result.token.tokenString)")
+            print("the token received is \(String(describing: result.token.tokenString))")
             DispatchQueue.global(qos: .default).async {
                 let sdk = OPGSDK()
                 do {
@@ -594,6 +594,9 @@ class LoginViewController: RootViewController, UITextFieldDelegate, GIDSignInUID
                                     // server always return http 500 for bad token and expired token
                                 else if authObj.httpStatusCode.intValue == 500 {
                                     super.showAlert(alertTitle: NSLocalizedString("MySurveys", comment: ""), alertMessage: NSLocalizedString("Internal Server Error", comment: ""), alertAction: NSLocalizedString("OK", comment: "OK"))
+                                }
+                                else if authObj.httpStatusCode.intValue == 406 {
+                                    super.showAlert(alertTitle: NSLocalizedString("MySurveys", comment: ""), alertMessage: NSLocalizedString("Invalid Credentials", comment: ""), alertAction: NSLocalizedString("OK", comment: "OK"))
                                 }
                                 else {
                                     super.showAlert(alertTitle: NSLocalizedString("MySurveys", comment: ""), alertMessage: NSLocalizedString("Google Sign in failed. Please try again", comment: ""), alertAction: NSLocalizedString("OK", comment: "OK"))
