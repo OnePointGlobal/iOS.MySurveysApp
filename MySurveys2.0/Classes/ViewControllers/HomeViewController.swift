@@ -1565,15 +1565,17 @@ class HomeViewController: RootViewController, CLLocationManagerDelegate,UITableV
     }
 
     func didExitSurveyRegion(_ regionExited: OPGGeofenceSurvey) {
-        print("region exited is \(regionExited.address) \(regionExited.surveyName)")
-        if regionExited.isEnter.intValue == 1 && regionExited.isExit.intValue == 1 {
-            // do nothing as the survey would be already enabled during entry for TT
-            return
-        }
-        let message = "Thank You for visiting" + " \(regionExited.address!)! " + NSLocalizedString("You have a survey available at this location", comment: "")
+        print("didExitSurveyRegion called")
+      //  print("region exited is \(regionExited.address) \(regionExited.surveyName)")
+        let message = NSLocalizedString("Thank You for visiting", comment: "") + " \(regionExited.address!)! " + NSLocalizedString("You have a survey available at this location", comment: "")
+               
         if regionExited.isExit.intValue == 1 {
             // exit event is true, so enable survey if TT, FT for Entry, Exit
             self.enableGeoSurvey(regionExited, alertMessage: message)
+        }
+        else if regionExited.isEnter.intValue == 1 && regionExited.isExit.intValue == 1 {
+                    // do nothing as the survey would be already enabled during entry for TT
+            return
         }
         else {
             self.disableGeoSurvey(regionExited)
@@ -1644,7 +1646,8 @@ class HomeViewController: RootViewController, CLLocationManagerDelegate,UITableV
                 DispatchQueue.main.async {
                     self.tableViewGeoFenced?.reloadData()       //enable surveys with orange color
                     if appState == UIApplication.State.active {
-                        self.showGeoAlerts(regionEntered)
+                        //self.showGeoAlerts(regionEntered)
+                          self.showGeoAlerts(regionEntered, alertMessage: alertMessage)
                     }
                 }
             }
@@ -1662,8 +1665,8 @@ class HomeViewController: RootViewController, CLLocationManagerDelegate,UITableV
         }
     }
 
-    func showGeoAlerts(_ regions: OPGGeofenceSurvey) {
-        let alert = UIAlertController.init(title: NSLocalizedString("MySurveys", comment: ""), message: ("Welcome to \(regions.address!)!. You have a survey available!"), preferredStyle: UIAlertController.Style.alert)
+    func showGeoAlerts(_ regions: OPGGeofenceSurvey!, alertMessage: String) {
+        let alert = UIAlertController.init(title: NSLocalizedString("MySurveys", comment: ""), message: alertMessage, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Take Survey", comment: ""), style: UIAlertAction.Style.default, handler: {
             action in
             self.alertsArray.removeFirst()
