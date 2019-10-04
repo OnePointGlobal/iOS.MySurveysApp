@@ -89,6 +89,7 @@
 "Profile" = "الملف الشخصي";
 "Profile image" = "صورة الملف الشخصي";
 "Results are Uploaded" = "تم تحميل النتائج";
+"Remove Photo" = "إزالة الصورة";
 "Save" = "إحفظ";
 "Selected survey is not under current Panel. Please change the panel to take survey!" = "الإستطلاع الذي اخترته ليس ضمن هذه اللوحة. يرجى تغيير اللوحة للمشاركة في إستطلاع!";
 "Send" = "أرسل";
@@ -105,6 +106,7 @@
 "Terms & Conditions" = "الشروط والأحكام";
 "To take your location based surveys turn on ‘Geolocation’ from the App Settings" = "للمشاركة في استطلاعات الرأي في موقعك شغل خدمة تحديد الموقع الجغرافي من إعدادات التطبيق";
 "T&C" = "الشروط والأحكام";
+"Thank You for visiting" = "شكرا لزيارتك";
 "Unauthorised login" = "تسجيل الدخول غير مسموح به";
 "Unable to upload results. Please try again!" = "يتعذر تحميل النتائج. حاول مرة اخرى!";
 "Unscheduled" = "غير مجدولة";

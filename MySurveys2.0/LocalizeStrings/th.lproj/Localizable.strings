@@ -1,0 +1,135 @@
+/* 
+  Localizable.strings
+  MySurveys2.0
+
+  Created by Chinthan on 21/10/16.
+  Copyright © 2016 OnePoint Global. All rights reserved.
+*/
+
+"AboutUs" = "เกี่ยวกับเรา";
+"An error occurred while changing the password." = "เกิดข้อผิดพลาดขึ้นระหว่างการเปลี่ยนรหัสผ่าน";
+"An error occurred while downloading profile image." = "เกิดข้อผิดพลาดขึ้นระหว่างการดาวน์โหลดภาพโปรไฟล์";
+"An error occurred while trying to fetch the geofenced surveys." = "เกิดข้อผิดพลาดขึ้นระหว่างการนำข้อมูลจากแบบสำรวจระบบ geofenced";
+"An error occurred while trying to send an email to reset the password." = "เกิดข้อผิดพลาดขึ้นระหว่างที่ระบบพยายามส่งอีเมลไปตั้งค่ารหัสผ่าน";
+"An error occurred while updating the profile picture." = "เกิดข้อผิดพลาดขึ้นระหว่างการอัปเดทรูปภาพโปรไฟล์";
+"Approximately" = "โดยประมาณ";
+"Are you sure you want to logout?" = "คุณแน่ใจหรือไม่ว่าต้องการออกจากระบบ";
+"Authentication Failed" = "ไม่สามารถตรวจสอบยืนยันตัวตนผู้ใช้งานได้";
+"Authentication Failed. Please try again" = "Authentication Failed. Please try again";
+"Back" = "กลับ";
+"By List" = "ตามรายการ";
+"By Location" = "ตามตำแหน่งที่ตั้ง";
+"Cancel" = "ยกเลิก";
+"Can't sign in. Try again." = "ไม่สามารถลงชื่อเข้าสู่ระบบได้ กรุณาลองใหม่อีกครั้ง";
+"Change Panel" = "เปลี่ยนพาแนล";
+"Change Password" = "เปลี่ยนรหัสผ่าน";
+"Check your credentials!" = "กรุณาตรวจสอบข้อมูลส่วนตัวของคุณ";
+"Choose From Gallery" = "กรุณาเลือกจากแกลลอรี่รูปภาพ";
+"Completed" = "เสร็จสมบูรณ์";
+"Confirm Password" = "ยืนยันรหัสผ่าน";
+"Country" = "ประเทศ";
+"Current Panel" = "พาแนลปัจจุบัน";
+"Current Password does not exist" = "ไม่ปรากฎรหัสผ่านปัจจุบัน";
+"Delete" = "ลบ";
+"Done" = "เสร็จ";
+"Download" = "ดาวน์โหลด";
+"Downloading..." = "กำลังดาวน์โหลดข้อมูล…";
+"Downloading. Please wait!" = "กำลังดาวน์โหลดข้อมูล… กรุณารอสักครู่";
+"Downloading surveys. Please wait!" = "กำลังดาวน์โหลดแบบสำรวจ กรุณารอสักครู่";
+"E-mail Id" = "อีเมล";
+"E-mail Id does not exist" = "ไม่ปรากฎอีเมล";
+"E-mail Id not found." = "ไม่พบอีเมล";
+"Edit" = "แก้ไข";
+"Enter Scanned Text" = "ป้อนข้อความที่สแกน";
+"Error while uploading. Please Refresh again!" = "เกิดข้อผิดพลาดระหว่างการอัพโหลดข้อมูล กรุณารีเฟรชหน้านี้อีกครั้ง";
+"Facebook login failed. Please try again." = "ไม่สามารถเข้าสู่ระบบผ่านเฟซบุ๊คได้ กรุณาลองใหม่อีกครั้ง";
+"Forgot Password" = "ลืมรหัสผ่าน";
+"Forgot Password?" = "ลืมรหัสผ่าน?";
+"Forgot your password?" = "คุณลืมรหัสผ่านใช่หรือไม่";
+"Geo location" = "ข้อมูลตำแหน่งที่ตั้ง";
+"Google Sign in failed. Please try again" = "ไม่สามารถลงชื่อเข้าใช้งานผ่านกูเกิลได้ กรุณาลองใหม่อีกครั้ง";
+"Got it!" = "รับทราบ";
+"Invalid Credentials" = "ข้อมูลไม่ถูกต้อง";
+"Internal Server Error" = "เกิดข้อผิดพลาดกับเครื่องเซิร์ฟเวอร์ภายใน";
+"Location Services not enabled!" = "ไม่สามารถเปิดใช้บริการหาตำแหน่งที่ตั้งได้";
+"Login" = "ลงชื่อเข้าใช้งาน";
+"Login with Facebook" = "ลงชื่อเข้าใช้งานผ่านเฟซบุ๊ค";
+"Log out" = "ออกจากระบบ";
+"min" = "นาที";
+"MySurveys"= "My Surveys";
+"Name" = "ชื่อ";
+"Name is empty" = "ชื่อไม่ครบถ้วน";
+"New" = "ใหม่";
+"New and Confirm passwords should be same" = "รหัสผ่านใหม่และรหัสผ่านที่ใช้ยืนยันต้องเหมือนกัน";
+"New Password" = "รหัสผ่านใหม่";
+"No items selected." = "ไม่ได้เลือกรายการใดๆ ";
+"No internet connection. Please try again!" = "ไม่มีการเชื่อมต่ออินเตอร์เน็ต กรุณาลองใหม่อีกครั้ง";
+"No surveys available for the selected panel." = "ไม่มีแบบสำรวจสำหรับพาแนลที่คุณเลือก";
+"No notifications so far." = "ยังไม่มีการแจ้งเตือนในขณะนี้";
+"Notifications" = "การแจ้งเตือน";
+"Number of times taken" = "จำนวนครั้งที่ใช้ไปแล้ว";
+"OK" = "OK";
+"Old Password" = "รหัสผ่านเดิม";
+"Old Password cannot be empty." = "กรุณาใส่ข้อมูลรหัสผ่านเดิม";
+"Old and new passwords cannot be same" = "รหัสผ่านเดิมและรหัสผ่านใหม่ต้องไม่ซ้ำกัน";
+"Oops! Unknown error. Please try again." = "เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง";
+"Password" = "รหัสผ่าน";
+"Password Change Failed" = "เปลี่ยนรหัสผ่านไม่สำเร็จ";
+"Password changed successfully!" = "เปลี่ยนรหัสผ่านสำเร็จแล้ว";
+"Password cannot be empty" = "กรุณาใส่ข้อมูลรหัสผ่าน";
+"Pending" = "อยู่ระหว่างดำเนินการ";
+"Please confirm your new password." = "กรุณายืนยันรหัสผ่านใหม่ของคุณ";
+"Please enable location services from device Settings to take the survey." = "กรุณาเปิดใช้งานบริการหาตำแหน่งที่ตั้งจากการตั้งค่าของอุปกรณ์ เพื่อทำแบบสำรวจ";
+"Please enter a valid e-mail ID." = "กรุณาใส่อีเมลที่ถูกต้อง";
+"Please enter your e-mail ID" = "กรุณาใส่อีเมลของคุณ";
+"Please enter your new password." = "กรุณาใส่รหัสผ่านใหม่ของคุณ";
+"Please take the survey before uploading results." = "กรุณาทำแบบสำรวจก่อนอัพโหลดข้อมูล";
+"Please upload offline survey results before logout." = "กรุณาอัพโหลดข้อมูลแบบสำรวจออฟไลน์ก่อนออกจากระบบ";
+"Privacy" = "ความเป็นส่วนตัว";
+"Profile" = "ข้อมูล";
+"Profile image" = "ภาพข้อมูล";
+"Results are Uploaded" = "อัพโหลดผลการทำแบบสำรวจแล้ว";
+"Remove Photo" = "ลบภาพ";
+"Save" = "บันทึกข้อมูล";
+"Selected survey is not under current Panel. Please change the panel to take survey!" = "แบบสำรวจที่เลือกไม่ได้อยู่ในพาแนลปัจจุบัน กรุณาเปลี่ยนพาแนลเพื่อทำแบบสำรวจ";
+"Send" = "ส่งข้อมูล";
+"Settings" = "การตั้งค่า";
+"Sign in with Google" = "ลงชื่อเข้าใช้งานผ่าน Google   ";
+"Sorry! You are not in survey location. So, you can not take the survey." = "ขออภัย คุณไม่ได้อยู่ในพื้นที่ที่ทำแบบสำรวจ จึงไม่สามารถทำแบบสำรวจได้";
+"Success! Please check your e-mail for new password!" = "สำเร็จ กรุณาเช็คอีเมลของคุณเพื่อดูข้อมูลรหัสผ่านใหม่";
+"Survey" = "แบบสำรวจ";
+"Surveys to upload" = "Surveys to upload";
+"Survey not available to take" = "แบบสำรวจยังไม่พร้อมในขณะนี้";
+"Sync in progress. Please wait!" = "กำลังซิงค์ข้อมูล โปรดรอสักครู่";
+"Take Photo" = "ถ่ายภาพ";
+"Take Survey" = "ทำแบบสำรวจ";
+"Terms & Conditions" = "ข้อกำหนดและเงื่อนไข";
+"To take your location based surveys turn on ‘Geolocation’ from the App Settings" = "หากคุณต้องการทำแบบสำรวจตามพื้นที่ที่คุณอาศัยอยู่ กรุณาเปิดการใช้งาน ‘Geolocation’ จากการตั้งค่าแอป";
+"T&C" = "T&C";
+"Thank You for visiting" = "ขอบคุณที่มาเยี่ยมชม";
+"Unauthorised login" = "การเข้าใช้งานโดยไม่ได้รับอนุญาต";
+"Unable to upload results. Please try again!" = "ไม่สามารถอัพโหลดข้อมูลได้ กรุณาลองใหม่อีกครั้ง";
+"Unscheduled" = "ไม่ได้วางกำหนดการ";
+"Upload" = "อัพโหลดข้อมูล";
+"Upload Results" = "อัพโหลดผลการทำแบบสำรวจ";
+"Uploading" = "กำลังอัพโหลดข้อมูล";
+"Uploading Offline Survey results" = "กำลังอัพโหลดข้อมูลแบบสำรวจแบบออฟไลฟ์";
+"Username/password cannot be empty." = "ไม่อนุญาตให้เว้นว่างในช่องชื่อผู้ใช้งาน/รหัสผ่าน";
+"Username/EmailID" = "ชื่อผู้ใช้งาน/อีเมล";
+"Version" = "เวอร์ชั่น";
+"Welcome to" = "ยินดีต้อนรับสู่";
+"Welcome! You have a survey here!" = "ยินดีต้อนรับ แบบสำรวจของคุณอยู่ที่นี่";
+"We will email you a link to reset your Password" = "เราจะส่งลิงค์ไปยังอีเมลของคุณเพื่อตั้งค่ารหัสผ่านใหม่";
+"You are not in this location to take the survey!" = "คุณไม่ได้อยู่ในพื้นที่สำหรับทำแบบสำรวจ";
+"You have a survey available at this location" = "คุณมีแบบสำรวจที่สามารถทำได้ในพื้นที่นี้";
+
+
+
+
+
+
+
+
+
+
+

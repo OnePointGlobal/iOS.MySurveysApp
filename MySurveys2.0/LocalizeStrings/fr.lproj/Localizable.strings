@@ -89,6 +89,7 @@
 "Profile" = "Profil";
 "Profile image" = "Photo de profil";
 "Results are Uploaded" = "Les résultats ont été chargés";
+"Remove Photo" = "Retirer photo";
 "Save" = "Sauvegarder";
 "Selected survey is not under current Panel. Please change the panel to take survey!" = "Le sondage choisi n’appartient pas au Panel sélectionné. Veuillez changer le panel pour participer au sondage.";
 "Send" = "Envoyer";
@@ -105,6 +106,7 @@
 "Terms & Conditions" = "Termes et Conditions";
 "To take your location based surveys turn on ‘Geolocation’ from the App Settings" = "Pour participer aux sondages liés à votre localisation, veuillez activer la fonction « Géolocalisation » dans les paramètres de l'application";
 "T&C" = "T&C";
+"Thank You for visiting" = "Merci pour votre visite";
 "Unauthorised login" = "Connexion non autorisée";
 "Unable to upload results. Please try again!" = "Impossible de charger les résultats. Veuillez réessayer!";
 "Unscheduled" = "Imprévu";

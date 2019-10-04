@@ -79,7 +79,7 @@ class SurveyTableViewCell: UITableViewCell {
             self.lblSurveyName.backgroundColor = UIColor.clear
             self.btnSurveyDesc.backgroundColor = UIColor.clear
             self.lblSurveyName.text=survey.surveyName
-            self.btnSurveyDesc.setTitle(survey.createdDate, for: .normal)
+            self.btnSurveyDesc.setTitle(NSLocalizedString(survey.createdDate, comment: ""), for: .normal)
             if (survey.createdDate == "Upload Results") || (survey.createdDate == "Uploading") {
                 self.btnSurveyDesc.setTitleColor(AppTheme.appBackgroundColor(), for: .normal)
             } else {
@@ -90,7 +90,7 @@ class SurveyTableViewCell: UITableViewCell {
             self.btnSurveyDesc.backgroundColor = UIColor.clear
             self.selectButton.backgroundColor = UIColor.lightGray
             self.lblSurveyName.text=survey.surveyName
-            self.btnSurveyDesc.setTitle(survey.createdDate, for: .normal)
+            self.btnSurveyDesc.setTitle(NSLocalizedString(survey.createdDate, comment: ""), for: .normal)
         }
     }
 }

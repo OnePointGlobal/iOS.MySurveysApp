@@ -65,6 +65,7 @@
 		13D781B41F7B8AF40026BF43 /* refresh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 13D781B21F7B8AF30026BF43 /* refresh@2x.png */; };
 		13D781B51F7B8AF40026BF43 /* refresh@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 13D781B31F7B8AF30026BF43 /* refresh@3x.png */; };
 		13DC10251F7D016A0097F56D /* LoginBgX.png in Resources */ = {isa = PBXBuildFile; fileRef = 13DC10241F7D01680097F56D /* LoginBgX.png */; };
+		13E9C61723476E0A00A6EAA5 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 13E9C61623476E0A00A6EAA5 /* Info.plist */; };
 		13F4472A1E28B90000B24B8E /* UploadSurvey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F447291E28B90000B24B8E /* UploadSurvey.swift */; };
 		13F9A4671DF943A40017C42C /* logout@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 13F9A4661DF943A40017C42C /* logout@3x.png */; };
 		13F9A4691DF9442A0017C42C /* profile@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 13F9A4681DF9442A0017C42C /* profile@3x.png */; };
@@ -282,7 +283,6 @@
 		94CD762F1DB4A63B00C6F958 /* SurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CD76161DB4A63B00C6F958 /* SurveyViewController.swift */; };
 		94CD76301DB4A63B00C6F958 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CD76171DB4A63B00C6F958 /* TabBarViewController.swift */; };
 		94CD76311DB4A63B00C6F958 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CD76171DB4A63B00C6F958 /* TabBarViewController.swift */; };
-		94CD76391DB4A6A400C6F958 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94CD76371DB4A6A400C6F958 /* Info.plist */; };
 		94D620CC1DC321B500629E52 /* ChangePanelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D620CB1DC321B500629E52 /* ChangePanelTableViewCell.swift */; };
 		94F07BDD1DBDE3CB00EEE189 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94F07BD91DBDE3CB00EEE189 /* Bolts.framework */; };
 		94F07BDE1DBDE3CB00EEE189 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94F07BD91DBDE3CB00EEE189 /* Bolts.framework */; };
@@ -388,6 +388,10 @@
 		13D781B31F7B8AF30026BF43 /* refresh@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "refresh@3x.png"; path = "icons/refresh@3x.png"; sourceTree = "<group>"; };
 		13DC10241F7D01680097F56D /* LoginBgX.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LoginBgX.png; path = icons/LoginBgX.png; sourceTree = "<group>"; };
 		13E895781FC84BFB00FB5E73 /* Pods_MySurveys2_0Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_MySurveys2_0Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		13E9C5F423470C5F00A6EAA5 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/Main.strings; sourceTree = "<group>"; };
+		13E9C5F523470C6000A6EAA5 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		13E9C5F623470C6100A6EAA5 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/Localizable.strings; sourceTree = "<group>"; };
+		13E9C61623476E0A00A6EAA5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13F447291E28B90000B24B8E /* UploadSurvey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadSurvey.swift; sourceTree = "<group>"; };
 		13F9A4661DF943A40017C42C /* logout@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logout@3x.png"; path = "icons/logout@3x.png"; sourceTree = "<group>"; };
 		13F9A4681DF9442A0017C42C /* profile@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "profile@3x.png"; path = "icons/profile@3x.png"; sourceTree = "<group>"; };
@@ -586,7 +590,6 @@
 		94CD76161DB4A63B00C6F958 /* SurveyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SurveyViewController.swift; path = Classes/ViewControllers/SurveyViewController.swift; sourceTree = "<group>"; };
 		94CD76171DB4A63B00C6F958 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarViewController.swift; path = Classes/ViewControllers/TabBarViewController.swift; sourceTree = "<group>"; };
 		94CD76361DB4A67500C6F958 /* MySurveys-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MySurveys-Bridging-Header.h"; sourceTree = "<group>"; };
-		94CD76371DB4A6A400C6F958 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94D620CB1DC321B500629E52 /* ChangePanelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangePanelTableViewCell.swift; path = Classes/TableViewCells/ChangePanelTableViewCell.swift; sourceTree = "<group>"; };
 		94F07BD91DBDE3CB00EEE189 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = MySurveys2.0/Frameworks/Bolts.framework; sourceTree = "<group>"; };
 		94F07BDA1DBDE3CB00EEE189 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = MySurveys2.0/Frameworks/FBSDKCoreKit.framework; sourceTree = "<group>"; };
@@ -686,7 +689,7 @@
 				1337DB311D07F4140075B356 /* LaunchScreen.storyboard */,
 				1337DB2C1D07F4140075B356 /* MySurveys2_0.xcdatamodeld */,
 				7853A2751DB899B8005EC4D1 /* GoogleService-Info.plist */,
-				94CD76371DB4A6A400C6F958 /* Info.plist */,
+				13E9C61623476E0A00A6EAA5 /* Info.plist */,
 				94CD75F31DB4A4F700C6F958 /* PublicArt.json */,
 				94CD76361DB4A67500C6F958 /* MySurveys-Bridging-Header.h */,
 				135B70FF1DB9FC0900F48E94 /* LocalizeStrings */,
@@ -1164,6 +1167,7 @@
 				fr,
 				vi,
 				es,
+				th,
 			);
 			mainGroup = 1337DB191D07F4130075B356;
 			productRefGroup = 1337DB231D07F4130075B356 /* Products */;
@@ -1230,6 +1234,7 @@
 				78EBE47120340AF5008C8573 /* icon_camera@3x.png in Resources */,
 				13F9A4751DF95C640017C42C /* notif_reminder@3x.png in Resources */,
 				94CB0D6F1DCB1B84007AF73F /* notif_select@2x.png in Resources */,
+				13E9C61723476E0A00A6EAA5 /* Info.plist in Resources */,
 				13F9A4711DF95AA10017C42C /* notif_deselect@3x.png in Resources */,
 				78F230A71E445B00001E24EC /* default_panel_bg.png in Resources */,
 				78D4C0C21F179558002E6AF4 /* LoginBg_iPad_Landscape.png in Resources */,
@@ -1352,7 +1357,6 @@
 				135B71051DB9FC6A00F48E94 /* Localizable.strings in Resources */,
 				782511FB202C1E4C00654236 /* tessdata in Resources */,
 				13BEEFD91F21E0D000ED0D3F /* Bangalore.gpx in Resources */,
-				94CD76391DB4A6A400C6F958 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1632,6 +1636,7 @@
 				78A054E51ECC565900D81C2F /* fr */,
 				7808187320CFA57E00C01CDC /* vi */,
 				78E1B9A220FC6B99007C180B /* es */,
+				13E9C5F423470C5F00A6EAA5 /* th */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -1644,6 +1649,7 @@
 				78A054E61ECC565A00D81C2F /* fr */,
 				7808187420CFA57F00C01CDC /* vi */,
 				78E1B9A320FC6BA3007C180B /* es */,
+				13E9C5F523470C6000A6EAA5 /* th */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -1656,6 +1662,7 @@
 				78A054E71ECC565B00D81C2F /* fr */,
 				7808187520CFA57F00C01CDC /* vi */,
 				78E1B9A420FC6BB1007C180B /* es */,
+				13E9C5F623470C6100A6EAA5 /* th */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

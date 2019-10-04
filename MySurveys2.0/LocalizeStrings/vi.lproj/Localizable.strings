@@ -89,6 +89,7 @@
 "Profile" = "Hồ sơ";
 "Profile image" = "Hình hồ sơ";
 "Results are Uploaded" = "Kế quả đã được cập nhật";
+"Remove Photo" = "Gỡ bỏ hình";
 "Save" = "Lưu";
 "Selected survey is not under current Panel. Please change the panel to take survey!" = "Khảo sát được chọn không nằm trong Panel hiện tại. Vui lòng thay đổi Panel để thực hiện khảo sát !";
 "Send" = "Gửi";
@@ -105,6 +106,7 @@
 "Terms & Conditions" = "Điều khoản & điều kiện";
 "To take your location based surveys turn on ‘Geolocation’ from the App Settings" = "Để thực hiện những khảo sát liên quan đến vị trí, vui lòng bật « Định vị » trong phần Cài đặt App";
 "T&C" = "T&C";
+"Thank You for visiting" = "Cảm ơn bạn đã đến thăm";
 "Unauthorised login" = "Quyền đăng nhập không hợp lệ";
 "Unable to upload results. Please try again!" = "Không thể cập nhật kết quả. Vui lòng thử lại !";
 "Unscheduled" = "Chưa săp lịch";

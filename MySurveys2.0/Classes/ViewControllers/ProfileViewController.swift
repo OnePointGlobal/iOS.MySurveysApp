@@ -623,7 +623,7 @@ class ProfileViewController: RootViewController, UITableViewDelegate, UITableVie
             alert.addAction(UIAlertAction(title: NSLocalizedString("Choose From Gallery", comment: "gallery"), style: UIAlertAction.Style.default, handler: {
                 action in self.openGallery()
             }))
-            alert.addAction(UIAlertAction(title: "Remove Photo", style: UIAlertAction.Style.default, handler: {
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Remove Photo", comment: ""), style: UIAlertAction.Style.default, handler: {
                 action in self.removeProfilePic()
             }))
             alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: UIAlertAction.Style.destructive, handler: nil))
