@@ -7,7 +7,7 @@ Latest Code update with fixing errors.
 
 # iOS.MySurveysApp
 
-Welcome to the OnePoint-Global-MySurveys-App-iOS.
+Welcome to the OnePoint-Global-iOS.MySurveysApp.
 
 A Mobile application for collecting feedback. You can download our app and customise it for your own needs taking advantage. The My Surveys App take full advantage of the Mobile FeedBack App SDK allowing you to take control of the feedback process and add your own features or integrate it with your own systems.
 
@@ -64,4 +64,4 @@ manjunath.ramesh@onepointglobal.com, chinthan.m@onepointglobal.com
 
 ## License
 
-OnePoint-Global-MySurveys-App-iOS is available under the MIT license. See the LICENSE file for more info.
+OnePoint-Global-iOS.MySurveysApp is available under the MIT license. See the LICENSE file for more info.
