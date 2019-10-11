@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		000E3F1CFABCBBDB26637FFB /* Pods_MySurveys2_0Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AE13FBDA741DA96E48A9E79 /* Pods_MySurveys2_0Tests.framework */; };
+		1329D378235052BF009460A9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1329D37A235052BF009460A9 /* InfoPlist.strings */; };
 		1337DB2B1D07F4140075B356 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1337DB291D07F4140075B356 /* Main.storyboard */; };
 		1337DB2E1D07F4140075B356 /* MySurveys2_0.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1337DB2C1D07F4140075B356 /* MySurveys2_0.xcdatamodeld */; };
 		1337DB301D07F4140075B356 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1337DB2F1D07F4140075B356 /* Assets.xcassets */; };
@@ -330,6 +331,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1329D37B235052C9009460A9 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1329D37C235052CA009460A9 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1329D37D235052CB009460A9 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1329D37E235052CC009460A9 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1329D37F235052CD009460A9 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1337DB221D07F4130075B356 /* MySurveys2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySurveys2.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1337DB2A1D07F4140075B356 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1337DB2D1D07F4140075B356 /* MySurveys2_0.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MySurveys2_0.xcdatamodel; sourceTree = "<group>"; };
@@ -690,6 +696,7 @@
 				1337DB2C1D07F4140075B356 /* MySurveys2_0.xcdatamodeld */,
 				7853A2751DB899B8005EC4D1 /* GoogleService-Info.plist */,
 				13E9C61623476E0A00A6EAA5 /* Info.plist */,
+				1329D37A235052BF009460A9 /* InfoPlist.strings */,
 				94CD75F31DB4A4F700C6F958 /* PublicArt.json */,
 				94CD76361DB4A67500C6F958 /* MySurveys-Bridging-Header.h */,
 				135B70FF1DB9FC0900F48E94 /* LocalizeStrings */,
@@ -1264,6 +1271,7 @@
 				94CB0D6E1DCB1B84007AF73F /* notif_reminder@2x.png in Resources */,
 				78F230AA1E445B00001E24EC /* default_theme_image.png in Resources */,
 				948102EF1E435B5F00605F18 /* icon-50@2x.png in Resources */,
+				1329D378235052BF009460A9 /* InfoPlist.strings in Resources */,
 				13AB83CF1DE6ECE5002A3108 /* Default-667h@2x.png in Resources */,
 				94CB0D591DCB1389007AF73F /* survey.png in Resources */,
 				1337DB301D07F4140075B356 /* Assets.xcassets in Resources */,
@@ -1628,6 +1636,18 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		1329D37A235052BF009460A9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1329D37B235052C9009460A9 /* ar */,
+				1329D37C235052CA009460A9 /* fr */,
+				1329D37D235052CB009460A9 /* es */,
+				1329D37E235052CC009460A9 /* th */,
+				1329D37F235052CD009460A9 /* vi */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		1337DB291D07F4140075B356 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

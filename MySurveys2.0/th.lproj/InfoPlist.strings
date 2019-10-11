@@ -1,0 +1,16 @@
+/* 
+  InfoPlist.strings
+  MySurveys2.0
+
+  Created by Chinthan on 11/10/19.
+  Copyright © 2019 Chinthan. All rights reserved.
+*/
+
+NSBluetoothPeripheralUsageDescription = "My Surveys ต้องการเข้าถึงบลูทู ธ ของคุณเพื่อให้คุณสามารถตอบกลับสื่อได้";
+NSCameraUsageDescription = "My Surveys ต้องการเข้าถึงกล้องของคุณเพื่อให้คุณสามารถตอบกลับสื่อได้";
+NSLocationAlwaysAndWhenInUseUsageDescription = "My Surveys ต้องการเข้าถึงตำแหน่งของคุณเพื่อเรียกการสำรวจตามตำแหน่ง";
+NSLocationAlwaysUsageDescription = "My Surveys ต้องการเข้าถึงตำแหน่งของคุณเพื่อเรียกการสำรวจตามตำแหน่ง";
+NSLocationWhenInUseUsageDescription = "My Surveys ต้องการเข้าถึงตำแหน่งของคุณเพื่อเรียกการสำรวจตามตำแหน่ง";
+NSMicrophoneUsageDescription = "My Surveys ต้องการเข้าถึงไมโครโฟนของคุณเพื่อให้คุณสามารถตอบกลับสื่อได้";
+NSPhotoLibraryAddUsageDescription = "My Surveys ต้องการเข้าถึงคลังรูปภาพของคุณเพื่อให้คุณสามารถให้คำตอบกับสื่อ";
+NSPhotoLibraryUsageDescription = "My Surveys ต้องการเข้าถึงคลังรูปภาพของคุณเพื่อให้คุณสามารถให้คำตอบกับสื่อ";

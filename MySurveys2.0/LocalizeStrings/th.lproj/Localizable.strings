@@ -68,7 +68,7 @@
 "No notifications so far." = "ยังไม่มีการแจ้งเตือนในขณะนี้";
 "Notifications" = "การแจ้งเตือน";
 "Number of times taken" = "จำนวนครั้งที่ใช้ไปแล้ว";
-"OK" = "OK";
+"OK" = "ตกลง";
 "Old Password" = "รหัสผ่านเดิม";
 "Old Password cannot be empty." = "กรุณาใส่ข้อมูลรหัสผ่านเดิม";
 "Old and new passwords cannot be same" = "รหัสผ่านเดิมและรหัสผ่านใหม่ต้องไม่ซ้ำกัน";
