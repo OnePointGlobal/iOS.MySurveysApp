@@ -573,7 +573,7 @@ class ProfileViewController: RootViewController, UITableViewDelegate, UITableVie
     }
 
     // MARK: - Image Picker Delegates
-    private func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+      func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         _ = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
         let image: UIImage = (info[UIImagePickerController.InfoKey.originalImage]  as? UIImage)!
         let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
