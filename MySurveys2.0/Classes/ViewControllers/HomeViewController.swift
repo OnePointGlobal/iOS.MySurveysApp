@@ -1801,11 +1801,11 @@ class HomeViewController: RootViewController, CLLocationManagerDelegate,UITableV
                 }
                 else {
                     // if multiple addresses for same survey, then take the one which is entered
-                    if (geofencedArrays[i] as? OPGGeofenceSurvey)?.isDeleted == 2 {
-                        let index: Int = self.getIndex(addressID: ((geofencedArrays[i] as? OPGGeofenceSurvey)?.addressID)!, array: dummyArray)
-                        dummyArray.remove(at: index)        // remove and update a new survey location which is entered
-                        dummyArray.append(geofencedArrays[i])
-                    }
+//                    if (geofencedArrays[i] as? OPGGeofenceSurvey)?.isDeleted == 2 {
+//                        let index: Int = self.getIndex(addressID: ((geofencedArrays[i] as? OPGGeofenceSurvey)?.addressID)!, array: dummyArray)
+//                        dummyArray.remove(at: index)        // remove and update a new survey location which is entered
+//                        dummyArray.append(geofencedArrays[i])
+//                    }
                 }
             }
         }

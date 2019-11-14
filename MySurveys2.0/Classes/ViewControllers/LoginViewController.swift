@@ -77,7 +77,7 @@ class LoginViewController: RootViewController, UITextFieldDelegate, GIDSignInUID
         self.startActivityIndicator()
         // Initialize again with OnePoint Developers in case Deep Link has initialised SDK with test credentials.
         OPGSDK.initialize(withUserName: OPGConstants.sdk.Username, withSDKKey: OPGConstants.sdk.SharedKey)
-        self.loginManager?.logIn(withReadPermissions: ["public_profile", "email", "user_friends"], from: self) { (result: FBSDKLoginManagerLoginResult?, error: Error?) in
+        self.loginManager?.logIn(withReadPermissions: ["public_profile", "email"], from: self) { (result: FBSDKLoginManagerLoginResult?, error: Error?) in
             if error != nil {
                 print("Custom facebook login failed ", error!)
                 self.stopActivityIndicator()
