@@ -189,8 +189,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                     }
 
                     if surveyRef != nil {
-                        OPGSDK.initialize(withUserName: "mobile.devtest", withSDKKey: "45c542c6-7130-4a98-b7c4-46fb5f9ef54f")
-
+                        //OPGSDK.initialize(withUserName: "mobile.devtest", withSDKKey: "45c542c6-7130-4a98-b7c4-46fb5f9ef54f")
+                         OPGSDK.initialize(withUserName: OPGConstants.sdk.Username, withSDKKey: OPGConstants.sdk.SharedKey)
                         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
                         let navController = storyBoard.instantiateViewController(withIdentifier: "Take_Trial")
                         let vc: IntermediateTrialSurveyViewController = navController.children.first as! IntermediateTrialSurveyViewController
