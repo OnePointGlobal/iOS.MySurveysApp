@@ -81,7 +81,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         OPGSDK.setAppVersion(OPGConstants.sdk.AppVersion)
         OPGSDK.initialize(withUserName: OPGConstants.sdk.Username, withSDKKey: OPGConstants.sdk.SharedKey)
         self.registerForPushNotifications(application: application)
-        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         return true
     }
 
@@ -209,7 +209,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
 
         if #available(iOS 9.0, *) {
-            facebookDidHandle = FBSDKApplicationDelegate.sharedInstance().application(application, open: url as URL?,
+            facebookDidHandle = ApplicationDelegate.shared.application(application, open: (url as URL?)!,
                                                                                       sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as! String?,
                                                                                       annotation: options[UIApplication.OpenURLOptionsKey.annotation])
         }
@@ -228,7 +228,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                                                     sourceApplication: sourceApplication,
                                                     annotation: annotation)
 
-        let facebookDidHandle = FBSDKApplicationDelegate.sharedInstance().application(application, open: url as URL?,
+        let facebookDidHandle = ApplicationDelegate.shared.application(application, open: (url as URL?)!,
                                                     sourceApplication: sourceApplication,
                                                     annotation: annotation)
         return googleDidHandle || facebookDidHandle

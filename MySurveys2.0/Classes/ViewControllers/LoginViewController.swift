@@ -33,7 +33,7 @@ class LoginViewController: RootViewController, UITextFieldDelegate, GIDSignInUID
     @IBOutlet weak var googleButtonAspectRatioConstraint: NSLayoutConstraint!
 
     // MARK: - Properties for viewcontroller
-    var loginManager: FBSDKLoginManager?
+    var loginManager: LoginManager?
     var bgColor: UIColor?
 
     // MARK: - IBOutlet Action methods
@@ -77,7 +77,7 @@ class LoginViewController: RootViewController, UITextFieldDelegate, GIDSignInUID
         self.startActivityIndicator()
         // Initialize again with OnePoint Developers in case Deep Link has initialised SDK with test credentials.
         OPGSDK.initialize(withUserName: OPGConstants.sdk.Username, withSDKKey: OPGConstants.sdk.SharedKey)
-        self.loginManager?.logIn(withReadPermissions: ["public_profile", "email"], from: self) { (result: FBSDKLoginManagerLoginResult?, error: Error?) in
+        self.loginManager?.logIn(permissions: ["public_profile", "email"], from: self) { (result: LoginManagerLoginResult?, error: Error?) in
             if error != nil {
                 print("Custom facebook login failed ", error!)
                 self.stopActivityIndicator()
@@ -106,7 +106,7 @@ class LoginViewController: RootViewController, UITextFieldDelegate, GIDSignInUID
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.title = NSLocalizedString("Login", comment: "")
-        self.loginManager = FBSDKLoginManager()
+        self.loginManager = LoginManager()
         self.setBackgroundImageforView()
         self.stopActivityIndicator()
         self.txtUsername?.delegate = self
@@ -268,13 +268,13 @@ class LoginViewController: RootViewController, UITextFieldDelegate, GIDSignInUID
     }
 
     /// Authenticates the user with Facebook credentials.
-    func authenticateWithFacebook(result: FBSDKLoginManagerLoginResult) {
+    func authenticateWithFacebook(result: LoginManagerLoginResult) {
         if result.token != nil {
-            print("the token received is \(String(describing: result.token.tokenString))")
+            print("the token received is \(String(describing: result.token!.tokenString))")
             DispatchQueue.global(qos: .default).async {
                 let sdk = OPGSDK()
                 do {
-                    let tokenString: String = result.token.tokenString
+                    let tokenString: String = result.token!.tokenString
                     let authObj = try sdk.authenticate(withFacebook: tokenString) as OPGAuthenticate
                     DispatchQueue.main.async {
                         if authObj.isSuccess == 1 {

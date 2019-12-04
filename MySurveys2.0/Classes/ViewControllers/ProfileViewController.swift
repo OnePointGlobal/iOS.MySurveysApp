@@ -310,7 +310,7 @@ class ProfileViewController: RootViewController, UITableViewDelegate, UITableVie
         }
         self.deleteTempDBFolders()
         if isSocialLogin == 1 {
-            let loginManager: FBSDKLoginManager = FBSDKLoginManager()
+            let loginManager: LoginManager = LoginManager()
             loginManager.logOut()                                           // Facebook logout
         }
         else if isSocialLogin == 2 {

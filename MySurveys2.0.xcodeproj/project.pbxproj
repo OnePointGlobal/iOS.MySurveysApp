@@ -85,6 +85,13 @@
 		13F9A4891DF962A10017C42C /* surveydetail_nav.png in Resources */ = {isa = PBXBuildFile; fileRef = 13F9A4861DF962A10017C42C /* surveydetail_nav.png */; };
 		13F9A48A1DF962A10017C42C /* surveydetail_nav@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 13F9A4871DF962A10017C42C /* surveydetail_nav@2x.png */; };
 		13F9A48B1DF962A10017C42C /* surveydetail_nav@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 13F9A4881DF962A10017C42C /* surveydetail_nav@3x.png */; };
+		13F9EB71239690F300CC559D /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13F9EB70239690F200CC559D /* Accelerate.framework */; };
+		13F9EB752396910400CC559D /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13F9EB722396910300CC559D /* FBSDKLoginKit.framework */; };
+		13F9EB762396910400CC559D /* FBSDKLoginKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 13F9EB722396910300CC559D /* FBSDKLoginKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		13F9EB772396910500CC559D /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13F9EB732396910400CC559D /* FBSDKShareKit.framework */; };
+		13F9EB782396910500CC559D /* FBSDKShareKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 13F9EB732396910400CC559D /* FBSDKShareKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		13F9EB792396910500CC559D /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13F9EB742396910400CC559D /* FBSDKCoreKit.framework */; };
+		13F9EB7A2396910500CC559D /* FBSDKCoreKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 13F9EB742396910400CC559D /* FBSDKCoreKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		41F865C8D1E68663A3B18804 /* Pods_MySurveys2_0.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 723EE931262C8993D768B5EC /* Pods_MySurveys2_0.framework */; };
 		7801C24E1ED6E47E009FEC59 /* surveydetail_nav_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 7801C24C1ED6E47E009FEC59 /* surveydetail_nav_iPad.png */; };
 		7801C24F1ED6E47E009FEC59 /* surveydetail_nav_iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7801C24D1ED6E47E009FEC59 /* surveydetail_nav_iPad@2x.png */; };
@@ -155,8 +162,8 @@
 		78D4C0C31F179559002E6AF4 /* LoginBg_iPad_Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D4C0BF1F179558002E6AF4 /* LoginBg_iPad_Portrait.png */; };
 		78D4C0C41F179559002E6AF4 /* LoginPageLogo_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D4C0C01F179558002E6AF4 /* LoginPageLogo_iPad.png */; };
 		78D4C0C51F179559002E6AF4 /* LoginPageLogo_iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D4C0C11F179558002E6AF4 /* LoginPageLogo_iPad@2x.png */; };
-		78D5EA161DC36091009125A7 /* BuildFile in Sources */ = {isa = PBXBuildFile; };
-		78E2252D1DC3638400880AE0 /* BuildFile in Sources */ = {isa = PBXBuildFile; };
+		78D5EA161DC36091009125A7 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		78E2252D1DC3638400880AE0 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		78E368461DF6DF4900D14F07 /* profile_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 78E368451DF6DF4900D14F07 /* profile_default.png */; };
 		78E4F2731E1271FF001678FB /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78E4F2721E1271FF001678FB /* UserNotifications.framework */; };
 		78E9F4CB1DDC61500004FC73 /* ProfileTableViewCountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E9F4CA1DDC61500004FC73 /* ProfileTableViewCountryCell.swift */; };
@@ -288,15 +295,6 @@
 		94F07BDD1DBDE3CB00EEE189 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94F07BD91DBDE3CB00EEE189 /* Bolts.framework */; };
 		94F07BDE1DBDE3CB00EEE189 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94F07BD91DBDE3CB00EEE189 /* Bolts.framework */; };
 		94F07BDF1DBDE3CB00EEE189 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94F07BD91DBDE3CB00EEE189 /* Bolts.framework */; };
-		94F07BE01DBDE3CB00EEE189 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94F07BDA1DBDE3CB00EEE189 /* FBSDKCoreKit.framework */; };
-		94F07BE11DBDE3CB00EEE189 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94F07BDA1DBDE3CB00EEE189 /* FBSDKCoreKit.framework */; };
-		94F07BE21DBDE3CB00EEE189 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94F07BDA1DBDE3CB00EEE189 /* FBSDKCoreKit.framework */; };
-		94F07BE31DBDE3CB00EEE189 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94F07BDB1DBDE3CB00EEE189 /* FBSDKLoginKit.framework */; };
-		94F07BE41DBDE3CB00EEE189 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94F07BDB1DBDE3CB00EEE189 /* FBSDKLoginKit.framework */; };
-		94F07BE51DBDE3CB00EEE189 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94F07BDB1DBDE3CB00EEE189 /* FBSDKLoginKit.framework */; };
-		94F07BE61DBDE3CB00EEE189 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94F07BDC1DBDE3CB00EEE189 /* FBSDKShareKit.framework */; };
-		94F07BE71DBDE3CB00EEE189 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94F07BDC1DBDE3CB00EEE189 /* FBSDKShareKit.framework */; };
-		94F07BE81DBDE3CB00EEE189 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94F07BDC1DBDE3CB00EEE189 /* FBSDKShareKit.framework */; };
 		A2CD8DC2CA68315250446876 /* Pods_MySurveys2_0UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922ACEFFF431DCA7518796C2 /* Pods_MySurveys2_0UITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -318,6 +316,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		13F9EB7B2396910500CC559D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				13F9EB782396910500CC559D /* FBSDKShareKit.framework in Embed Frameworks */,
+				13F9EB7A2396910500CC559D /* FBSDKCoreKit.framework in Embed Frameworks */,
+				13F9EB762396910400CC559D /* FBSDKLoginKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7885CA3520D13106003E8E0C /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 12;
@@ -417,6 +428,10 @@
 		13F9A4861DF962A10017C42C /* surveydetail_nav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = surveydetail_nav.png; path = icons/surveydetail_nav.png; sourceTree = "<group>"; };
 		13F9A4871DF962A10017C42C /* surveydetail_nav@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "surveydetail_nav@2x.png"; path = "icons/surveydetail_nav@2x.png"; sourceTree = "<group>"; };
 		13F9A4881DF962A10017C42C /* surveydetail_nav@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "surveydetail_nav@3x.png"; path = "icons/surveydetail_nav@3x.png"; sourceTree = "<group>"; };
+		13F9EB70239690F200CC559D /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		13F9EB722396910300CC559D /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = MySurveys2.0/Frameworks/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		13F9EB732396910400CC559D /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = MySurveys2.0/Frameworks/FBSDKShareKit.framework; sourceTree = "<group>"; };
+		13F9EB742396910400CC559D /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = MySurveys2.0/Frameworks/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		3B8517C75D5C341107BACB3F /* Pods-MySurveys2.0.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySurveys2.0.release.xcconfig"; path = "Pods/Target Support Files/Pods-MySurveys2.0/Pods-MySurveys2.0.release.xcconfig"; sourceTree = "<group>"; };
 		638B1F2BB0BBF3C008A42B25 /* Pods-MySurveys2.0.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySurveys2.0.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MySurveys2.0/Pods-MySurveys2.0.debug.xcconfig"; sourceTree = "<group>"; };
 		6AE13FBDA741DA96E48A9E79 /* Pods_MySurveys2_0Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MySurveys2_0Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -598,9 +613,6 @@
 		94CD76361DB4A67500C6F958 /* MySurveys-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MySurveys-Bridging-Header.h"; sourceTree = "<group>"; };
 		94D620CB1DC321B500629E52 /* ChangePanelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangePanelTableViewCell.swift; path = Classes/TableViewCells/ChangePanelTableViewCell.swift; sourceTree = "<group>"; };
 		94F07BD91DBDE3CB00EEE189 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = MySurveys2.0/Frameworks/Bolts.framework; sourceTree = "<group>"; };
-		94F07BDA1DBDE3CB00EEE189 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = MySurveys2.0/Frameworks/FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		94F07BDB1DBDE3CB00EEE189 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = MySurveys2.0/Frameworks/FBSDKLoginKit.framework; sourceTree = "<group>"; };
-		94F07BDC1DBDE3CB00EEE189 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = MySurveys2.0/Frameworks/FBSDKShareKit.framework; sourceTree = "<group>"; };
 		9D4FF392968BCD2DF3E68861 /* Pods-MySurveys2.0Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySurveys2.0Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MySurveys2.0Tests/Pods-MySurveys2.0Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		D1FCE576E30948CCD47027A6 /* Pods-MySurveys2.0UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySurveys2.0UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MySurveys2.0UITests/Pods-MySurveys2.0UITests.release.xcconfig"; sourceTree = "<group>"; };
 		F580D3796F98B5CDC4980CDC /* Pods-MySurveys2.0UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySurveys2.0UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MySurveys2.0UITests/Pods-MySurveys2.0UITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -613,15 +625,16 @@
 			files = (
 				13CB421C1FC5972E00876DC2 /* Shimmer.framework in Frameworks */,
 				7803418F1EA62AF200F3CCE1 /* libOnePoint.PROM.a in Frameworks */,
+				13F9EB752396910400CC559D /* FBSDKLoginKit.framework in Frameworks */,
 				785B8B141E1E254800F09F20 /* libOnePointFramework.a in Frameworks */,
+				13F9EB772396910500CC559D /* FBSDKShareKit.framework in Frameworks */,
+				13F9EB71239690F300CC559D /* Accelerate.framework in Frameworks */,
 				78E4F2731E1271FF001678FB /* UserNotifications.framework in Frameworks */,
 				9408BB091DBF7F7E0066A049 /* libOnePoint.MOM.a in Frameworks */,
 				9408BB0A1DBF7F7E0066A049 /* libOnePoint.POM.a in Frameworks */,
-				94F07BE01DBDE3CB00EEE189 /* FBSDKCoreKit.framework in Frameworks */,
-				94F07BE31DBDE3CB00EEE189 /* FBSDKLoginKit.framework in Frameworks */,
 				136163071D1D611A005C41D0 /* CoreLocation.framework in Frameworks */,
-				94F07BE61DBDE3CB00EEE189 /* FBSDKShareKit.framework in Frameworks */,
 				94F07BDD1DBDE3CB00EEE189 /* Bolts.framework in Frameworks */,
+				13F9EB792396910500CC559D /* FBSDKCoreKit.framework in Frameworks */,
 				133D0A801D1977E000C72DD9 /* libsqlite3.0.tbd in Frameworks */,
 				41F865C8D1E68663A3B18804 /* Pods_MySurveys2_0.framework in Frameworks */,
 			);
@@ -631,9 +644,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94F07BE11DBDE3CB00EEE189 /* FBSDKCoreKit.framework in Frameworks */,
-				94F07BE71DBDE3CB00EEE189 /* FBSDKShareKit.framework in Frameworks */,
-				94F07BE41DBDE3CB00EEE189 /* FBSDKLoginKit.framework in Frameworks */,
 				94F07BDE1DBDE3CB00EEE189 /* Bolts.framework in Frameworks */,
 				000E3F1CFABCBBDB26637FFB /* Pods_MySurveys2_0Tests.framework in Frameworks */,
 			);
@@ -643,9 +653,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94F07BE21DBDE3CB00EEE189 /* FBSDKCoreKit.framework in Frameworks */,
-				94F07BE81DBDE3CB00EEE189 /* FBSDKShareKit.framework in Frameworks */,
-				94F07BE51DBDE3CB00EEE189 /* FBSDKLoginKit.framework in Frameworks */,
 				94F07BDF1DBDE3CB00EEE189 /* Bolts.framework in Frameworks */,
 				A2CD8DC2CA68315250446876 /* Pods_MySurveys2_0UITests.framework in Frameworks */,
 			);
@@ -805,6 +812,10 @@
 		13FE6EEA1D670D0600439C89 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				13F9EB742396910400CC559D /* FBSDKCoreKit.framework */,
+				13F9EB722396910300CC559D /* FBSDKLoginKit.framework */,
+				13F9EB732396910400CC559D /* FBSDKShareKit.framework */,
+				13F9EB70239690F200CC559D /* Accelerate.framework */,
 				13CB421D1FC5972E00876DC2 /* Shimmer.framework */,
 				787D1E581E1E22120095DFFA /* libxml2.tbd */,
 				78E4F2721E1271FF001678FB /* UserNotifications.framework */,
@@ -813,9 +824,6 @@
 				9408BB071DBF7F7E0066A049 /* libOnePoint.PROM.a */,
 				9408BB081DBF7F7E0066A049 /* libOnePointFramework.a */,
 				94F07BD91DBDE3CB00EEE189 /* Bolts.framework */,
-				94F07BDA1DBDE3CB00EEE189 /* FBSDKCoreKit.framework */,
-				94F07BDB1DBDE3CB00EEE189 /* FBSDKLoginKit.framework */,
-				94F07BDC1DBDE3CB00EEE189 /* FBSDKShareKit.framework */,
 				138D33441D5B2D170094F439 /* libc++.tbd */,
 				138D33421D5B2D070094F439 /* libz.tbd */,
 				133D0A7F1D1977E000C72DD9 /* libsqlite3.0.tbd */,
@@ -1075,6 +1083,7 @@
 				D1301DE60E8965C1FD943128 /* [CP] Copy Pods Resources */,
 				A5A3A8880276F34A0BD56B6F /* Tailor */,
 				7885CA3520D13106003E8E0C /* CopyFiles */,
+				13F9EB7B2396910500CC559D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1512,7 +1521,7 @@
 				94C216E51DDF19DD004C1131 /* RootViewController.swift in Sources */,
 				94CD762E1DB4A63B00C6F958 /* SurveyViewController.swift in Sources */,
 				7878854320BBD20300BFEB67 /* NSString+OPGAESCrypt.m in Sources */,
-				78D5EA161DC36091009125A7 /* BuildFile in Sources */,
+				78D5EA161DC36091009125A7 /* (null) in Sources */,
 				789CCFEA1DC3664E00D79FA1 /* ProfileTableViewCell.swift in Sources */,
 				9408BB021DBF7EFE0066A049 /* NSString+NSDate.m in Sources */,
 				94CD75FD1DB4A51E00C6F958 /* UIImage.swift in Sources */,
@@ -1534,7 +1543,7 @@
 				782511F6202C1DD400654236 /* OCRViewController.m in Sources */,
 				94CD75FB1DB4A51E00C6F958 /* UIColor.swift in Sources */,
 				946474A61DBE497A00016F2C /* SettingsViewController.swift in Sources */,
-				78E2252D1DC3638400880AE0 /* BuildFile in Sources */,
+				78E2252D1DC3638400880AE0 /* (null) in Sources */,
 				94CD761A1DB4A63B00C6F958 /* AboutUsViewController.swift in Sources */,
 				78EAFEC51DD302CC002158A1 /* NotificationTableViewCell.swift in Sources */,
 				135011FB201EFAAC0043EE6F /* CurrencyPlugin.m in Sources */,
