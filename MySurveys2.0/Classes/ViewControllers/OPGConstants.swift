@@ -12,9 +12,9 @@ class OPGConstants {
 
     struct sdk {
     // SDK Constants define here.
-    static let AppVersion = "APP_VERSION"
-    static let Username = "USER_NAME"
-    static let SharedKey = "SHARED_KEY"
+    static let AppVersion = "MySurveysApp-IOS-2.1.4-A"
+    static let Username = "MySurveys2.0"
+    static let SharedKey = "5ed49012-5321-411c-951e-ffca8e4f1f61"
 
     static let DatabaseVersion: Int32 = 3
    }
