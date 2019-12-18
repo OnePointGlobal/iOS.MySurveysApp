@@ -16,12 +16,8 @@ class TakeTrialViewController: OPGViewController, OPGSurveyDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.hidesBackButton = true
-        // self.navigationController?.navigationBar.tintColor = UIColor.white
-        self.title = NSLocalizedString("Survey", comment: "Survey")
-        let navBar = self.navigationController?.navigationBar
-        navBar?.barStyle = UIBarStyle.black
-        navBar?.tintColor = UIColor.white
-        navBar?.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+       // self.title = NSLocalizedString("Survey", comment: "Survey")
+        self.setNavigationBarTheme()
         self.view.backgroundColor = AppTheme.appBackgroundColor()
         self.spinner.color = AppTheme.appBackgroundColor()
         self.spinner.startAnimating()
@@ -34,7 +30,16 @@ class TakeTrialViewController: OPGViewController, OPGSurveyDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
+    
+    /// Configures Navigation bar.
+    func setNavigationBarTheme() {
+        self.navigationController?.navigationBar.isTranslucent = true
+        let navAlpha = 0.85 // Your appropriate calculation
+        let image = UIImage.imageFromColor(color: AppTheme.appBackgroundColor().withAlphaComponent(CGFloat(navAlpha)))
+        self.navigationController?.navigationBar.setBackgroundImage(image, for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.barStyle = .default
+    }
+    
     // MARK: - WebView methods
     func didSurveyStartLoad() {
         print("QUESTION STARTED LOADING")

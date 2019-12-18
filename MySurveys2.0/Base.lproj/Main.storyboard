@@ -22,7 +22,7 @@
                             </webView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="4gP-90-pv6">
                                 <rect key="frame" x="169" y="329.5" width="37" height="37"/>
-                                <color key="color" red="0.92941176469999998" green="0.49803921569999998" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="color" red="0.97254901960784312" green="0.54117647058823526" blue="0.0039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -57,7 +57,7 @@
                                 <rect key="frame" x="169" y="315" width="37" height="37"/>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" red="0.95294117649999999" green="0.58039215690000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.97254901960784312" green="0.54117647058823526" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Gec-iD-Oj6" firstAttribute="centerY" secondItem="Bae-d9-H6c" secondAttribute="centerY" id="got-Kd-j0Y"/>
                             <constraint firstItem="Gec-iD-Oj6" firstAttribute="centerX" secondItem="ORj-c6-g0J" secondAttribute="centerX" id="qrj-Dl-D2v"/>
@@ -101,7 +101,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fa2-fQ-3GB">
                                 <rect key="frame" x="303" y="64" width="56" height="56"/>
-                                <color key="backgroundColor" red="0.96862745100000003" green="0.56862745100000001" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.97254901960784312" green="0.54117647058823526" blue="0.0039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="am7-7B-s8p">
                                         <variation key="heightClass=regular-widthClass=regular" constant="70"/>
@@ -119,7 +119,7 @@
                                 <rect key="frame" x="16" y="255" width="117" height="32"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <state key="normal" title="Upload Results">
-                                    <color key="titleColor" red="0.96862745098039216" green="0.56862745098039214" blue="0.21568627450980393" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.97254901960784312" green="0.54117647058823526" blue="0.0039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <variation key="heightClass=regular-widthClass=regular">
                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
@@ -132,7 +132,7 @@
                                 <rect key="frame" x="16" y="298" width="85" height="32"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <state key="normal" title="Take a Trail">
-                                    <color key="titleColor" red="0.96862745098039216" green="0.56862745098039214" blue="0.21568627450980393" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.97254901960784312" green="0.54117647058823526" blue="0.0039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xJM-Hm-GRq">
@@ -308,7 +308,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="VMQ-CL-XQ0"/>
                                 </constraints>
-                                <color key="progressTintColor" red="0.96862745100000003" green="0.56862745100000001" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="progressTintColor" red="0.97254901960784312" green="0.54117647058823526" blue="0.0039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </progressView>
                         </subviews>
@@ -412,7 +412,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rG9-F7-Y1t">
                                 <rect key="frame" x="303" y="64" width="56" height="56"/>
-                                <color key="backgroundColor" red="0.96862745098039216" green="0.56862745098039214" blue="0.21568627450980393" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.97254901960784312" green="0.54117647058823526" blue="0.0039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="56" id="B2M-mO-Tvo">
                                         <variation key="heightClass=regular-widthClass=regular" constant="70"/>
@@ -509,7 +509,7 @@
                                 <rect key="frame" x="18" y="255.5" width="82" height="32"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <state key="normal" title="Take a trail">
-                                    <color key="titleColor" red="0.96862745098039216" green="0.56862745098039214" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.97254901960784312" green="0.54117647058823526" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
                         </subviews>
@@ -575,7 +575,7 @@
                         <subviews>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="RYU-5R-0r5">
                                 <rect key="frame" x="169" y="305" width="37" height="37"/>
-                                <color key="color" red="0.94815526829999996" green="0.52120259290000004" blue="0.15200245130000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="color" red="0.97254901960784312" green="0.54117647058823526" blue="0.0039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UYW-Vy-kXl">
                                 <rect key="frame" x="-4" y="-20" width="379" height="667"/>
@@ -653,7 +653,7 @@
                             </imageView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="OgJ-XU-Gfr">
                                 <rect key="frame" x="169" y="136.5" width="37" height="37"/>
-                                <color key="color" red="0.94815526829999996" green="0.52120259290000004" blue="0.15200245130000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="color" red="0.97254901960784312" green="0.54117647058823526" blue="0.0039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sfh-yC-Acu">
                                 <rect key="frame" x="227.5" y="175.5" width="40" height="40"/>
@@ -1182,7 +1182,7 @@
                             </view>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Dfm-44-va8">
                                 <rect key="frame" x="169" y="315" width="37" height="37"/>
-                                <color key="color" red="0.94815526829999996" green="0.52120259290000004" blue="0.15200245130000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="color" red="0.97254901960784312" green="0.54117647058823526" blue="0.0039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1287,7 +1287,7 @@
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         </imageView>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="0.96862745100000003" green="0.56862745100000001" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" red="0.97254901960784312" green="0.54117647058823526" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstItem="Yc6-We-MsR" firstAttribute="top" secondItem="QdZ-ny-8Bx" secondAttribute="top" id="2rh-vs-ne3"/>
                                                         <constraint firstAttribute="bottom" secondItem="Yc6-We-MsR" secondAttribute="bottom" id="Eyq-Eh-uBo"/>
@@ -1612,7 +1612,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="barTintColor" red="0.96862745100000003" green="0.56862745100000001" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.97254901960784312" green="0.54117647058823526" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1860,7 +1860,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.95294117649999999" green="0.58039215690000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.97254901960784312" green="0.54117647058823526" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wWZ-yX-9gF" firstAttribute="centerX" secondItem="yTu-0S-NST" secondAttribute="centerX" id="13p-0T-hsn"/>
                             <constraint firstItem="RGI-Rt-EX9" firstAttribute="height" secondItem="jBf-hi-d2a" secondAttribute="height" id="4Cj-wZ-CcS"/>
@@ -2022,7 +2022,7 @@
                                                         </label>
                                                         <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CXT-36-DFb">
                                                             <rect key="frame" x="314" y="19" width="45" height="45"/>
-                                                            <color key="backgroundColor" red="0.96862745100000003" green="0.56862745100000001" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="backgroundColor" red="0.97254901960784312" green="0.54117647058823526" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="45" id="WEE-b1-haZ">
                                                                     <variation key="heightClass=regular-widthClass=regular" constant="61"/>
@@ -2124,7 +2124,7 @@
                                                         </label>
                                                         <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cyZ-KH-xQO">
                                                             <rect key="frame" x="314" y="19" width="45" height="45"/>
-                                                            <color key="backgroundColor" red="0.96862745098039216" green="0.56862745098039214" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="backgroundColor" red="0.97254901960784312" green="0.54117647058823526" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="45" id="24u-fR-aLB">
                                                                     <variation key="heightClass=regular-widthClass=regular" constant="61"/>
@@ -2142,7 +2142,7 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="2"/>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                                    <color key="progressTintColor" red="0.95074945690000001" green="0.56852096320000001" blue="0.21392989160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <color key="progressTintColor" red="0.97254901960784312" green="0.54117647058823526" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 </progressView>
                                                             </subviews>
@@ -2257,7 +2257,7 @@
                                             <segment title="By List"/>
                                             <segment title="By Location"/>
                                         </segments>
-                                        <color key="tintColor" red="0.96862745100000003" green="0.56862745100000001" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" red="0.97254901960784312" green="0.54117647058823526" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="segmentedControlAction:" destination="wBU-AO-3fi" eventType="valueChanged" id="dVs-hw-vW0"/>
                                         </connections>
@@ -2414,7 +2414,7 @@
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZzA-Vi-0vT">
                                 <rect key="frame" x="327" y="64" width="35" height="35"/>
-                                <color key="backgroundColor" red="0.94815526829999996" green="0.52120259290000004" blue="0.15200245130000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.97254901960784312" green="0.54117647058823526" blue="0.0039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="2Et-vx-WI1"/>
                                     <constraint firstAttribute="width" constant="35" id="zEl-Pj-Dnl"/>
@@ -2482,7 +2482,7 @@
                                         </variation>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.96862745100000003" green="0.56862745100000001" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.97254901960784312" green="0.54117647058823526" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="RbL-be-lYm" firstAttribute="centerX" secondItem="yek-SK-JIQ" secondAttribute="centerX" id="Djs-Hz-dbw"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="RbL-be-lYm" secondAttribute="trailing" id="E6Z-bg-AHv"/>
@@ -2514,7 +2514,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                                         <state key="normal" title="Button">
-                                            <color key="titleColor" red="0.94815526829999996" green="0.52120259290000004" blue="0.15200245130000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="0.97254901960784312" green="0.54117647058823526" blue="0.0039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <variation key="heightClass=regular-widthClass=regular">
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="24"/>
@@ -2557,7 +2557,7 @@
                                     </label>
                                     <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="3o2-m9-LJN">
                                         <rect key="frame" x="169" y="66.5" width="37" height="37"/>
-                                        <color key="color" red="0.94815526829999996" green="0.52120259290000004" blue="0.15200245130000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="color" red="0.97254901960784312" green="0.54117647058823526" blue="0.0039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                                     </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2590,7 +2590,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.96862745100000003" green="0.56862745100000001" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.97254901960784312" green="0.54117647058823526" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="yek-SK-JIQ" firstAttribute="height" secondItem="2R8-GP-D9H" secondAttribute="height" multiplier="0.95:3.1" id="2cA-Wt-v8I"/>
                             <constraint firstItem="Nmo-9K-9Ph" firstAttribute="leading" secondItem="kRZ-vc-qOx" secondAttribute="leading" id="7JZ-hf-Uyz"/>
@@ -2654,7 +2654,7 @@
                                 <rect key="frame" x="169" y="337" width="37" height="37"/>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" red="0.94815526829999996" green="0.52120259290000004" blue="0.15200245130000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.97254901960784312" green="0.54117647058823526" blue="0.0039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="aBW-pd-cOI" firstAttribute="centerX" secondItem="Tdo-8R-6VT" secondAttribute="centerX" id="Lpo-GQ-Zmf"/>
                             <constraint firstItem="aBW-pd-cOI" firstAttribute="centerY" secondItem="Tdo-8R-6VT" secondAttribute="centerY" id="mhu-hM-nzD"/>
@@ -2677,7 +2677,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Db0-Lm-7f0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.96862745100000003" green="0.56862745100000001" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.97254901960784312" green="0.54117647058823526" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2784,7 +2784,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="35N-nF-YHw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.96862745100000003" green="0.56862745100000001" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.97254901960784312" green="0.54117647058823526" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="xRp-pa-aNC" kind="relationship" relationship="rootViewController" id="EQl-lb-ffv"/>
@@ -2804,7 +2804,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eJQ-g4-wtZ">
                                 <rect key="frame" x="138.5" y="148" width="98" height="42"/>
-                                <color key="backgroundColor" red="0.96862745100000003" green="0.56862745100000001" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.97254901960784312" green="0.54117647058823526" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="O1W-yS-cJL"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="98" id="PiW-ib-Bhb"/>
@@ -2903,7 +2903,7 @@
                             </textView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="63z-Xz-9wr">
                                 <rect key="frame" x="169" y="220.5" width="37" height="37"/>
-                                <color key="color" red="0.94815526829999996" green="0.52120259290000004" blue="0.15200245130000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="color" red="0.97254901960784312" green="0.54117647058823526" blue="0.0039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2942,7 +2942,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UvP-SR-ccI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.94815526829999996" green="0.52120259290000004" blue="0.15200245130000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.97254901960784312" green="0.54117647058823526" blue="0.0039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -3084,6 +3084,6 @@ EIUQiBCaEJ0QogAAAAAAAAIBAAAAAAAAAEEAAAAAAAAAAAAAAAAAABCkA
         <image name="surveydetail_nav.png" width="53.759998321533203" height="53.759998321533203"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="m0x-aU-ZdX"/>
+        <segue reference="l4M-nM-sXY"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -15,7 +15,7 @@ extension UserDefaults {
             color = NSKeyedUnarchiver.unarchiveObject(with: colorData) as? UIColor
         }
         else {
-            color = UIColor(red: 247/255.0, green: 145/255.0, blue: 55/255.0, alpha: 1.0)
+             color = UIColor(red: 248/255.0, green: 138/255.0, blue: 1/255.0, alpha: 1.0)
         }
         return color
     }

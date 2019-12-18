@@ -141,7 +141,7 @@ class AppTheme: NSObject {
         self.setLoginBGImagePath(path: EMPTY_STRING)                // defaultBG image
         self.setHeaderLogoImagePath(path: EMPTY_STRING)        // default header logo image
         self.setLogoText(text: EMPTY_STRING)
-        UserDefaults.standard.setColor(UIColor.orange, forKey: "appBgColor")
+        UserDefaults.standard.setColor(colorWithHexString(hex: "#F88A01"), forKey: "appBgColor")
         self.theme = nil                                        // no theme
     }
 
