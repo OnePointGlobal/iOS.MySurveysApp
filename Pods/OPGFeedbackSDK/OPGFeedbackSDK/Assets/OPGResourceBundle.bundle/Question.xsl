@@ -208,35 +208,10 @@
     <xsl:element name="Label">
       <xsl:attribute name="style">position:relative;right:-0.9em</xsl:attribute>
       <xsl:attribute name="data-iconpos">notext</xsl:attribute>
-    <xsl:choose>
-      <xsl:when test="Style/@Image != ''">
-        <xsl:choose>
-          <xsl:when test="Style/@ImagePosition = 'Left' or not(Style/@ImagePosition)">
-            <xsl:element name="img">
-              <xsl:attribute name="src">
-                <xsl:if test="not((starts-with(Style/@Image, 'http:'))or(starts-with(Style/@Image, 'https:')))">
-                  <xsl:value-of select="$sImageLocation"/>
-                </xsl:if>
-                <xsl:value-of select="Style/@Image"/>
-              </xsl:attribute>
-              <xsl:attribute name="alt"/>
-            </xsl:element>
-            <xsl:call-template name="LabelText"/>
-          </xsl:when>
-          <xsl:when test="Style/@ImagePosition = 'Right'">
-            <xsl:call-template name="LabelText"/>
-            <xsl:element name="img">
-              <xsl:attribute name="src">
-                <xsl:if test="not((starts-with(Style/@Image, 'http:'))or(starts-with(Style/@Image, 'https:')))">
-                  <xsl:value-of select="$sImageLocation"/>
-                </xsl:if>
-                <xsl:value-of select="Style/@Image"/>
-              </xsl:attribute>
-              <xsl:attribute name="alt"/>
-            </xsl:element>
-          </xsl:when>
-          <xsl:when test="Style/@ImagePosition = 'Top'">
-            <xsl:element name="div">
+      <xsl:choose>
+        <xsl:when test="Style/@Image != ''">
+          <xsl:choose>
+            <xsl:when test="Style/@ImagePosition = 'Left' or not(Style/@ImagePosition)">
               <xsl:element name="img">
                 <xsl:attribute name="src">
                   <xsl:if test="not((starts-with(Style/@Image, 'http:'))or(starts-with(Style/@Image, 'https:')))">
@@ -246,45 +221,70 @@
                 </xsl:attribute>
                 <xsl:attribute name="alt"/>
               </xsl:element>
-            </xsl:element>
-            <xsl:call-template name="LabelText"/>
-          </xsl:when>
-          <xsl:when test="Style/@ImagePosition = 'Bottom'">
-            <xsl:element name="div">
               <xsl:call-template name="LabelText"/>
-            </xsl:element>
-            <xsl:element name="img">
-              <xsl:attribute name="src">
-                <xsl:if test="not((starts-with(Style/@Image, 'http:'))or(starts-with(Style/@Image, 'https:')))">
-                  <xsl:value-of select="$sImageLocation"/>
-                </xsl:if>
-                <xsl:value-of select="Style/@Image"/>
-              </xsl:attribute>
-              <xsl:attribute name="alt"/>
-            </xsl:element>
-          </xsl:when>
-          <xsl:when test="Style/@ImagePosition = 'ImageOnly'">
-            <xsl:element name="img">
-              <xsl:attribute name="src">
-                <xsl:if test="not((starts-with(Style/@Image, 'http:'))or(starts-with(Style/@Image, 'https:')))">
-                  <xsl:value-of select="$sImageLocation"/>
-                </xsl:if>
-                <xsl:value-of select="Style/@Image"/>
-              </xsl:attribute>
-              <xsl:attribute name="alt">
-                <xsl:value-of select="Text"/>
-              </xsl:attribute>
-            </xsl:element>
-          </xsl:when>
-          <xsl:otherwise>
-            <xsl:call-template name="LabelText"/>
-          </xsl:otherwise>
-        </xsl:choose>
-      </xsl:when>
-      <xsl:otherwise>
-        <xsl:call-template name="LabelText"/>
-      </xsl:otherwise>
-    </xsl:choose>
+            </xsl:when>
+            <xsl:when test="Style/@ImagePosition = 'Right'">
+              <xsl:call-template name="LabelText"/>
+              <xsl:element name="img">
+                <xsl:attribute name="src">
+                  <xsl:if test="not((starts-with(Style/@Image, 'http:'))or(starts-with(Style/@Image, 'https:')))">
+                    <xsl:value-of select="$sImageLocation"/>
+                  </xsl:if>
+                  <xsl:value-of select="Style/@Image"/>
+                </xsl:attribute>
+                <xsl:attribute name="alt"/>
+              </xsl:element>
+            </xsl:when>
+            <xsl:when test="Style/@ImagePosition = 'Top'">
+              <xsl:element name="div">
+                <xsl:element name="img">
+                  <xsl:attribute name="src">
+                    <xsl:if test="not((starts-with(Style/@Image, 'http:'))or(starts-with(Style/@Image, 'https:')))">
+                      <xsl:value-of select="$sImageLocation"/>
+                    </xsl:if>
+                    <xsl:value-of select="Style/@Image"/>
+                  </xsl:attribute>
+                  <xsl:attribute name="alt"/>
+                </xsl:element>
+              </xsl:element>
+              <xsl:call-template name="LabelText"/>
+            </xsl:when>
+            <xsl:when test="Style/@ImagePosition = 'Bottom'">
+              <xsl:element name="div">
+                <xsl:call-template name="LabelText"/>
+              </xsl:element>
+              <xsl:element name="img">
+                <xsl:attribute name="src">
+                  <xsl:if test="not((starts-with(Style/@Image, 'http:'))or(starts-with(Style/@Image, 'https:')))">
+                    <xsl:value-of select="$sImageLocation"/>
+                  </xsl:if>
+                  <xsl:value-of select="Style/@Image"/>
+                </xsl:attribute>
+                <xsl:attribute name="alt"/>
+              </xsl:element>
+            </xsl:when>
+            <xsl:when test="Style/@ImagePosition = 'ImageOnly'">
+              <xsl:element name="img">
+                <xsl:attribute name="src">
+                  <xsl:if test="not((starts-with(Style/@Image, 'http:'))or(starts-with(Style/@Image, 'https:')))">
+                    <xsl:value-of select="$sImageLocation"/>
+                  </xsl:if>
+                  <xsl:value-of select="Style/@Image"/>
+                </xsl:attribute>
+                <xsl:attribute name="alt">
+                  <xsl:value-of select="Text"/>
+                </xsl:attribute>
+              </xsl:element>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:call-template name="LabelText"/>
+            </xsl:otherwise>
+          </xsl:choose>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:call-template name="LabelText"/>
+        </xsl:otherwise>
+      </xsl:choose>
     </xsl:element>
   </xsl:template>
 
@@ -372,6 +372,17 @@
           </xsl:call-template>
         </xsl:element>
       </xsl:when>
+      <xsl:when test="@UseTablesLayout = '20'">
+        <xsl:element name="ul">
+          <xsl:attribute name="data-role">maxdiff</xsl:attribute>
+          <xsl:if test="$bIncludeCSSStyles">
+            <xsl:attribute name="class">mrQuestionTable</xsl:attribute>
+          </xsl:if>
+          <xsl:call-template name="UlRow">
+            <xsl:with-param name="Orientation" select="$Orientation" />
+          </xsl:call-template>
+        </xsl:element>
+      </xsl:when>
       <xsl:when test="@UseTablesLayout = '6'">
         <xsl:element name="ul">
           <xsl:attribute name="data-role">rank</xsl:attribute>
@@ -409,6 +420,12 @@
       <xsl:otherwise>
         <!--- div tag needed for horizontal alignment of tables-->
         <xsl:element name="table">
+          <xsl:if test="@UseTablesLayout = '21'">
+            <xsl:attribute name="data-role">bucket</xsl:attribute>
+          </xsl:if>
+          <xsl:if test="@UseTablesLayout = '22'">
+            <xsl:attribute name="data-role">imagemap</xsl:attribute>
+          </xsl:if>
           <xsl:if test="@Summary">
             <xsl:attribute name="summary">
               <xsl:value-of select="@Summary"/>
@@ -603,7 +620,7 @@
     </xsl:choose>
   </xsl:template>
   <!-- UL LAYOUT -->
-  
+
   <xsl:template name="UlRow">
     <xsl:param name="Orientation" select="Column" />
     <xsl:for-each select="Row">
@@ -620,79 +637,79 @@
     <xsl:param name="Orientation" select="Column" />
     <xsl:for-each select="Cell">
       <xsl:sort select="@X" order="ascending" data-type="number" />
-        <!--- Element ID -->
-        <!--- CSS Class -->
-        <xsl:if test="$bIncludeCSSStyles and @Class">
-          <xsl:attribute name="class">
-            <xsl:value-of select="@Class"/>
-          </xsl:attribute>
-        </xsl:if>
+      <!--- Element ID -->
+      <!--- CSS Class -->
+      <xsl:if test="$bIncludeCSSStyles and @Class">
+        <xsl:attribute name="class">
+          <xsl:value-of select="@Class"/>
+        </xsl:attribute>
+      </xsl:if>
+      <xsl:choose>
+        <xsl:when test="Control[1]/Style">
+          <xsl:for-each select="Control[1]">
+            <xsl:attribute name="style">
+              <xsl:call-template name="CellStyle">
+                <xsl:with-param name="bUseTablesLayout" select="true()" />
+                <xsl:with-param name="Orientation" select="$Orientation" />
+              </xsl:call-template>
+            </xsl:attribute>
+          </xsl:for-each>
+        </xsl:when>
+        <xsl:when test="Label[1]/Style">
+          <xsl:for-each select="Label[1]">
+            <xsl:attribute name="style">
+              <xsl:call-template name="CellStyle"/>
+            </xsl:attribute>
+          </xsl:for-each>
+        </xsl:when>
+        <xsl:when test="Error[1]/Style">
+          <xsl:for-each select="Error[1]">
+            <xsl:attribute name="style">
+              <xsl:call-template name="CellStyle"/>
+            </xsl:attribute>
+          </xsl:for-each>
+        </xsl:when>
+        <xsl:when test="Question[1]/Style">
+          <xsl:for-each select="Question[1]">
+            <xsl:attribute name="style">
+              <xsl:call-template name="CellStyle"/>
+            </xsl:attribute>
+          </xsl:for-each>
+        </xsl:when>
+      </xsl:choose>
+      <xsl:for-each select="*">
         <xsl:choose>
-          <xsl:when test="Control[1]/Style">
-            <xsl:for-each select="Control[1]">
-              <xsl:attribute name="style">
-                <xsl:call-template name="CellStyle">
-                  <xsl:with-param name="bUseTablesLayout" select="true()" />
-                  <xsl:with-param name="Orientation" select="$Orientation" />
-                </xsl:call-template>
-              </xsl:attribute>
-            </xsl:for-each>
+          <xsl:when test="name() = 'Control'">
+            <xsl:apply-templates select="."/>
           </xsl:when>
-          <xsl:when test="Label[1]/Style">
-            <xsl:for-each select="Label[1]">
-              <xsl:attribute name="style">
-                <xsl:call-template name="CellStyle"/>
-              </xsl:attribute>
-            </xsl:for-each>
+          <xsl:when test="name() = 'Label'">
+            <xsl:apply-templates select=".">
+              <xsl:with-param name="sLabelClass" select="'mrQuestionText'"/>
+              <xsl:with-param name="bWithinTable" select="true()"/>
+            </xsl:apply-templates>
           </xsl:when>
-          <xsl:when test="Error[1]/Style">
-            <xsl:for-each select="Error[1]">
-              <xsl:attribute name="style">
-                <xsl:call-template name="CellStyle"/>
-              </xsl:attribute>
-            </xsl:for-each>
+          <xsl:when test="name() = 'Error'">
+            <xsl:apply-templates select=".">
+              <xsl:with-param name="sLabelClass" select="'mrErrorText'"/>
+              <xsl:with-param name="bWithinTable" select="true()"/>
+            </xsl:apply-templates>
           </xsl:when>
-          <xsl:when test="Question[1]/Style">
-            <xsl:for-each select="Question[1]">
-              <xsl:attribute name="style">
-                <xsl:call-template name="CellStyle"/>
-              </xsl:attribute>
-            </xsl:for-each>
+          <xsl:when test="name() = 'Table'">
+            <xsl:apply-templates select="."/>
+          </xsl:when>
+          <xsl:when test="name() = 'Question'">
+            <xsl:apply-templates select=".">
+              <xsl:with-param name="bWithinTable" select="true()"/>
+            </xsl:apply-templates>
           </xsl:when>
         </xsl:choose>
-        <xsl:for-each select="*">
-          <xsl:choose>
-            <xsl:when test="name() = 'Control'">
-              <xsl:apply-templates select="."/>
-            </xsl:when>
-            <xsl:when test="name() = 'Label'">
-              <xsl:apply-templates select=".">
-                <xsl:with-param name="sLabelClass" select="'mrQuestionText'"/>
-                <xsl:with-param name="bWithinTable" select="true()"/>
-              </xsl:apply-templates>
-            </xsl:when>
-            <xsl:when test="name() = 'Error'">
-              <xsl:apply-templates select=".">
-                <xsl:with-param name="sLabelClass" select="'mrErrorText'"/>
-                <xsl:with-param name="bWithinTable" select="true()"/>
-              </xsl:apply-templates>
-            </xsl:when>
-            <xsl:when test="name() = 'Table'">
-              <xsl:apply-templates select="."/>
-            </xsl:when>
-            <xsl:when test="name() = 'Question'">
-              <xsl:apply-templates select=".">
-                <xsl:with-param name="bWithinTable" select="true()"/>
-              </xsl:apply-templates>
-            </xsl:when>
-          </xsl:choose>
-        </xsl:for-each>
+      </xsl:for-each>
     </xsl:for-each>
   </xsl:template>
 
   <!-- DIV Layout -->
 
-    <xsl:template name="DivHorizontalRow">
+  <xsl:template name="DivHorizontalRow">
     <xsl:param name="Orientation" select="Column" />
     <xsl:for-each select="Row">
       <xsl:sort select="@Y" order="ascending" data-type="number"/>
@@ -716,9 +733,9 @@
     <xsl:param name="Orientation" select="Column" />
     <xsl:for-each select="Row">
       <xsl:sort select="@Y" order="ascending" data-type="number"/>
-        <xsl:call-template name="DivCell">
-          <xsl:with-param name="Orientation" select="$Orientation" />
-        </xsl:call-template>
+      <xsl:call-template name="DivCell">
+        <xsl:with-param name="Orientation" select="$Orientation" />
+      </xsl:call-template>
     </xsl:for-each>
   </xsl:template>
 
@@ -921,7 +938,7 @@
             <xsl:when test="name() = 'Control'">
               <xsl:apply-templates select=".">
                 <xsl:with-param name="bNoLabel" select="true()"/>
-            </xsl:apply-templates>
+              </xsl:apply-templates>
             </xsl:when>
             <xsl:when test="name() = 'Label'">
               <xsl:call-template name="LabelNoLabel">
@@ -1067,7 +1084,7 @@
         <xsl:call-template name="SignatureControl"/>
       </xsl:when>
       <xsl:when test="@Type = 'ocr'">
-        <xsl:call-template name="OCRControl"/>
+        <xsl:call-template name="OcrScanControl"/>
       </xsl:when>
       <xsl:when test="@Type = 'numbermasking'">
         <xsl:call-template name="NumberMaskedControl"/>
@@ -1172,76 +1189,75 @@
   </xsl:template>
 
   <xsl:template name="SignatureControl">
-      <!--- Control Label -->
-      <xsl:if test="Category[1]/Label">
-          <xsl:choose>
-              <xsl:when test="$bIncludeElementIds">
-                  <xsl:element name="label">
-                      <xsl:attribute name="for">
-                          <xsl:value-of select="@ElementID"/>
-                          <xsl:if test="Category[1]/@CategoryID">
-                              <xsl:value-of select="Category[1]/@CategoryID"/>
-                          </xsl:if>
-                      </xsl:attribute>
-                      <xsl:apply-templates select="Category[1]/Label">
-                          <xsl:with-param name="sLabelClass" select="'mrSingleText'"/>
-                      </xsl:apply-templates>
-                 </xsl:element>
-              </xsl:when>
-              <xsl:otherwise>
-                  <xsl:apply-templates select="Category[1]/Label">
-                     <xsl:with-param name="sLabelClass" select="'mrSingleText'"/>
-                  </xsl:apply-templates>
-              </xsl:otherwise>
-          </xsl:choose>
-      </xsl:if>
-      <!--- Edit box -->
-      <xsl:element name="input">
-          <!--- Set Control Type -->
-          <xsl:attribute name="data-role">signature</xsl:attribute>
-          <!--- Input name -->
-          <xsl:attribute name="name">
-              <xsl:value-of select="@QuestionName"/>
-              <xsl:if test="Category[1]/@Name">
-                  <xsl:value-of select="Category[1]/@Name"/>
+    <!--- Control Label -->
+    <xsl:if test="Category[1]/Label">
+      <xsl:choose>
+        <xsl:when test="$bIncludeElementIds">
+          <xsl:element name="label">
+            <xsl:attribute name="for">
+              <xsl:value-of select="@ElementID"/>
+              <xsl:if test="Category[1]/@CategoryID">
+                <xsl:value-of select="Category[1]/@CategoryID"/>
               </xsl:if>
-          </xsl:attribute>
-          <!--- ID -->
-          <xsl:if test="$bIncludeElementIds">
-              <xsl:attribute name="id">
-                  <xsl:value-of select="@ElementID"/>
-                  <xsl:if test="Category[1]/@CategoryID">
-                      <xsl:value-of select="Category[1]/@CategoryID"/>
-                  </xsl:if>
-              </xsl:attribute>
+            </xsl:attribute>
+            <xsl:apply-templates select="Category[1]/Label">
+              <xsl:with-param name="sLabelClass" select="'mrSingleText'"/>
+            </xsl:apply-templates>
+          </xsl:element>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:apply-templates select="Category[1]/Label">
+            <xsl:with-param name="sLabelClass" select="'mrSingleText'"/>
+          </xsl:apply-templates>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:if>
+    <!--- Edit box -->
+    <xsl:element name="input">
+      <!--- Set Control Type -->
+      <xsl:attribute name="data-role">signature</xsl:attribute>
+      <!--- Input name -->
+      <xsl:attribute name="name">
+        <xsl:value-of select="@QuestionName"/>
+        <xsl:if test="Category[1]/@Name">
+          <xsl:value-of select="Category[1]/@Name"/>
+        </xsl:if>
+      </xsl:attribute>
+      <!--- ID -->
+      <xsl:if test="$bIncludeElementIds">
+        <xsl:attribute name="id">
+          <xsl:value-of select="@ElementID"/>
+          <xsl:if test="Category[1]/@CategoryID">
+            <xsl:value-of select="Category[1]/@CategoryID"/>
           </xsl:if>
-          <!--- Alt -->
-          <xsl:if test="@Alt != ''">
-              <xsl:attribute name="Alt">
-                  <xsl:value-of select="@Alt"/>
-              </xsl:attribute>
-          </xsl:if>
-          <!--- CSS Class -->
-          <xsl:if test="$bIncludeCSSStyles">
-              <xsl:attribute name="class">mrEdit</xsl:attribute>
-          </xsl:if>
-          <!--- Show Only -->
-          <xsl:if test="$bShowOnly != false()">
-              <xsl:attribute name="disabled"/>
-          </xsl:if>
-          <!--- Read Only -->
-          <xsl:if test="Style/Control/@ReadOnly = 'true'">
-              <xsl:attribute name="readonly"/>
-          </xsl:if>
-          <!--- Default text -->
-          <xsl:attribute name="value">
-              <xsl:value-of select="@Value"/>
-          </xsl:attribute>
-      </xsl:element>
+        </xsl:attribute>
+      </xsl:if>
+      <!--- Alt -->
+      <xsl:if test="@Alt != ''">
+        <xsl:attribute name="Alt">
+          <xsl:value-of select="@Alt"/>
+        </xsl:attribute>
+      </xsl:if>
+      <!--- CSS Class -->
+      <xsl:if test="$bIncludeCSSStyles">
+        <xsl:attribute name="class">mrEdit</xsl:attribute>
+      </xsl:if>
+      <!--- Show Only -->
+      <xsl:if test="$bShowOnly != false()">
+        <xsl:attribute name="disabled"/>
+      </xsl:if>
+      <!--- Read Only -->
+      <xsl:if test="Style/Control/@ReadOnly = 'true'">
+        <xsl:attribute name="readonly"/>
+      </xsl:if>
+      <!--- Default text -->
+      <xsl:attribute name="value">
+        <xsl:value-of select="@Value"/>
+      </xsl:attribute>
+    </xsl:element>
   </xsl:template>
 
-
-    <xsl:template name="OCRControl">
+  <xsl:template name="OcrScanControl">
     <!--- Control Label -->
     <xsl:if test="Category[1]/Label">
       <xsl:choose>
@@ -1309,8 +1325,6 @@
       </xsl:attribute>
     </xsl:element>
   </xsl:template>
-
-
 
   <xsl:template name="BarCodeControl">
     <!--- Control Label -->
@@ -1524,7 +1538,7 @@
       </xsl:attribute>
     </xsl:element>
   </xsl:template>
-  
+
   <xsl:template name="GeoCodeControl">
     <!--- Control Label -->
     <xsl:if test="Category[1]/Label">
@@ -1591,6 +1605,10 @@
       <xsl:attribute name="value">
         <xsl:value-of select="@Value"/>
       </xsl:attribute>
+      <!--- Hidden -->
+      <xsl:if test="Style/@Hidden = 'true'">
+        <xsl:attribute name="hidden">true</xsl:attribute>
+      </xsl:if>
     </xsl:element>
   </xsl:template>
 
@@ -1661,7 +1679,7 @@
       <xsl:if test="Style/@Orientation = 'Column'">
         <xsl:attribute name="data-vertical">true</xsl:attribute>
       </xsl:if>
-      
+
       <!--- Min Max -->
       <xsl:if test="Validation/@MinValue">
         <xsl:attribute name="min">
@@ -1910,7 +1928,7 @@
       </xsl:attribute>
     </xsl:element>
   </xsl:template>
-  
+
   <xsl:template name="CurrencyControl">
     <!--- Control Label -->
     <xsl:if test="Category[1]/Label">
@@ -2341,6 +2359,37 @@
           <xsl:attribute name="style">
             <xsl:call-template name="ControlStyle"/>
           </xsl:attribute>
+          <!--- Initial Option -->
+          <xsl:element name="option">
+            <!--- Set Option Style -->
+            <xsl:for-each select="Label">
+              <xsl:attribute name="style">
+                <xsl:call-template name="LabelStyle"/>
+              </xsl:attribute>
+            </xsl:for-each>
+            <!--- Set Option Class -->
+            <xsl:attribute name="class">mrMultiple</xsl:attribute>
+            <!--- Check if selected -->
+            <xsl:if test="@Checked = 'true'">
+              <xsl:attribute name="selected"/>
+            </xsl:if>
+            <xsl:choose>
+              <xsl:when test="@IsHeading">
+                <!--- Option value -->
+                <xsl:attribute name="value">
+                  <xsl:value-of select="''"/>
+                </xsl:attribute>
+              </xsl:when>
+              <xsl:otherwise>
+                <xsl:attribute name="value">
+                  <xsl:value-of select="@Name"/>
+                </xsl:attribute>
+              </xsl:otherwise>
+            </xsl:choose>
+            <xsl:for-each select="Label">
+              <xsl:call-template name="LabelText"/>
+            </xsl:for-each>
+          </xsl:element>
           <!--- Drop list categories -->
           <xsl:for-each select="Category">
             <xsl:choose>
@@ -2462,25 +2511,25 @@
       </xsl:if>
     </xsl:element>
     <xsl:choose>
-        <xsl:when test="$bIncludeElementIds and Category[1]/Label">
-          <xsl:element name="label">
-            <xsl:attribute name="for">
-              <xsl:value-of select="@ElementID"/>
-              <xsl:if test="Category[1]/@CategoryID">
-                <xsl:value-of select="Category[1]/@CategoryID"/>
-              </xsl:if>
-            </xsl:attribute>
-            <xsl:apply-templates select="Category[1]/Label">
-              <xsl:with-param name="sLabelClass" select="'mrSingleText'"/>
-            </xsl:apply-templates>
-          </xsl:element>
-        </xsl:when>
-        <xsl:otherwise>
+      <xsl:when test="$bIncludeElementIds and Category[1]/Label">
+        <xsl:element name="label">
+          <xsl:attribute name="for">
+            <xsl:value-of select="@ElementID"/>
+            <xsl:if test="Category[1]/@CategoryID">
+              <xsl:value-of select="Category[1]/@CategoryID"/>
+            </xsl:if>
+          </xsl:attribute>
           <xsl:apply-templates select="Category[1]/Label">
             <xsl:with-param name="sLabelClass" select="'mrSingleText'"/>
           </xsl:apply-templates>
-        </xsl:otherwise>
-      </xsl:choose>
+        </xsl:element>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:apply-templates select="Category[1]/Label">
+          <xsl:with-param name="sLabelClass" select="'mrSingleText'"/>
+        </xsl:apply-templates>
+      </xsl:otherwise>
+    </xsl:choose>
   </xsl:template>
 
   <xsl:template name="CheckButtonControl">
@@ -2543,26 +2592,26 @@
         <xsl:attribute name="checked"/>
       </xsl:if>
     </xsl:element>
-      <xsl:choose>
-        <xsl:when test="$bIncludeElementIds and Category[1]/Label">
-          <xsl:element name="label">
-            <xsl:attribute name="for">
-              <xsl:value-of select="@ElementID"/>
-              <xsl:if test="Category[1]/@CategoryID">
-                <xsl:value-of select="Category[1]/@CategoryID"/>
-              </xsl:if>
-            </xsl:attribute>
-            <xsl:apply-templates select="Category[1]/Label">
-              <xsl:with-param name="sLabelClass" select="'mrMultipleText'"/>
-            </xsl:apply-templates>
-          </xsl:element>
-        </xsl:when>
-        <xsl:otherwise>
+    <xsl:choose>
+      <xsl:when test="$bIncludeElementIds and Category[1]/Label">
+        <xsl:element name="label">
+          <xsl:attribute name="for">
+            <xsl:value-of select="@ElementID"/>
+            <xsl:if test="Category[1]/@CategoryID">
+              <xsl:value-of select="Category[1]/@CategoryID"/>
+            </xsl:if>
+          </xsl:attribute>
           <xsl:apply-templates select="Category[1]/Label">
             <xsl:with-param name="sLabelClass" select="'mrMultipleText'"/>
           </xsl:apply-templates>
-        </xsl:otherwise>
-      </xsl:choose>
+        </xsl:element>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:apply-templates select="Category[1]/Label">
+          <xsl:with-param name="sLabelClass" select="'mrMultipleText'"/>
+        </xsl:apply-templates>
+      </xsl:otherwise>
+    </xsl:choose>
   </xsl:template>
 
   <xsl:template name="ListBoxControl">
@@ -2789,109 +2838,109 @@
   <xsl:template name="DateControl">
     <xsl:param name="controlType" />
     <!--- Control Label -->
-      <xsl:if test="Category[1]/Label">
-        <xsl:choose>
-          <xsl:when test="$bIncludeElementIds">
-            <xsl:element name="label">
-              <xsl:attribute name="for">
-                <xsl:value-of select="@ElementID"/>
-                <xsl:if test="Category[1]/@CategoryID">
-                  <xsl:value-of select="Category[1]/@CategoryID"/>
-                </xsl:if>
-              </xsl:attribute>
-              <xsl:apply-templates select="Category[1]/Label">
-                <xsl:with-param name="sLabelClass" select="'mrSingleText'"/>
-              </xsl:apply-templates>
-            </xsl:element>
-          </xsl:when>
-          <xsl:otherwise>
+    <xsl:if test="Category[1]/Label">
+      <xsl:choose>
+        <xsl:when test="$bIncludeElementIds">
+          <xsl:element name="label">
+            <xsl:attribute name="for">
+              <xsl:value-of select="@ElementID"/>
+              <xsl:if test="Category[1]/@CategoryID">
+                <xsl:value-of select="Category[1]/@CategoryID"/>
+              </xsl:if>
+            </xsl:attribute>
             <xsl:apply-templates select="Category[1]/Label">
               <xsl:with-param name="sLabelClass" select="'mrSingleText'"/>
             </xsl:apply-templates>
-          </xsl:otherwise>
-        </xsl:choose>
-      </xsl:if>
-      <!--- Edit box -->
-      <xsl:element name="input">
-        <!--- Set Control Type -->
-        <xsl:attribute name="type">
-          <xsl:value-of select="$controlType" />
+          </xsl:element>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:apply-templates select="Category[1]/Label">
+            <xsl:with-param name="sLabelClass" select="'mrSingleText'"/>
+          </xsl:apply-templates>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:if>
+    <!--- Edit box -->
+    <xsl:element name="input">
+      <!--- Set Control Type -->
+      <xsl:attribute name="type">
+        <xsl:value-of select="$controlType" />
+      </xsl:attribute>
+      <!--- Placeholder -->
+      <xsl:if test="Style/@Placeholder != ''">
+        <xsl:attribute name="data-placeholder">
+          <xsl:value-of select="Style/@Placeholder"/>
         </xsl:attribute>
-        <!--- Placeholder -->
-        <xsl:if test="Style/@Placeholder != ''">
-          <xsl:attribute name="data-placeholder">
-            <xsl:value-of select="Style/@Placeholder"/>
-          </xsl:attribute>
+      </xsl:if>
+      <!--- Input name -->
+      <xsl:attribute name="name">
+        <xsl:value-of select="@QuestionName"/>
+        <xsl:if test="Category[1]/@Name">
+          <xsl:value-of select="Category[1]/@Name"/>
         </xsl:if>
-        <!--- Input name -->
-        <xsl:attribute name="name">
-          <xsl:value-of select="@QuestionName"/>
-          <xsl:if test="Category[1]/@Name">
-            <xsl:value-of select="Category[1]/@Name"/>
+      </xsl:attribute>
+      <!--- ID -->
+      <xsl:if test="$bIncludeElementIds">
+        <xsl:attribute name="id">
+          <xsl:value-of select="@ElementID"/>
+          <xsl:if test="Category[1]/@CategoryID">
+            <xsl:value-of select="Category[1]/@CategoryID"/>
           </xsl:if>
         </xsl:attribute>
-        <!--- ID -->
-        <xsl:if test="$bIncludeElementIds">
-          <xsl:attribute name="id">
-            <xsl:value-of select="@ElementID"/>
-            <xsl:if test="Category[1]/@CategoryID">
-              <xsl:value-of select="Category[1]/@CategoryID"/>
-            </xsl:if>
-          </xsl:attribute>
-        </xsl:if>
-        <!--- Alt -->
-        <xsl:if test="@Alt != ''">
-          <xsl:attribute name="Alt">
-            <xsl:value-of select="@Alt"/>
-          </xsl:attribute>
-        </xsl:if>
-        <!--- CSS Class -->
-        <xsl:if test="$bIncludeCSSStyles">
-          <xsl:attribute name="class">mrEdit</xsl:attribute>
-        </xsl:if>
-        <!--- Show Only -->
-        <xsl:if test="$bShowOnly != false()">
-          <xsl:attribute name="disabled"/>
-        </xsl:if>
-        <!--- Accelerator access key -->
-        <xsl:if test="Style/Control/@Accelerator != ''">
-          <xsl:attribute name="accesskey">
-            <xsl:value-of select="Style/Control/@Accelerator"/>
-          </xsl:attribute>
-        </xsl:if>
-        <!--- Mask -->
-        <xsl:if test="Style/@Mask != ''">
-          <xsl:attribute name="data-mask">
-            <xsl:value-of select="Style/Control/@Mask"/>
-          </xsl:attribute>
-        </xsl:if>
-        <!--- AutoComplete -->
-        <xsl:choose>
-          <xsl:when test="$bAutoComplete = true()">
-            <xsl:attribute name="autocomplete">on</xsl:attribute>
-          </xsl:when>
-          <xsl:otherwise>
-            <xsl:attribute name="autocomplete">off</xsl:attribute>
-          </xsl:otherwise>
-        </xsl:choose>
-        <!--- Read Only -->
-        <xsl:if test="Style/Control/@ReadOnly = 'true'">
-          <xsl:attribute name="readonly"/>
-        </xsl:if>
-        <!--- Hide -->
-        <xsl:if test="Style/@Hidden = 'true'">
-          <xsl:attribute name="data-role">none</xsl:attribute>
-        </xsl:if>
-        <!--- Set Control Style -->
-        <xsl:attribute name="style">
-          <xsl:call-template name="ControlStyle"/>
+      </xsl:if>
+      <!--- Alt -->
+      <xsl:if test="@Alt != ''">
+        <xsl:attribute name="Alt">
+          <xsl:value-of select="@Alt"/>
         </xsl:attribute>
-        <!--- Max length -->
-        <xsl:if test="@Length">
-          <xsl:attribute name="maxlength">
-            <xsl:value-of select="@Length"/>
-          </xsl:attribute>
-        </xsl:if>
+      </xsl:if>
+      <!--- CSS Class -->
+      <xsl:if test="$bIncludeCSSStyles">
+        <xsl:attribute name="class">mrEdit</xsl:attribute>
+      </xsl:if>
+      <!--- Show Only -->
+      <xsl:if test="$bShowOnly != false()">
+        <xsl:attribute name="disabled"/>
+      </xsl:if>
+      <!--- Accelerator access key -->
+      <xsl:if test="Style/Control/@Accelerator != ''">
+        <xsl:attribute name="accesskey">
+          <xsl:value-of select="Style/Control/@Accelerator"/>
+        </xsl:attribute>
+      </xsl:if>
+      <!--- Mask -->
+      <xsl:if test="Style/@Mask != ''">
+        <xsl:attribute name="data-mask">
+          <xsl:value-of select="Style/Control/@Mask"/>
+        </xsl:attribute>
+      </xsl:if>
+      <!--- AutoComplete -->
+      <xsl:choose>
+        <xsl:when test="$bAutoComplete = true()">
+          <xsl:attribute name="autocomplete">on</xsl:attribute>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:attribute name="autocomplete">off</xsl:attribute>
+        </xsl:otherwise>
+      </xsl:choose>
+      <!--- Read Only -->
+      <xsl:if test="Style/Control/@ReadOnly = 'true'">
+        <xsl:attribute name="readonly"/>
+      </xsl:if>
+      <!--- Hide -->
+      <xsl:if test="Style/@Hidden = 'true'">
+        <xsl:attribute name="data-role">none</xsl:attribute>
+      </xsl:if>
+      <!--- Set Control Style -->
+      <xsl:attribute name="style">
+        <xsl:call-template name="ControlStyle"/>
+      </xsl:attribute>
+      <!--- Max length -->
+      <xsl:if test="@Length">
+        <xsl:attribute name="maxlength">
+          <xsl:value-of select="@Length"/>
+        </xsl:attribute>
+      </xsl:if>
       <!--- Min Max -->
       <xsl:if test="Validation/@MinValue">
         <xsl:attribute name="min">
@@ -2918,18 +2967,18 @@
           <xsl:value-of select="Validation/@MaxValue"/>
         </xsl:attribute>
       </xsl:if>
-        <!--- Default text -->
-        <xsl:attribute name="value">
-          <xsl:choose>
-            <xsl:when test="Category[1]/@Checked = 'true'">
-              <xsl:value-of select="'*'"/>
-            </xsl:when>
-            <xsl:otherwise>
-              <xsl:value-of select="@Value"/>
-            </xsl:otherwise>
-          </xsl:choose>
-        </xsl:attribute>
-      </xsl:element>
+      <!--- Default text -->
+      <xsl:attribute name="value">
+        <xsl:choose>
+          <xsl:when test="Category[1]/@Checked = 'true'">
+            <xsl:value-of select="'*'"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of select="@Value"/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:attribute>
+    </xsl:element>
   </xsl:template>
 
   <xsl:template name="TimeControl">
@@ -3035,7 +3084,7 @@
     <!--- adds the label styles to a style attribute -->
     <xsl:if test="Style/@AccessGallery">AccessGallery;</xsl:if><xsl:if test="Style/@AccessNew">AccessNew;</xsl:if><xsl:if test="Style/@AllowPlayback">AllowPlayback;</xsl:if><xsl:if test="Style/@AllowUpload">AllowUpload;</xsl:if>
   </xsl:template>
-    
+
   <!--- Style Templates -->
 
   <xsl:template name="LabelStyle">
@@ -3136,3 +3185,4 @@
     <xsl:if test="Style/Cell/@PaddingBottom">padding-bottom: <xsl:value-of select="Style/Cell/@PaddingBottom"/>px;</xsl:if>
   </xsl:template>
 </xsl:stylesheet>
+

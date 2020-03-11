@@ -29,32 +29,32 @@
             i.type = "text/javascript";
             i.src = "https://maps.googleapis.com/maps/api/js?v=3.exp&" + "callback=initialize";
             i.setAttribute("async", true);
-			document.body.appendChild(i);
-			var co_ords = this.element[0].value.split(",");
-			var thisElem  = this;
-			if(this.element[0].value){
-				$("#geoLocation").show();
-				var n = "Your location is : " + co_ords[0] + ", " + co_ords[1];
+            document.body.appendChild(i);
+            var co_ords = this.element[0].value.split(",");
+            var thisElem  = this;
+            if(this.element[0].value){
+                $("#geoLocation").show();
+                var n = "Your location is : " + co_ords[0] + ", " + co_ords[1];
                 this.positionElm.html(n);
-				setTimeout(function(){
-					var myLatlng = new google.maps.LatLng(co_ords[0], co_ords[1]);
-					var mapOptions = {
-						zoom: 15,
-						center: myLatlng,
-						mapTypeId: google.maps.MapTypeId.ROADMAP
-				};
-					var map = new google.maps.Map(document.getElementById("geoLocation"),
-					mapOptions);
-					var i = thisElem.mapHolder[0];
-					var s = new google.maps.Map(i, mapOptions);
-					var o = new google.maps.Marker({
-								position: myLatlng,
-								map: s,
-								title: "You are here!"
-							});					
-				},1000);
-				   
-			}
+                setTimeout(function(){
+                    var myLatlng = new google.maps.LatLng(co_ords[0], co_ords[1]);
+                    var mapOptions = {
+                        zoom: 15,
+                        center: myLatlng,
+                        mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+                    var map = new google.maps.Map(document.getElementById("geoLocation"),
+                    mapOptions);
+                    var i = thisElem.mapHolder[0];
+                    var s = new google.maps.Map(i, mapOptions);
+                    var o = new google.maps.Marker({
+                                position: myLatlng,
+                                map: s,
+                                title: "You are here!"
+                            });
+                },1000);
+                   
+            }
         },
         _refresh: function() {
             this.changer.click()
@@ -341,7 +341,7 @@
     e.widget("opg.barcode", {
         initSelector: "input[data-role=barcode]",
         _create: function() {
-	        var t = document.createElement("div");
+            var t = document.createElement("div");
             var n = e(t);
             this.changer = e("<input>", {
                 value: "Click to Get Barcode",
@@ -354,10 +354,10 @@
             var r = this.element.parent(".ui-input-text");
             if (r) r.before(n).hide();
             else this.element.before(n).hide();
-			if(this.element[0].value != ""){
-				var n = "Barcode Entered is : " + this.element[0].value;
-				this.barcodeElm.html(n);	
-			}
+            if(this.element[0].value != ""){
+                var n = "Barcode Entered is : " + this.element[0].value;
+                this.barcodeElm.html(n);
+            }
             this._on(this.changer, {
                 click: "_getBarcode"
             });
@@ -372,16 +372,16 @@
             var t = this;
             try {
                 cordova.plugins.barcodeScanner.scan(function(n) {
-	                  e.proxy(t._writeBarcode(n), this);
-					  if(tMobile.Android()){
-					      $(".ui-popup-container").css({"left":"55px","top":"183px"});
-					  }
-	                 
+                      e.proxy(t._writeBarcode(n), this);
+                      if(tMobile.Android()){
+                          $(".ui-popup-container").css({"left":"55px","top":"183px"});
+                      }
+                     
                 }, function(n) {
-			          e.proxy(t._writeBarcode(), this);
+                      e.proxy(t._writeBarcode(), this);
                 });
             } catch (n) {
-	              e.proxy(t._writeBarcode(), this);
+                  e.proxy(t._writeBarcode(), this);
             }
         },
         _writeBarcode: function(t) {
@@ -473,10 +473,10 @@
             for (var i= 0 ; (i < selected && selected != 0); i++) {
               r.find("li:eq("+i+")").addClass("active");
             }
-			 if(tMobile.anyMobile() != null || navigator.userAgent.match(/X11; Linux x86_64/i)){
-				  this._on(r.find("li"), {
-						touchstart:function(t) {
-							var n = e(t.target);
+             if(tMobile.anyMobile() != null || navigator.userAgent.match(/X11; Linux x86_64/i)){
+                  this._on(r.find("li"), {
+                        touchstart:function(t) {
+                            var n = e(t.target);
                             n = n.is("li") ? n : n.parent();
                             if(r.find("li:eq("+n.index()+")").hasClass("active") == false){
                                  r.find("li:eq("+n.index()+")").addClass("active");
@@ -493,50 +493,50 @@
                                  }
 
                              }
-						},
-					 })
-			}else{
-				 this._on(r.find("li"), {
-				 click: function(t) {
-						//console.log("click");
-						var n = e(t.target);
-						n = n.is("li") ? n : n.parent();
-						if(r.find("li:eq("+n.index()+")").hasClass("active") == false){
-							 r.find("li:eq("+n.index()+")").addClass("active");
-							 n.prevAll().andSelf().addClass("active");
-							 u.val(n.index() + 1).attr("value", n.index() + 1);
-						 }else{
-							 r.find("li:eq("+n.index()+")").removeClass("active");
-							 if((n.index()+1) < u.val()){
-									r.find("li:gt("+n.index()+")").removeClass("active");
-									u.val(n.index()+1).attr("value", n.index()+1);
-							 }else{
-								   u.val(n.index()).attr("value", n.index());
-							 }
+                        },
+                     })
+            }else{
+                 this._on(r.find("li"), {
+                 click: function(t) {
+                        //console.log("click");
+                        var n = e(t.target);
+                        n = n.is("li") ? n : n.parent();
+                        if(r.find("li:eq("+n.index()+")").hasClass("active") == false){
+                             r.find("li:eq("+n.index()+")").addClass("active");
+                             n.prevAll().andSelf().addClass("active");
+                             u.val(n.index() + 1).attr("value", n.index() + 1);
+                         }else{
+                             r.find("li:eq("+n.index()+")").removeClass("active");
+                             if((n.index()+1) < u.val()){
+                                    r.find("li:gt("+n.index()+")").removeClass("active");
+                                    u.val(n.index()+1).attr("value", n.index()+1);
+                             }else{
+                                   u.val(n.index()).attr("value", n.index());
+                             }
 
-						 }
-					},
-					mouseover: function(t) {
-						r.find("li").removeClass("hover");
-						var n = e(t.target);
-						n = n.is("li") ? n : n.parent();
-						if((n.index()+1) < u.val()){
-								r.find("li:gt("+n.index()+")").removeClass("active").removeClass("hover");
-						 }
-						n.prevAll().andSelf().addClass("hover");
-					},
-				   mouseout: function(ev) {
-						r.find("li").removeClass("hover");
-						var t = u.val() ;
-						var n = e(ev.target);
-						if (t > 0) {
-							var n = r.find("li").eq((t-1));
-							n.prevAll().andSelf().addClass("active")
-						}
-					},
+                         }
+                    },
+                    mouseover: function(t) {
+                        r.find("li").removeClass("hover");
+                        var n = e(t.target);
+                        n = n.is("li") ? n : n.parent();
+                        if((n.index()+1) < u.val()){
+                                r.find("li:gt("+n.index()+")").removeClass("active").removeClass("hover");
+                         }
+                        n.prevAll().andSelf().addClass("hover");
+                    },
+                   mouseout: function(ev) {
+                        r.find("li").removeClass("hover");
+                        var t = u.val() ;
+                        var n = e(ev.target);
+                        if (t > 0) {
+                            var n = r.find("li").eq((t-1));
+                            n.prevAll().andSelf().addClass("active")
+                        }
+                    },
 
-				})
-			}
+                })
+            }
           },
         _destroy: function() {
             domHandle.remove()
@@ -1221,7 +1221,7 @@
             };
             if (tMobile.iOS()) this.controls.gallery = false;
             var r = document.createElement("div");
-			r.className = "audiocontainer";
+            r.className = "audiocontainer";
             var i = e(r);
             var s = e('<div class="ui-block-a">');
             var o = e('<div class="ui-block-b">');
@@ -1268,10 +1268,10 @@
             this._on(this.uploadBtn, {
                 click: "_uploadAudio"
             });
-			if(this.element[0].value != ""){
-			var audioUrl = 'OPG_Surveys_Media/'+this.element[0].value;
-				$('<audio controls><source id=customUploadedAudio   src='+audioUrl+'></audio>').appendTo(r);
-			}
+            if(this.element[0].value != ""){
+            var audioUrl = 'OPG_Surveys_Media/'+this.element[0].value;
+                $('<audio controls><source id=customUploadedAudio   src='+audioUrl+'></audio>').appendTo(r);
+            }
         },
         _refresh: function() {
             this._create()
@@ -1380,15 +1380,15 @@
                 cordovaFunction.uploadImage(n, function(e) {
                     if (!e.Percent) {
                         t.uploadBtn.val("Uploaded").button("refresh");
-						var audioUrl = 'OPG_Surveys_Media/'+e.MediaID;
+                        var audioUrl = 'OPG_Surveys_Media/'+e.MediaID;
                         t.element.val(e.MediaID);
-						t.element.attr("value", e.MediaID);
-						if($("audio").length != 0){
-							$("audio").remove();
-							$('<audio controls><source id=customUploadedAudio   src='+audioUrl+'></audio>').appendTo($(".audiocontainer"));
-						}else{
-							$('<audio controls><source src='+audioUrl+'></audio>').appendTo($(".audiocontainer"));
-						}				
+                        t.element.attr("value", e.MediaID);
+                        if($("audio").length != 0){
+                            $("audio").remove();
+                            $('<audio controls><source id=customUploadedAudio   src='+audioUrl+'></audio>').appendTo($(".audiocontainer"));
+                        }else{
+                            $('<audio controls><source src='+audioUrl+'></audio>').appendTo($(".audiocontainer"));
+                        }
                     }
                 }, function(t) {
                     e.alertOpg("Audio upload failed : " + t,"My Surveys")
@@ -1411,7 +1411,7 @@
                 upload: t.indexOf("AllowUpload") == -1 ? false : true
             };
             var n = document.createElement("div");
-			n.className = "videocontainer";
+            n.className = "videocontainer";
             var r = e(n);
             var i = e('<div class="ui-block-a">');
             var s = e('<div class="ui-block-b">');
@@ -1458,10 +1458,10 @@
             this._on(this.uploadBtn, {
                 click: "_uploadVideo"
             });
-			var videoUrl = 'OPG_Surveys_Media/'+this.element[0].value;
-			if(this.element[0].value != ""){
-					$('<video controls><source id=customUploadedVideo   src='+videoUrl+'></video>').appendTo(r);
-			}
+            var videoUrl = 'OPG_Surveys_Media/'+this.element[0].value;
+            if(this.element[0].value != ""){
+                    $('<video controls><source id=customUploadedVideo   src='+videoUrl+'></video>').appendTo(r);
+            }
         },
         _refresh: function() {
             this._create()
@@ -1546,16 +1546,16 @@
                 cordovaFunction.uploadImage(i, function(e) {
                     if (!e.Percent) {
                         r.uploadBtn.val("Uploaded").button("refresh");
-						var videoUrl = 'OPG_Surveys_Media/'+e.MediaID;
+                        var videoUrl = 'OPG_Surveys_Media/'+e.MediaID;
                         r.element.val(e.MediaID);
-						if($("video").length != 0){
-							$("video").remove();
-								$('<video controls><source id=customUploadedVideo   src='+videoUrl+'></video>').appendTo($(".videocontainer"));
-						}else{
+                        if($("video").length != 0){
+                            $("video").remove();
+                                $('<video controls><source id=customUploadedVideo   src='+videoUrl+'></video>').appendTo($(".videocontainer"));
+                        }else{
                                             $('<video controls><source id=customUploadedVideo   src='+videoUrl+'></video>').appendTo($(".videocontainer"));
-		
-						}
-						
+        
+                        }
+                        
                     }
                 }, function(t) {
                     e.alertOpg("Video upload failed : " + t,"My Surveys")
@@ -1663,24 +1663,24 @@
                     var r = t[o[u]];
                     var i = -1;var count = 0;
                     n.find(u).off().on("mousedown touchstart", e.proxy(function() {
-                       	if( i == -1){
-                       	  i = setInterval(function() {
-                        	 ++count;
-                        	 if(count > (i%10)){
-                        		 clearInterval(i);
-                        		 i=-1;count = 0;
-                        	 }else{
-                        		t._handleDate(r)
-                        	 }
-                          },300);  
-                        }                 
+                           if( i == -1){
+                             i = setInterval(function() {
+                             ++count;
+                             if(count > (i%10)){
+                                 clearInterval(i);
+                                 i=-1;count = 0;
+                             }else{
+                                t._handleDate(r)
+                             }
+                          },300);
+                        }
                     }, t)).on("mouseup mouseout touchend", e.proxy(function() {
-                    	if( i != -1){
-                       	  clearInterval(i);
-                       	  count = 0;i=-1;
-	                    }
+                        if( i != -1){
+                             clearInterval(i);
+                             count = 0;i=-1;
+                        }
                     }, t)).on("click",e.proxy(function(){
-                    	return t._handleDate(r)
+                        return t._handleDate(r)
                     },t));
                 })()
             }
@@ -1973,7 +1973,361 @@
             domHandle.remove()
         }
     });
+                                             
+    e.widget("opg.Bucket", {
+         initSelector: "table[data-role='bucket']",
+         _create: function() {
+// *Note : Images should have ids with the count starting from 0 and so on. Buckets are counted with the length of table columns.
+           $(function($) {
+               var table = $(this).find("table[data-role='bucket']");
+                    table = table.length;
+                     if(table >= 1){
+               var buckets = $(this).find("input[id*='_Q']");
+               var images = $(this).find("img");
+                     if(buckets.length && images.length){
+                          $('bucket').append("<div class='container addImages'></div>");
+                          $.each(images, function (key, val) {
+                          $('.addImages').append(images[key].outerHTML);
+                         });
+                var colCount = -1;
+                          $('tr:nth-child(3) td').each(function () {
+                              colCount++;
+                              console.log(colCount);
+                            });
+                              colCount = new Array(colCount);
+                           $.each(colCount, function (key, val) {
+                           $('.addImages').append("<div id='bucket"+(key+1)+"' class='drop'><p>Bucket "+(key+1)+"</p></div>");
+                        });
 
+                      if($(this).find("input[id*='_Q']").val()){
+                var allInputs = $(this).find("input[id*='_Q']");
+                           $.each(allInputs, function (key, val) {
+                       if(val.value != '0'){
+                            console.log(val);
+                var imageCount = new Array(Number(val.value));
+                var bucketId, imageId;
+                    bucketId = val.id.split('_Q');
+                    console.log(bucketId);
+                    imageId = "#"+bucketId[2];
+                    bucketId = '#bucket'+ (Number(bucketId[3]) + 1);
+                           $.each(imageCount, function(){
+                           $(imageId).clone().attr('class', 'dragdrop draggable dragaware dragging dropped').appendTo(bucketId).draggable('destroy');
+                        });
+                     }
+                });
+            }else{
+                          $(this).find("input[id*='_Q']").val(0);
+                        }
+                     }
+                  var questionNumber = $('tr:nth-child(3) td input');
+                      questionNumber = questionNumber[0].id.split("_");
+                      questionNumber = questionNumber[1];
+                         $('.dragdrop').draggable({
+                      revert: true,
+                      placeholder: true,
+                      droptarget: '.drop',
+        drop: function(evt, droptarget) {
+                $(this).clone().addClass('dropped').appendTo(droptarget).draggable('destroy');
+              var getIdSplice = droptarget.id.replace("bucket", "");
+              getIdSplice = (0 + getIdSplice) - 1;
+              var addHere = 'input[id~="_'+questionNumber+'_Q'+this.attr("id")+'_Q'+ getIdSplice +'"';
+              var finalAns = Number($(addHere).val()) + 1;
+              $(addHere).val(finalAns);
+            }
+        });
+
+              $(document).on('click','img', function(event){
+              if(event.target.className == "dragdrop draggable dragaware dragging dropped"){
+                                                                        var droptarget = event.target.parentNode;
+                                                                        var getIdSplice = droptarget.id.replace("bucket", "");
+                                                                        getIdSplice = (0 + getIdSplice) - 1;
+                                                                        var addHere = 'input[id~="_'+questionNumber+'_Q'+event.target.id+'_Q'+ getIdSplice +'"';
+                                                                        var finalAns = Number($(addHere).val()) - 1;
+                                                                        $(addHere).val(finalAns);
+                                                                        event.target.remove();
+                                                                    }
+                                                                });
+                                                            }
+
+                                                        });
+                                                    },
+                                                    _destroy: function() {
+                                                        domHandle.remove()
+                                                    }
+                                                });
+
+                                             var createCount = 0;
+                                                e.widget("opg.imagemap",{
+                                                    initSelector: "input[type='text']",
+                                                    _create: function() {
+                                                        $(function($)
+                                             {
+                                                            var imagemap = $(this).find("table[data-role='imagemap']");
+                                                            imagemap = imagemap.length;
+                                                            if(imagemap >= 1){
+                                                                if(createCount == 0){
+                                                                    createCount++;
+                                                                    console.log("imagemap created");
+                                                                    var inputFields = $(this).find("input[id*='_Q']");
+                                                                    var images = $(this).find("img");
+                                                                    $('img').load(function(){
+                                                                        if(inputFields.length && images.length){
+                                                                            $('imagemap').append("<br><br><br><br><div id='imagemap' class='container'></div><p class='imageMapError'></p>");
+                                                                            $('.container').append(""+images[0].outerHTML+"<div class='tag'></div>");
+                                                                            $('.container .imagemap').attr('class','newImage');
+                                                                            var heightOfImage = $(".imagemap")[0].height;
+                                                                            var widthOfImage = $(".imagemap")[0].width;
+                                                                            var divWidth, divHeight = 0, numberOfCol, numberOfRows;
+                                                                            numberOfRows = $('table[data-role="imagemap"] tr').length - 2;
+                                                                            numberOfCol = $("table[data-role='imagemap'] tr:nth-child(3) td").length - 1;
+                                                                            if(heightOfImage >= 500){
+                                                                                heightOfImage = 500;
+                                                                                divHeight = (heightOfImage/numberOfRows)+"px";
+                                                                            }else{
+                                                                                divHeight = (heightOfImage/numberOfRows)+"px";
+                                                                            }
+                                                                            if(widthOfImage >= 500){
+                                                                                widthOfImage = 500;
+                                                                                divWidth = (widthOfImage/numberOfCol)+"px";
+                                                                            }else{
+                                                                                divWidth = (widthOfImage/numberOfCol)+"px";
+                                                                            }
+                                                                            $('.container').css("height",heightOfImage);
+                                                                            $('.container').css("width",widthOfImage);
+                                                                            $('.tag').css("height",heightOfImage);
+                                                                            $('.tag').css("width",widthOfImage);
+                                                                            $('.newImage').css("height",heightOfImage);
+                                                                            $('.newImage').css("width",widthOfImage);
+                                                                            $('.container').css("max-height","500px");
+                                                                            $('.container').css("max-width","500px");
+                                                                            $('.tag').css("max-height","500px");
+                                                                            $('.tag').css("max-width","500px");
+                                                                            $('.newImage').css("max-height","500px");
+                                                                            $('.newImage').css("max-width","500px");
+                                                                            $.each(inputFields, function(key, val){
+                                                                                $('.tag').append("<span class='trackPixel tooltip' id='"+val.id+"'><span class='tooltiptext like'>Like</span><span class='tooltiptext dislike'>Dislike</span><span class='tooltiptext neutral'>Neutral</span></span>");
+                                                                            });
+                                                                            $('.trackPixel').css("height",divHeight);
+                                                                            $('.trackPixel').css("width",divWidth);
+                                                                            //console.log(inputFields);
+                                                                            //console.log(images);
+                                                                            //console.log(heightOfImage);
+                                                                            //console.log(widthOfImage);
+                                                                            if($("input[id*='_Q']").val() >= 0){
+                                                                                var allInputs = $("input[id*='_Q']");
+                                                                                $.each(allInputs, function (key, val) {
+                                                                                    if(val.value > '0'){
+                                                                                        if(val.value == 1){
+                                                                                            $("span#"+val.id+"").addClass('dislikeMe');
+                                                                                        }else if(val.value == 2){
+                                                                                            $("span#"+val.id+"").addClass('likeMe');
+                                                                                        }else{
+                                                                                            $("span#"+val.id+"").addClass('neutralMe');
+                                                                                        }
+
+                                                                                    }else{
+                                                                                        val.value = '0';
+                                                                                    }
+                                                                                });
+                                                                            }
+
+                                                                            $('.like').click(function(event){
+                                                                                $('.imageMapError').text("");
+                                                                                $('#imagemap').css('border','0.5px solid #ccc');
+                                                                                $("span#"+event.target.parentNode.id+"").attr('class','trackPixel tooltip likeMe');
+                                                                                $("input#"+event.target.parentNode.id+"").val(2);
+                                                                            });
+                                                                            $('.dislike').click(function(event){
+                                                                                $('.imageMapError').text("");
+                                                                                $('#imagemap').css('border','0.5px solid #ccc');
+                                                                                $("span#"+event.target.parentNode.id+"").attr('class','trackPixel tooltip dislikeMe');
+                                                                                $("input#"+event.target.parentNode.id+"").val(1);
+                                                                            });
+                                                                            $('.neutral').click(function(event){
+                                                                                $('.imageMapError').text("");
+                                                                                $('#imagemap').css('border','0.5px solid #ccc');
+                                                                                $("span#"+event.target.parentNode.id+"").attr('class','trackPixel tooltip neutralMe');
+                                                                                $("input#"+event.target.parentNode.id+"").val(3);
+                                                                            });
+
+                                                                            var mandatory = $("mandatory");
+                                                                            if(mandatory.length){
+                                                                                $.each(mandatory, function (key, val) {
+                                                                                    mandatory = val.innerText;
+                                                                                });
+                                                                                if(mandatory == 'true'){
+                                                                                    $('.mrNext, .mrPrev').click(function(event){
+                                                                                        var formInput = 0;
+                                                                                        var allInputs = $("input[id*='_Q']");
+                                                                                        $.each(allInputs, function (key, val) {
+                                                                                            if(val.value > '0'){
+                                                                                                formInput++;
+                                                                                            }
+                                                                                        });
+                                                                                        if(formInput == 0){
+                                                                                            console.log("came and applied return");
+                                                                                            $('.imageMapError').text("Please map at least one section on the image.").css('color','red');
+                                                                                            $('#imagemap').css('border','1px solid red');
+                                                                                            event.preventDefault();
+                                                                                        }
+                                                                                    });
+                                                                                }
+                                                                            }
+                                                                            $('mandatory').css('display','none');
+                                                                        }
+                                                                    })
+                                                                    .error(function(){
+                                                                        alert('Image is not loaded!');
+                                                                    });
+
+                                                                }
+                                                            }
+                                                        });
+                                                    },
+                                                    _refresh: function() {
+                                                        this._create()
+                                                    },
+                                                    _destroy: function() {
+                                                        this.domHandle.remove()
+                                                    },
+                                                });
+                                                    
+  var count = 0;
+    e.widget("opg.MaxDiff",{
+     initSelector: "input[type='text']",
+       _create: function() {
+        $(function($)
+      {
+         var maxDifference = $(this).find("ul[data-role='maxdiff']");
+         axDifference = maxDifference.length;
+        if(axDifference >= 1){
+          console.log("max diff created");
+           if(count == 0){
+            count++;
+            console.log($('ul[data-role="maxdiff"] li span input'));
+         var firstQuesId = $('ul[data-role="maxdiff"] li span input')[0].id;
+             firstQuesId = firstQuesId.split('_');
+             firstQuesId = "_"+firstQuesId[1];
+         var flavours = $('ul[data-role="maxdiff"] li span.mrQuestionText');
+         var addTableData = "";
+         $.each(flavours,function(key, val){
+         var name = firstQuesId+"_Q"+key+"_Q0";
+           if(!val.outerText) {
+            val.outerText = val.textContent;
+        }
+          addTableData = addTableData + "<tr><td><input type='radio' name='"+name+"' data-col='1'></td><td>"+val.outerText+"</td><td><input type='radio' name='"+name+"' data-col='3'></td></tr>";
+           });
+
+        var max = $('max');
+        var min = $('min');
+          if(max.length >= 1){
+            max = max[0].innerText;
+           $('max').css('display','none');
+    }else{
+           max = "Most Important";
+       }
+          if(min.length >= 1){
+            min = min[0].innerText;
+        $('min').css('display','none');
+    }else{
+          min = "Least Important";
+     }
+$('maxdiff').append("<div id='maxdiff'><table><tr><th>"+max+"</th><th></th><th>"+min+"</th></tr>"+addTableData+"</table></div><p class='maxDiffError'></p>");
+
+       if($(this).find("input[id*='_Q']").val()){
+      var allInputs = $(this).find("input[id*='_Q']");
+      $.each(allInputs, function (key, val) {
+      if(val.value != '0'){
+        if(val.value == '2'){
+          $('input[data-col="1"][name="'+val.id+'"]').prop("checked", true);
+    }else{
+          $('input[data-col="3"][name="'+val.id+'"]').prop("checked", true);
+        }
+     }
+  })
+     var arrayOfChecked = $('input[type="radio"]:checked');
+     $.each(arrayOfChecked, function(key, val){
+     $('input[name='+val.name+']').prop("disabled", true);
+ });
+    }else{
+      $(this).find("input[id*='_Q']").val(0);
+    }
+ }
+  $('tr td input[data-col="1"]').click(function(){
+      var arrayOfChecked = $('input[type="radio"]:checked');
+       console.log(arrayOfChecked);
+    $.each(arrayOfChecked, function(key, val){
+       if((val.getAttribute('data-col') == 1)){
+        console.log(val.name);
+    $('ul[data-role="maxdiff"] li span input#'+val.name).val(0);
+    /*if(($('ul[data-role="maxdiff"] li span input#'+val.name+'').val()) == 2){
+  $('ul[data-role="maxdiff"] li span input#'+val.name+'').val(0);
+  }else{
+    $('ul[data-role="maxdiff"] li span input#'+val.name+'').val(2);
+ }*/
+  }
+ });
+  console.log("$(this)");
+  console.log($(this)[0].name);
+  $('ul[data-role="maxdiff"] li span input#'+$(this)[0].name+'').val(2);
+  $('tr td input[data-col="3"]').prop("disabled", false);
+  $('tr td input[data-col="1"]').prop("disabled", false);
+  $('tr td input[data-col="1"]').prop("checked", false);
+  $(this).prop("checked", true);
+//$('input[name='+$(this)[0].name+']').prop("disabled", true);
+  var arrayOfChecked = $('input[type="radio"]:checked');
+  $.each(arrayOfChecked, function(key, val){
+  $('input[name='+val.name+']').prop("disabled", true);
+ });
+});
+   $('tr td input[data-col="3"]').click(function(){
+      var arrayOfChecked = $('input[type="radio"]:checked');
+    $.each(arrayOfChecked, function(key, val){
+       if(val.getAttribute('data-col') == 3){
+    $('ul[data-role="maxdiff"] li span input#'+val.name).val(0);
+      }
+   });
+    $('ul[data-role="maxdiff"] li span input#'+$(this)[0].name+'').val(1);
+    $('tr td input[data-col="1"]').prop("disabled", false);
+    $('tr td input[data-col="3"]').prop("disabled", false);
+    $('tr td input[data-col="3"]').prop("checked", false);
+    $(this).prop("checked", true);
+     var arrayOfChecked = $('input[type="radio"]:checked');
+     $.each(arrayOfChecked, function(key, val){
+     $('input[name='+val.name+']').prop("disabled", true);
+ });
+//$('input[name='+$(this)[0].name+']').prop("disabled", true);
+//
+});
+
+      var mandatory = $("mandatory");
+        if(mandatory.length){
+          $.each(mandatory, function (key, val) {
+            mandatory = val.innerText;
+      });
+      if(mandatory == 'true'){
+         $('.mrNext, .mrPrev').click(function(event){
+           var formInput = 0;
+           var allInputs = $("input[id*='_Q']");
+          $.each(allInputs, function (key, val) {
+       if(val.value > '0'){
+         formInput++;
+    }
+  });
+       if(formInput == 0){
+          console.log("came and applied return");
+         $('.maxDiffError').text("Please select at least one value.").css('color','red');
+         $('#maxdiff>table').css('border','1px solid red');
+         event.preventDefault();
+           }
+        });
+      }
+   }
+        $('mandatory').css('display','none');
+      }
+   } );
+  }
+});
     e.widget("opg.slider", $.mobile.slider, {
     options: {
         vertical: false,
@@ -2359,3 +2713,6 @@
         }
     }
 })(jQuery)
+
+
+
