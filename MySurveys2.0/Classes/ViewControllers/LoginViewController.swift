@@ -122,8 +122,8 @@ class LoginViewController: RootViewController, UITextFieldDelegate, GIDSignInUID
         self.btnLogin?.layer.borderWidth = 1.0
 
         self.btnLogin?.setTitle(NSLocalizedString("Login", comment: ""), for: UIControl.State.normal)
-        self.btnGooglePlusLogin.setTitle(NSLocalizedString("Sign in with Google", comment: ""), for: UIControl.State.normal)
-        self.btnFacebookLogin.setTitle(NSLocalizedString("Login with Facebook", comment: ""), for: UIControl.State.normal)
+       // self.btnGooglePlusLogin.setTitle(NSLocalizedString("Sign in with Google", comment: ""), for: UIControl.State.normal)
+      //  self.btnFacebookLogin.setTitle(NSLocalizedString("Login with Facebook", comment: ""), for: UIControl.State.normal)
         self.btnForgotPassword?.setTitle(NSLocalizedString("Forgot Password?", comment: ""), for: UIControl.State.normal)
         // Configure GGLContext and set delegate
         GIDSignIn.sharedInstance().uiDelegate=self  // Google SignIn UI Delegate
@@ -194,7 +194,7 @@ class LoginViewController: RootViewController, UITextFieldDelegate, GIDSignInUID
             if height == OPGConstants.device.iPhoneXHeight {
                 let isiPhoneXAdjusted: String? = UserDefaults.standard.value(forKey: "iPhoneXAdjusted") as? String
                 if isiPhoneXAdjusted == nil {
-                    self.adjustiPhoneXGoogleButton()
+                 //   self.adjustiPhoneXGoogleButton()
                 }
             }
         }

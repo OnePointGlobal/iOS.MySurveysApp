@@ -92,6 +92,15 @@
 		13F9EB782396910500CC559D /* FBSDKShareKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 13F9EB732396910400CC559D /* FBSDKShareKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		13F9EB792396910500CC559D /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13F9EB742396910400CC559D /* FBSDKCoreKit.framework */; };
 		13F9EB7A2396910500CC559D /* FBSDKCoreKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 13F9EB742396910400CC559D /* FBSDKCoreKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1893A319247E2DA00096B968 /* icon_Google@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1893A316247E2D9F0096B968 /* icon_Google@2x.png */; };
+		1893A31A247E2DA00096B968 /* icon_Google@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1893A317247E2D9F0096B968 /* icon_Google@1x.png */; };
+		1893A31B247E2DA00096B968 /* icon_Google@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1893A318247E2DA00096B968 /* icon_Google@3x.png */; };
+		1893A31F247E2DBD0096B968 /* icon_Apple@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1893A31C247E2DBC0096B968 /* icon_Apple@1x.png */; };
+		1893A320247E2DBD0096B968 /* icon_Apple@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1893A31D247E2DBC0096B968 /* icon_Apple@2x.png */; };
+		1893A321247E2DBD0096B968 /* icon_Apple@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1893A31E247E2DBD0096B968 /* icon_Apple@3x.png */; };
+		1893A325247E2DDA0096B968 /* icon_FB@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1893A322247E2DD90096B968 /* icon_FB@1x.png */; };
+		1893A326247E2DDA0096B968 /* icon_FB@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1893A323247E2DD90096B968 /* icon_FB@2x.png */; };
+		1893A327247E2DDA0096B968 /* icon_FB@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1893A324247E2DDA0096B968 /* icon_FB@3x.png */; };
 		41F865C8D1E68663A3B18804 /* Pods_MySurveys2_0.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 723EE931262C8993D768B5EC /* Pods_MySurveys2_0.framework */; };
 		7801C24E1ED6E47E009FEC59 /* surveydetail_nav_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 7801C24C1ED6E47E009FEC59 /* surveydetail_nav_iPad.png */; };
 		7801C24F1ED6E47E009FEC59 /* surveydetail_nav_iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7801C24D1ED6E47E009FEC59 /* surveydetail_nav_iPad@2x.png */; };
@@ -162,8 +171,8 @@
 		78D4C0C31F179559002E6AF4 /* LoginBg_iPad_Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D4C0BF1F179558002E6AF4 /* LoginBg_iPad_Portrait.png */; };
 		78D4C0C41F179559002E6AF4 /* LoginPageLogo_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D4C0C01F179558002E6AF4 /* LoginPageLogo_iPad.png */; };
 		78D4C0C51F179559002E6AF4 /* LoginPageLogo_iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D4C0C11F179558002E6AF4 /* LoginPageLogo_iPad@2x.png */; };
-		78D5EA161DC36091009125A7 /* BuildFile in Sources */ = {isa = PBXBuildFile; };
-		78E2252D1DC3638400880AE0 /* BuildFile in Sources */ = {isa = PBXBuildFile; };
+		78D5EA161DC36091009125A7 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		78E2252D1DC3638400880AE0 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		78E368461DF6DF4900D14F07 /* profile_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 78E368451DF6DF4900D14F07 /* profile_default.png */; };
 		78E4F2731E1271FF001678FB /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78E4F2721E1271FF001678FB /* UserNotifications.framework */; };
 		78E9F4CB1DDC61500004FC73 /* ProfileTableViewCountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E9F4CA1DDC61500004FC73 /* ProfileTableViewCountryCell.swift */; };
@@ -432,6 +441,15 @@
 		13F9EB722396910300CC559D /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = MySurveys2.0/Frameworks/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		13F9EB732396910400CC559D /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = MySurveys2.0/Frameworks/FBSDKShareKit.framework; sourceTree = "<group>"; };
 		13F9EB742396910400CC559D /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = MySurveys2.0/Frameworks/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		1893A316247E2D9F0096B968 /* icon_Google@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_Google@2x.png"; sourceTree = "<group>"; };
+		1893A317247E2D9F0096B968 /* icon_Google@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_Google@1x.png"; sourceTree = "<group>"; };
+		1893A318247E2DA00096B968 /* icon_Google@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_Google@3x.png"; sourceTree = "<group>"; };
+		1893A31C247E2DBC0096B968 /* icon_Apple@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_Apple@1x.png"; sourceTree = "<group>"; };
+		1893A31D247E2DBC0096B968 /* icon_Apple@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_Apple@2x.png"; sourceTree = "<group>"; };
+		1893A31E247E2DBD0096B968 /* icon_Apple@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_Apple@3x.png"; sourceTree = "<group>"; };
+		1893A322247E2DD90096B968 /* icon_FB@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_FB@1x.png"; sourceTree = "<group>"; };
+		1893A323247E2DD90096B968 /* icon_FB@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_FB@2x.png"; sourceTree = "<group>"; };
+		1893A324247E2DDA0096B968 /* icon_FB@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_FB@3x.png"; sourceTree = "<group>"; };
 		3B8517C75D5C341107BACB3F /* Pods-MySurveys2.0.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySurveys2.0.release.xcconfig"; path = "Pods/Target Support Files/Pods-MySurveys2.0/Pods-MySurveys2.0.release.xcconfig"; sourceTree = "<group>"; };
 		638B1F2BB0BBF3C008A42B25 /* Pods-MySurveys2.0.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySurveys2.0.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MySurveys2.0/Pods-MySurveys2.0.debug.xcconfig"; sourceTree = "<group>"; };
 		6AE13FBDA741DA96E48A9E79 /* Pods_MySurveys2_0Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MySurveys2_0Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -903,6 +921,15 @@
 		94CD76601DB4AB9F00C6F958 /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				1893A322247E2DD90096B968 /* icon_FB@1x.png */,
+				1893A323247E2DD90096B968 /* icon_FB@2x.png */,
+				1893A324247E2DDA0096B968 /* icon_FB@3x.png */,
+				1893A31C247E2DBC0096B968 /* icon_Apple@1x.png */,
+				1893A31D247E2DBC0096B968 /* icon_Apple@2x.png */,
+				1893A31E247E2DBD0096B968 /* icon_Apple@3x.png */,
+				1893A317247E2D9F0096B968 /* icon_Google@1x.png */,
+				1893A316247E2D9F0096B968 /* icon_Google@2x.png */,
+				1893A318247E2DA00096B968 /* icon_Google@3x.png */,
 				78EBE46F20340AF5008C8573 /* icon_camera.png */,
 				78EBE47020340AF5008C8573 /* icon_camera@2x.png */,
 				78EBE46E20340AF5008C8573 /* icon_camera@3x.png */,
@@ -1205,6 +1232,7 @@
 				136E200922BE0F8B00BA7D39 /* Localizable.strings in Resources */,
 				78CB25991EA5EE460002EC6D /* survey_time_iPad.png in Resources */,
 				13F9A46B1DF9453E0017C42C /* profile_camera@3x.png in Resources */,
+				1893A321247E2DBD0096B968 /* icon_Apple@3x.png in Resources */,
 				78CB259A1EA5EE460002EC6D /* survey_time_iPad@2x.png in Resources */,
 				787D88E41E09337800E15D22 /* number_of_times@3x.png in Resources */,
 				942DBBEE1DE5A17B00A0BD98 /* applogo.png in Resources */,
@@ -1216,6 +1244,7 @@
 				78CB25901EA5EE460002EC6D /* notif_others_iPad@2x.png in Resources */,
 				948102F01E435B5F00605F18 /* icon-60@2x.png in Resources */,
 				781401171EAE02A000799399 /* profile_bg_iPad@2x.png in Resources */,
+				1893A320247E2DBD0096B968 /* icon_Apple@2x.png in Resources */,
 				78D4C0C51F179559002E6AF4 /* LoginPageLogo_iPad@2x.png in Resources */,
 				94CB0D4A1DCB1389007AF73F /* notif_reminder.png in Resources */,
 				134C44EA1FC6B107002D8AE9 /* icon_refresh@2x.png in Resources */,
@@ -1230,6 +1259,7 @@
 				13AB83D11DE6ECE5002A3108 /* Default.png in Resources */,
 				78F230A91E445B00001E24EC /* default_panel_bg@3x.png in Resources */,
 				948102E91E435B5F00605F18 /* Icon-29@2x.png in Resources */,
+				1893A319247E2DA00096B968 /* icon_Google@2x.png in Resources */,
 				134C44E91FC6B107002D8AE9 /* icon_save@2x.png in Resources */,
 				1337DB331D07F4140075B356 /* LaunchScreen.storyboard in Resources */,
 				134C44EB1FC6B107002D8AE9 /* icon_cancel.png in Resources */,
@@ -1247,6 +1277,7 @@
 				782511FA202C1E4C00654236 /* tessdata in Resources */,
 				94CB0D6B1DCB1B84007AF73F /* logout@2x.png in Resources */,
 				94CB0D571DCB1389007AF73F /* survey_nav.png in Resources */,
+				1893A31F247E2DBD0096B968 /* icon_Apple@1x.png in Resources */,
 				78EBE47120340AF5008C8573 /* icon_camera@3x.png in Resources */,
 				13F9A4751DF95C640017C42C /* notif_reminder@3x.png in Resources */,
 				94CB0D6F1DCB1B84007AF73F /* notif_select@2x.png in Resources */,
@@ -1264,10 +1295,12 @@
 				13F9A4691DF9442A0017C42C /* profile@3x.png in Resources */,
 				78EBE47320340AF5008C8573 /* icon_camera@2x.png in Resources */,
 				78822D1E1EAA0ED500E84831 /* forgotpwd_key_iPad.png in Resources */,
+				1893A325247E2DDA0096B968 /* icon_FB@1x.png in Resources */,
 				94CB0D701DCB1B84007AF73F /* notification@2x.png in Resources */,
 				78CB25971EA5EE460002EC6D /* survey_calendar_iPad.png in Resources */,
 				78F230AC1E445B00001E24EC /* default_theme_image@3X.png in Resources */,
 				78D4C0B81F1786FF002E6AF4 /* LoginBg.png in Resources */,
+				1893A31A247E2DA00096B968 /* icon_Google@1x.png in Resources */,
 				13F9A47B1DF95E8D0017C42C /* settings@3x.png in Resources */,
 				78D4C0B91F1786FF002E6AF4 /* LoginBg@2x.png in Resources */,
 				78CB258F1EA5EE460002EC6D /* notif_others_iPad.png in Resources */,
@@ -1289,6 +1322,7 @@
 				94CB0D491DCB1389007AF73F /* notif_others.png in Resources */,
 				13D18F911F31A41F00237390 /* LongDistance.gpx in Resources */,
 				948102EC1E435B5F00605F18 /* icon-40@2x.png in Resources */,
+				1893A31B247E2DA00096B968 /* icon_Google@3x.png in Resources */,
 				78D4C0BB1F1786FF002E6AF4 /* LoginPageLogo@2x.png in Resources */,
 				948102F71E435B5F00605F18 /* icon@2x.png in Resources */,
 				94CB0D521DCB1389007AF73F /* refresh.png in Resources */,
@@ -1301,11 +1335,13 @@
 				13F9A46E1DF945ED0017C42C /* profile_orange@2x.png in Resources */,
 				78F5490A1DF8128B00E4EB35 /* google@2x.png in Resources */,
 				13BEEFD81F21E0D000ED0D3F /* Bangalore.gpx in Resources */,
+				1893A327247E2DDA0096B968 /* icon_FB@3x.png in Resources */,
 				1399F90A1DFA9078006AFD4C /* profile_default@3x.png in Resources */,
 				781401111EADDD2D00799399 /* survey_nav_iPad@2x.png in Resources */,
 				94CB0D761DCB1B84007AF73F /* splash@2x.png in Resources */,
 				13608E581DFE7ECC00F7DF05 /* profile_bg.png in Resources */,
 				1399F9101DFA94EA006AFD4C /* forgotpwd_key@3x.png in Resources */,
+				1893A326247E2DDA0096B968 /* icon_FB@2x.png in Resources */,
 				13F9A4851DF962940017C42C /* survey@3x.png in Resources */,
 				781401161EAE02A000799399 /* profile_bg_iPad.png in Resources */,
 				78D4C0B71F1786FF002E6AF4 /* LoginBg-736@3x.png in Resources */,
@@ -1521,7 +1557,7 @@
 				94C216E51DDF19DD004C1131 /* RootViewController.swift in Sources */,
 				94CD762E1DB4A63B00C6F958 /* SurveyViewController.swift in Sources */,
 				7878854320BBD20300BFEB67 /* NSString+OPGAESCrypt.m in Sources */,
-				78D5EA161DC36091009125A7 /* BuildFile in Sources */,
+				78D5EA161DC36091009125A7 /* (null) in Sources */,
 				789CCFEA1DC3664E00D79FA1 /* ProfileTableViewCell.swift in Sources */,
 				9408BB021DBF7EFE0066A049 /* NSString+NSDate.m in Sources */,
 				94CD75FD1DB4A51E00C6F958 /* UIImage.swift in Sources */,
@@ -1543,7 +1579,7 @@
 				782511F6202C1DD400654236 /* OCRViewController.m in Sources */,
 				94CD75FB1DB4A51E00C6F958 /* UIColor.swift in Sources */,
 				946474A61DBE497A00016F2C /* SettingsViewController.swift in Sources */,
-				78E2252D1DC3638400880AE0 /* BuildFile in Sources */,
+				78E2252D1DC3638400880AE0 /* (null) in Sources */,
 				94CD761A1DB4A63B00C6F958 /* AboutUsViewController.swift in Sources */,
 				78EAFEC51DD302CC002158A1 /* NotificationTableViewCell.swift in Sources */,
 				135011FB201EFAAC0043EE6F /* CurrencyPlugin.m in Sources */,
