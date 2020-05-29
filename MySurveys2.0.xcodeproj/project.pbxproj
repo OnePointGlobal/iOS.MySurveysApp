@@ -92,6 +92,7 @@
 		13F9EB782396910500CC559D /* FBSDKShareKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 13F9EB732396910400CC559D /* FBSDKShareKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		13F9EB792396910500CC559D /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13F9EB742396910400CC559D /* FBSDKCoreKit.framework */; };
 		13F9EB7A2396910500CC559D /* FBSDKCoreKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 13F9EB742396910400CC559D /* FBSDKCoreKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		185F96B8247F895F0002600A /* KeychainItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185F96B7247F895F0002600A /* KeychainItem.swift */; };
 		1893A319247E2DA00096B968 /* icon_Google@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1893A316247E2D9F0096B968 /* icon_Google@2x.png */; };
 		1893A31A247E2DA00096B968 /* icon_Google@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1893A317247E2D9F0096B968 /* icon_Google@1x.png */; };
 		1893A31B247E2DA00096B968 /* icon_Google@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1893A318247E2DA00096B968 /* icon_Google@3x.png */; };
@@ -441,6 +442,7 @@
 		13F9EB722396910300CC559D /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = MySurveys2.0/Frameworks/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		13F9EB732396910400CC559D /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = MySurveys2.0/Frameworks/FBSDKShareKit.framework; sourceTree = "<group>"; };
 		13F9EB742396910400CC559D /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = MySurveys2.0/Frameworks/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		185F96B7247F895F0002600A /* KeychainItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainItem.swift; sourceTree = "<group>"; };
 		1893A316247E2D9F0096B968 /* icon_Google@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_Google@2x.png"; sourceTree = "<group>"; };
 		1893A317247E2D9F0096B968 /* icon_Google@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_Google@1x.png"; sourceTree = "<group>"; };
 		1893A318247E2DA00096B968 /* icon_Google@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_Google@3x.png"; sourceTree = "<group>"; };
@@ -787,6 +789,7 @@
 				782511F0202C1DB300654236 /* OCRPlugin.m */,
 				782511F4202C1DD400654236 /* OCRViewController.h */,
 				782511F5202C1DD400654236 /* OCRViewController.m */,
+				185F96B7247F895F0002600A /* KeychainItem.swift */,
 			);
 			name = CustomClass;
 			path = Classes/CustomClass;
@@ -1591,6 +1594,7 @@
 				135011FA201EFAAC0043EE6F /* CurrenyViewController.swift in Sources */,
 				787D6B751EE676E10055C69E /* OPGConstants.swift in Sources */,
 				94CD76301DB4A63B00C6F958 /* TabBarViewController.swift in Sources */,
+				185F96B8247F895F0002600A /* KeychainItem.swift in Sources */,
 				94D620CC1DC321B500629E52 /* ChangePanelTableViewCell.swift in Sources */,
 				9408BAF71DBF7E9A0066A049 /* CollabrateDB.m in Sources */,
 				78EAFEC81DD32E56002158A1 /* ShowNotificationViewController.swift in Sources */,

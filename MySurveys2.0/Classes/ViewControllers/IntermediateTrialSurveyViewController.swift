@@ -60,8 +60,12 @@ class IntermediateTrialSurveyViewController: RootViewController, UINavigationCon
     }
 
     func gotoLoginPage() {
-        let appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
-        appDelegate?.resetLoginRootView()
+        if #available(iOS 13.0, *) {
+            let appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
+            appDelegate?.resetLoginRootView()
+        } else {
+            // Fallback on earlier versions
+        }
     }
 
     // MARK: - Navigation

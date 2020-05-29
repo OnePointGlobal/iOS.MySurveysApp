@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import FBSDKCoreKit
 import UserNotifications
+import AuthenticationServices
 
 
 @UIApplicationMain
@@ -72,11 +73,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
         return surveyRef as String
     }
+    
+    func setUpSignInWithApple() {
+        
+        if #available(iOS 13.0, *) {
+            let appleIDProvider = ASAuthorizationAppleIDProvider()
+            appleIDProvider.getCredentialState(forUserID: KeychainItem.currentUserIdentifier) { (credentialState, error) in
+                switch credentialState {
+                case .authorized:
+                    // The Apple ID credential is valid.
+                    UserDefaults.standard.set("1", forKey: "isUserLoggedIN")
+                    break
+                case .revoked, .notFound:
+                    // The Apple ID credential is either revoked or was not found, so show the sign-in UI.
+                    UserDefaults.standard.set("0", forKey: "isUserLoggedIN")
+                    break
+                default:
+                    break
+                }
+            }
+        }
+        else {
+            // Fallback on earlier versions
+        }
+    }
 
       func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         UIApplication.shared.statusBarStyle = .lightContent
         // Override point for customization after application launch.
         UIApplication.shared.applicationIconBadgeNumber = 0
+        //self.setUpSignInWithApple()
         self.setAppViews()
         OPGSDK.setAppVersion(OPGConstants.sdk.AppVersion)
         OPGSDK.initialize(withUserName: OPGConstants.sdk.Username, withSDKKey: OPGConstants.sdk.SharedKey)

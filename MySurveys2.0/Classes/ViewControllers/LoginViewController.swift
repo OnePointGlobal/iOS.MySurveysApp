@@ -8,8 +8,10 @@
 
 import UIKit
 import FBSDKLoginKit
+import AuthenticationServices
 
 class LoginViewController: RootViewController, UITextFieldDelegate, GIDSignInUIDelegate, GIDSignInDelegate {
+    
     // MARK: - IBOutlets for view
     @IBOutlet weak var imgLogo: UIImageView?
     @IBOutlet weak var lblLogoText: UILabel?
@@ -56,6 +58,10 @@ class LoginViewController: RootViewController, UITextFieldDelegate, GIDSignInUID
 
     @IBAction func forgotPasswordAction(_ sender: AnyObject) {
         self.performSegue(withIdentifier: "embedForgot", sender: self)
+    }
+    
+     @IBAction func signInWithAppleAction(_ sender: AnyObject) {
+        self.handleAuthorizationAppleIDButtonPress()
     }
 
     @IBAction func googleSignInAction(_ sender: AnyObject) {
@@ -435,15 +441,15 @@ class LoginViewController: RootViewController, UITextFieldDelegate, GIDSignInUID
         }
     }
 
-    /// Adjusts aspect ratio for Goggle/Facebook Sign in button height for iPhone X where it looks strectched vertically
-    func adjustiPhoneXGoogleButton() {
-        print("iPhone X Constarint Updated Succesfuly")
-        self.view.removeConstraint(self.googleButtonAspectRatioConstraint)
-        self.googleButtonAspectRatioConstraint = NSLayoutConstraint.init(item: self.googleButtonAspectRatioConstraint.firstItem as Any, attribute: self.googleButtonAspectRatioConstraint.firstAttribute, relatedBy: self.googleButtonAspectRatioConstraint.relation, toItem: self.googleButtonAspectRatioConstraint.secondItem, attribute: self.googleButtonAspectRatioConstraint.secondAttribute, multiplier: 1.1/15.0, constant: 0)
-        self.view.addConstraint(self.googleButtonAspectRatioConstraint)
-        UserDefaults.standard.set("1", forKey: "iPhoneXAdjusted")
-        self.view.layoutIfNeeded()
-    }
+//    /// Adjusts aspect ratio for Goggle/Facebook Sign in button height for iPhone X where it looks strectched vertically
+//    func adjustiPhoneXGoogleButton() {
+//        print("iPhone X Constarint Updated Succesfuly")
+//        self.view.removeConstraint(self.googleButtonAspectRatioConstraint)
+//        self.googleButtonAspectRatioConstraint = NSLayoutConstraint.init(item: self.googleButtonAspectRatioConstraint.firstItem as Any, attribute: self.googleButtonAspectRatioConstraint.firstAttribute, relatedBy: self.googleButtonAspectRatioConstraint.relation, toItem: self.googleButtonAspectRatioConstraint.secondItem, attribute: self.googleButtonAspectRatioConstraint.secondAttribute, multiplier: 1.1/15.0, constant: 0)
+//        self.view.addConstraint(self.googleButtonAspectRatioConstraint)
+//        UserDefaults.standard.set("1", forKey: "iPhoneXAdjusted")
+//        self.view.layoutIfNeeded()
+//    }
 
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -619,5 +625,114 @@ class LoginViewController: RootViewController, UITextFieldDelegate, GIDSignInUID
         print("Google disconnected")
         // Signin
     }
-
+    
+    // MARK: - Sign in with Apple Methods
+    
+    func handleAuthorizationAppleIDButtonPress() {
+        if #available(iOS 13.0, *) {
+            let appleIDProvider = ASAuthorizationAppleIDProvider()
+            let request = appleIDProvider.createRequest()
+            request.requestedScopes = [.fullName, .email]
+            
+            let authorizationController = ASAuthorizationController(authorizationRequests: [request])
+            authorizationController.delegate = self
+            authorizationController.presentationContextProvider = self
+            authorizationController.performRequests()
+        } else {
+            // Fallback on earlier versions
+            print("This version below 13")
+            super.showAlert(alertTitle: NSLocalizedString("MySurveys", comment: ""), alertMessage: NSLocalizedString("Your version is not supported, Please update to ios 13 to use this feature.", comment: ""), alertAction: NSLocalizedString("OK", comment: "OK"))
+        }
+    }
+    
+    func performExistingAccountSetupFlows() {
+         if #available(iOS 13.0, *) {
+            // Prepare requests for both Apple ID and password providers.
+            let requests = [ASAuthorizationAppleIDProvider().createRequest(),
+                            ASAuthorizationPasswordProvider().createRequest()]
+            
+            // Create an authorization controller with the given requests.
+            let authorizationController = ASAuthorizationController(authorizationRequests: requests)
+            authorizationController.delegate = self as? ASAuthorizationControllerDelegate
+            authorizationController.presentationContextProvider = self as? ASAuthorizationControllerPresentationContextProviding
+            authorizationController.performRequests()
+        }
+        
+    }
 }
+
+extension LoginViewController: ASAuthorizationControllerDelegate {
+    /// - Tag: did_complete_authorization
+    @available(iOS 13.0, *)
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        switch authorization.credential {
+        case let appleIDCredential as ASAuthorizationAppleIDCredential:
+            
+            // Create an account in your system.
+            let userIdentifier = appleIDCredential.user
+            let fullName = appleIDCredential.fullName
+            let email = appleIDCredential.email
+            
+            if email == nil {
+            let appleEmailID: String? = UserDefaults.standard.object(forKey: "appleID") as? String
+                print(appleEmailID!)
+            }
+            else {
+                UserDefaults.standard.set(email, forKey: "appleID")
+            }
+        
+            self.txtUsername?.text = "durga.jadapolu@onepointglobal.com"
+            self.txtPassword?.text = "Dev@opg"
+            self.authenticate()
+            // For the purpose of this demo app, store the `userIdentifier` in the keychain.
+            self.saveUserInKeychain(userIdentifier)
+            
+        case let passwordCredential as ASPasswordCredential:
+        
+            // Sign in using an existing iCloud Keychain credential.
+            let username = passwordCredential.user
+            let password = passwordCredential.password
+            
+            // For the purpose of this demo app, show the password credential as an alert.
+            DispatchQueue.main.async {
+                self.showPasswordCredentialAlert(username: username, password: password)
+            }
+            
+        default:
+            break
+        }
+    }
+    
+    private func saveUserInKeychain(_ userIdentifier: String) {
+        do {
+            try KeychainItem(service: "com.opg..Sign-In-with-Apple", account: "userIdentifier").saveItem(userIdentifier)
+        } catch {
+            print("Unable to save userIdentifier to keychain.")
+        }
+    }
+    
+    private func showPasswordCredentialAlert(username: String, password: String) {
+        let message = "The app has received your selected credential from the keychain. \n\n Username: \(username)\n Password: \(password)"
+        let alertController = UIAlertController(title: "Keychain Credential Received",
+                                                message: message,
+                                                preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    /// - Tag: did_complete_error
+    @available(iOS 13.0, *)
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        // Handle error.
+    }
+}
+
+extension LoginViewController: ASAuthorizationControllerPresentationContextProviding {
+    /// - Tag: provide_presentation_anchor
+    @available(iOS 13.0, *)
+    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+        return self.view.window!
+    }
+}
+
+

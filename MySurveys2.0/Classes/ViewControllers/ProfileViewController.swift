@@ -296,6 +296,7 @@ class ProfileViewController: RootViewController, UITableViewDelegate, UITableVie
         let isiPhoneXAdjusted: String? = UserDefaults.standard.value(forKey: "iPhoneXAdjusted") as? String
         let isSocialLogin = UserDefaults.standard.value(forKey: "isSocialLogin") as? Int
         let deviceToken: String? = UserDefaults.standard.value(forKey: "DeviceTokenID") as? String
+        let appleEmail: String? = UserDefaults.standard.value(forKey: "appleID") as? String
         let panelID: String? = UserDefaults.standard.value(forKey: selectedPanelID) as? String              // fetch the updated panelID again
         let panelName: String? = UserDefaults.standard.value(forKey: selectedPanelName) as? String
         let bgImagePath: String? = AppTheme.getLoginBGImagePath()
@@ -328,6 +329,8 @@ class ProfileViewController: RootViewController, UITableViewDelegate, UITableVie
         if isiPhoneXAdjusted != nil {
             UserDefaults.standard.set(isiPhoneXAdjusted, forKey: "iPhoneXAdjusted")
         }
+        
+        UserDefaults.standard.set(appleEmail, forKey: "appleID")                    // Before  Logout, Re-assign appleID as we get that only for one time
         UserDefaults.standard.set("0", forKey: "isUserLoggedIN")                    // 0 indicates not logged in or logout
         UserDefaults.standard.set(deviceToken, forKey: "DeviceTokenID")             // Before Logout, Re-assign DeviceTokenID as we get that only for one time
         AppTheme.setLoginBGImagePath(path: bgImagePath!)                            // Before Logout, Re-assign login BG image path as it is to be shown after logout

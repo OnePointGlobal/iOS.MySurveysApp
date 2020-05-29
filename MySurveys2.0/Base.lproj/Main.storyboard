@@ -631,7 +631,7 @@
             <objects>
                 <viewController storyboardIdentifier="Profile" modalTransitionStyle="crossDissolve" id="JcZ-Qf-u8e" customClass="ProfileViewController" customModule="MySurveys2_0" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fm9-pb-SzU">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="lLT-6v-kIc">
@@ -885,7 +885,7 @@
             <objects>
                 <viewController modalTransitionStyle="flipHorizontal" id="r7t-F8-sjI" customClass="SettingsViewController" customModule="MySurveys2_0" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oiY-8D-Rvj">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LN1-r8-pBv">
@@ -1501,7 +1501,7 @@
             <objects>
                 <viewController modalTransitionStyle="crossDissolve" id="e27-8d-1Ol" customClass="NotificationsViewController" customModule="MySurveys2_0" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FsH-Kw-tKh">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FbY-ak-2yM">
@@ -1866,14 +1866,23 @@
                                             </constraint>
                                         </constraints>
                                         <state key="normal" backgroundImage="icon_FB.png"/>
+                                        <connections>
+                                            <action selector="facebookLoginAction:" destination="zx5-tf-9mK" eventType="touchUpInside" id="BmH-gg-hgb"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kr1-uB-VH9">
                                         <rect key="frame" x="264.5" y="18" width="55" height="55"/>
                                         <state key="normal" backgroundImage="icon_Google.png"/>
+                                        <connections>
+                                            <action selector="googleSignInAction:" destination="zx5-tf-9mK" eventType="touchUpInside" id="n0k-4c-Pb2"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pRo-Nq-Ntv">
                                         <rect key="frame" x="94.5" y="18" width="55" height="55"/>
                                         <state key="normal" backgroundImage="icon_Apple.png"/>
+                                        <connections>
+                                            <action selector="signInWithAppleAction:" destination="zx5-tf-9mK" eventType="touchUpInside" id="XCv-XC-rE7"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1940,7 +1949,9 @@
                     <navigationItem key="navigationItem" title="Login" id="har-vg-5KN"/>
                     <connections>
                         <outlet property="activityIndicatorView" destination="wjK-zb-Cik" id="3zq-eB-283"/>
+                        <outlet property="btnFacebookLogin" destination="OHH-tA-3Rn" id="lOE-7o-It1"/>
                         <outlet property="btnForgotPassword" destination="9QP-cM-6gN" id="NKf-L2-KNa"/>
+                        <outlet property="btnGooglePlusLogin" destination="Kr1-uB-VH9" id="Z7b-AS-jei"/>
                         <outlet property="btnLogin" destination="x4b-p3-76U" id="MGA-UA-CbW"/>
                         <outlet property="constraintImageViewBottom" destination="grt-61-6Ka" id="b4O-Ky-NNj"/>
                         <outlet property="constraintImageViewTop" destination="SNr-rx-Qvi" id="G3y-ap-wuR"/>
