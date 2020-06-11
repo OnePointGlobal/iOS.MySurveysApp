@@ -1856,32 +1856,48 @@
                                 <rect key="frame" x="0.0" y="649" width="414" height="91"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OHH-tA-3Rn">
-                                        <rect key="frame" x="179.5" y="18" width="55" height="55"/>
+                                        <rect key="frame" x="207" y="18" width="0.0" height="55"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="55" id="9Vv-Cr-1HI">
                                                 <variation key="heightClass=regular-widthClass=regular" constant="85"/>
                                             </constraint>
-                                            <constraint firstAttribute="width" constant="55" id="rOo-Bn-VIs">
-                                                <variation key="heightClass=regular-widthClass=regular" constant="85"/>
+                                            <constraint firstAttribute="width" id="rOo-Bn-VIs">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
                                             </constraint>
                                         </constraints>
-                                        <state key="normal" backgroundImage="icon_FB.png"/>
+                                        <state key="normal" backgroundImage="icon_Apple.png"/>
                                         <connections>
-                                            <action selector="facebookLoginAction:" destination="zx5-tf-9mK" eventType="touchUpInside" id="BmH-gg-hgb"/>
+                                            <action selector="signInWithAppleAction:" destination="zx5-tf-9mK" eventType="touchUpInside" id="ZGy-46-BnO"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kr1-uB-VH9">
-                                        <rect key="frame" x="264.5" y="18" width="55" height="55"/>
+                                        <rect key="frame" x="222" y="18" width="55" height="55"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="Bzf-TT-ft5">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="85"/>
+                                            </constraint>
+                                            <constraint firstAttribute="width" constant="55" id="ckK-xG-5XI">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="85"/>
+                                            </constraint>
+                                        </constraints>
                                         <state key="normal" backgroundImage="icon_Google.png"/>
                                         <connections>
                                             <action selector="googleSignInAction:" destination="zx5-tf-9mK" eventType="touchUpInside" id="n0k-4c-Pb2"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pRo-Nq-Ntv">
-                                        <rect key="frame" x="94.5" y="18" width="55" height="55"/>
-                                        <state key="normal" backgroundImage="icon_Apple.png"/>
+                                        <rect key="frame" x="137" y="18" width="55" height="55"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="1Y2-xw-SfY">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="85"/>
+                                            </constraint>
+                                            <constraint firstAttribute="width" constant="55" id="aXy-Vz-e4v">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="85"/>
+                                            </constraint>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="icon_FB.png"/>
                                         <connections>
-                                            <action selector="signInWithAppleAction:" destination="zx5-tf-9mK" eventType="touchUpInside" id="XCv-XC-rE7"/>
+                                            <action selector="facebookLoginAction:" destination="zx5-tf-9mK" eventType="touchUpInside" id="2Ld-rk-KM0"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1892,20 +1908,16 @@
                                     </constraint>
                                     <constraint firstAttribute="bottom" secondItem="OHH-tA-3Rn" secondAttribute="bottom" constant="18" id="5cE-Gj-DtV"/>
                                     <constraint firstItem="Kr1-uB-VH9" firstAttribute="top" secondItem="jeu-Co-Wzt" secondAttribute="top" constant="18" id="Dhe-53-VgH"/>
-                                    <constraint firstItem="OHH-tA-3Rn" firstAttribute="leading" secondItem="pRo-Nq-Ntv" secondAttribute="trailing" constant="30" id="H3M-RV-HCM">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="65"/>
+                                    <constraint firstItem="OHH-tA-3Rn" firstAttribute="leading" secondItem="pRo-Nq-Ntv" secondAttribute="trailing" constant="15" id="H3M-RV-HCM">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="32"/>
                                     </constraint>
                                     <constraint firstAttribute="bottom" secondItem="Kr1-uB-VH9" secondAttribute="bottom" constant="18" id="H4P-lX-e8L"/>
                                     <constraint firstItem="pRo-Nq-Ntv" firstAttribute="top" secondItem="jeu-Co-Wzt" secondAttribute="top" constant="18" id="Mxa-Nd-3Ul"/>
-                                    <constraint firstItem="Kr1-uB-VH9" firstAttribute="width" secondItem="pRo-Nq-Ntv" secondAttribute="width" id="Nxr-ke-sGW"/>
-                                    <constraint firstItem="OHH-tA-3Rn" firstAttribute="width" secondItem="pRo-Nq-Ntv" secondAttribute="width" id="Rfj-of-GOA"/>
-                                    <constraint firstItem="OHH-tA-3Rn" firstAttribute="height" secondItem="pRo-Nq-Ntv" secondAttribute="height" id="V2M-yd-GdD"/>
                                     <constraint firstItem="OHH-tA-3Rn" firstAttribute="top" secondItem="jeu-Co-Wzt" secondAttribute="top" constant="18" id="YbE-vQ-02e"/>
                                     <constraint firstItem="OHH-tA-3Rn" firstAttribute="centerX" secondItem="jeu-Co-Wzt" secondAttribute="centerX" id="Z3b-BF-EDV"/>
                                     <constraint firstAttribute="bottom" secondItem="pRo-Nq-Ntv" secondAttribute="bottom" constant="18" id="eLL-Eo-j8R"/>
-                                    <constraint firstItem="Kr1-uB-VH9" firstAttribute="height" secondItem="pRo-Nq-Ntv" secondAttribute="height" id="ffg-iq-9Cv"/>
-                                    <constraint firstItem="Kr1-uB-VH9" firstAttribute="leading" secondItem="OHH-tA-3Rn" secondAttribute="trailing" constant="30" id="wkS-vF-InX">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="65"/>
+                                    <constraint firstItem="Kr1-uB-VH9" firstAttribute="leading" secondItem="OHH-tA-3Rn" secondAttribute="trailing" constant="15" id="wkS-vF-InX">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="32"/>
                                     </constraint>
                                 </constraints>
                             </view>
@@ -1949,7 +1961,8 @@
                     <navigationItem key="navigationItem" title="Login" id="har-vg-5KN"/>
                     <connections>
                         <outlet property="activityIndicatorView" destination="wjK-zb-Cik" id="3zq-eB-283"/>
-                        <outlet property="btnFacebookLogin" destination="OHH-tA-3Rn" id="lOE-7o-It1"/>
+                        <outlet property="appleButtonwidthhiddenConstraint" destination="rOo-Bn-VIs" id="eAb-pM-uJD"/>
+                        <outlet property="btnFacebookLogin" destination="pRo-Nq-Ntv" id="dB0-hf-kkj"/>
                         <outlet property="btnForgotPassword" destination="9QP-cM-6gN" id="NKf-L2-KNa"/>
                         <outlet property="btnGooglePlusLogin" destination="Kr1-uB-VH9" id="Z7b-AS-jei"/>
                         <outlet property="btnLogin" destination="x4b-p3-76U" id="MGA-UA-CbW"/>
@@ -1961,6 +1974,8 @@
                         <outlet property="imgLoginBG" destination="8Vz-wW-q2u" id="h8c-wR-5Mx"/>
                         <outlet property="imgLogo" destination="1FB-kk-Wsu" id="Yv7-JD-ZzN"/>
                         <outlet property="lblLogoText" destination="Qea-vW-db9" id="uky-xx-wjg"/>
+                        <outlet property="leftSideAppleSpacingConstraint" destination="H3M-RV-HCM" id="fEj-AM-1aG"/>
+                        <outlet property="rightSideAppleSpacingConstraint" destination="wkS-vF-InX" id="3Xx-bN-KdI"/>
                         <outlet property="txtPassword" destination="9p6-8e-Ama" id="9Cc-Vu-dbD"/>
                         <outlet property="txtUsername" destination="MNj-gc-Zuv" id="Rk9-vK-eOy"/>
                         <segue destination="d4g-Ty-kgG" kind="show" identifier="SurveyHome" id="h0Z-yE-LEZ"/>

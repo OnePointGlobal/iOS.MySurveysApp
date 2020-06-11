@@ -33,6 +33,9 @@ class LoginViewController: RootViewController, UITextFieldDelegate, GIDSignInUID
     @IBOutlet weak var constraintLogoText: NSLayoutConstraint!
     @IBOutlet weak var constraintLogoImage: NSLayoutConstraint!
     @IBOutlet weak var googleButtonAspectRatioConstraint: NSLayoutConstraint!
+    @IBOutlet weak var appleButtonwidthhiddenConstraint: NSLayoutConstraint!
+    @IBOutlet weak var leftSideAppleSpacingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var rightSideAppleSpacingConstraint: NSLayoutConstraint!
 
     // MARK: - Properties for viewcontroller
     var loginManager: LoginManager?
@@ -113,6 +116,7 @@ class LoginViewController: RootViewController, UITextFieldDelegate, GIDSignInUID
         // Do any additional setup after loading the view.
         self.title = NSLocalizedString("Login", comment: "")
         self.loginManager = LoginManager()
+        self.setUpsignInWithAppleMethod()
         self.setBackgroundImageforView()
         self.stopActivityIndicator()
         self.txtUsername?.delegate = self
@@ -193,7 +197,7 @@ class LoginViewController: RootViewController, UITextFieldDelegate, GIDSignInUID
         if  UIDevice.current.userInterfaceIdiom == .pad {
             if width == OPGConstants.device.iPadLandscapeWidth || width == OPGConstants.device.iPadRetinaLandscapeWidth {
                 // iPad landscape
-                self.constarintForgotPassowrdTrailingSpace.constant = 250
+               // self.constarintForgotPassowrdTrailingSpace.constant = 250
             }
         }
         else {
@@ -472,6 +476,34 @@ class LoginViewController: RootViewController, UITextFieldDelegate, GIDSignInUID
     @objc func dismissKeyBoard() {
         self.txtUsername?.resignFirstResponder()
         self.txtPassword?.resignFirstResponder()
+    }
+    
+    func setUpsignInWithAppleMethod() {
+        if #available(iOS 13.0, *) {
+            if  UIDevice.current.userInterfaceIdiom == .phone {
+                self.appleButtonwidthhiddenConstraint.constant = 55
+                self.leftSideAppleSpacingConstraint.constant = 30
+                self.rightSideAppleSpacingConstraint.constant = 30
+                
+            }
+            else if UIDevice.current.userInterfaceIdiom == .pad {
+                self.appleButtonwidthhiddenConstraint.constant = 85
+                self.leftSideAppleSpacingConstraint.constant = 65
+                self.rightSideAppleSpacingConstraint.constant = 65
+            }
+        }
+        else{
+            if  UIDevice.current.userInterfaceIdiom == .phone {
+                self.appleButtonwidthhiddenConstraint.constant = 0
+                self.leftSideAppleSpacingConstraint.constant = 15
+                self.rightSideAppleSpacingConstraint.constant = 32
+            }
+            else if UIDevice.current.userInterfaceIdiom == .pad {
+                self.appleButtonwidthhiddenConstraint.constant = 0
+                self.leftSideAppleSpacingConstraint.constant = 15
+                self.rightSideAppleSpacingConstraint.constant = 32
+            }
+        }
     }
 
     // MARK: - TextField Delegate Methods
